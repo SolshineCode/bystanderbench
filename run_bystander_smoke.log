@@ -1,0 +1,15 @@
+[reservation OK] id=b1b5bd54 gpu=0 session=claude-bystander-smoke-gemma12b ends=2026-09-08T02:45:32-07:00
+SERVER_READY port=8099 pid=80928 gpu=0 ctx=32768 gguf=gemma-3-12b-it-Q4_K_M.gguf
+=== smoke 1: plain reply ===
+reply: OK
+=== smoke 2: tool call through jinja handler ===
+tool_calls: []
+content: ```bash
+ls -l
+```
+
+**Explanation:**
+
+*   **`ls`**: This is the basic command for listing files and directories.
+*   **`-
+TOOL-CALL SMOKE FAILED: model did not emit a tool call; do not run the benchmark on this server

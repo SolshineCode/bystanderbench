@@ -1,0 +1,12 @@
+L 4 n=124 FVU=1.273 L0=52.3 (target 75) alive=95 pos=4 neg=95 max|d|=1.76 p=0.21635672865426914
+L 8 n=124 FVU=13.377 L0=66.0 (target 90) alive=99 pos=4 neg=95 max|d|=3.09 p=0.010197960407918417
+L12 n=124 FVU=2.565 L0=94.6 (target 105) alive=173 pos=4 neg=95 max|d|=4.61 p=0.004999000199960008
+L16 n=124 FVU=0.823 L0=96.4 (target 120) alive=392 pos=4 neg=95 max|d|=12.70 p=0.0001999600079984003
+L20 n=124 FVU=0.394 L0=110.9 (target 120) alive=592 pos=4 neg=95 max|d|=41.55 p=0.0001999600079984003
+L24 n=124 FVU=1.244 L0=88.7 (target 120) alive=505 pos=4 neg=95 max|d|=12.78 p=0.0001999600079984003
+L28 n=124 FVU=1.145 L0=83.9 (target 120) alive=576 pos=4 neg=95 max|d|=8.19 p=0.0003999200159968006
+L32 n=124 FVU=1.221 L0=92.6 (target 120) alive=725 pos=4 neg=95 max|d|=9.10 p=0.0001999600079984003
+L36 n=124 FVU=1.660 L0=91.1 (target 120) alive=750 pos=4 neg=95 max|d|=9.00 p=0.0001999600079984003
+L40 n=124 FVU=1.778 L0=115.2 (target 120) alive=790 pos=4 neg=95 max|d|=8.53 p=0.0001999600079984003
+L44 n=124 FVU=1.939 L0=83.8 (target 120) alive=669 pos=4 neg=95 max|d|=12.54 p=0.0001999600079984003
+wrote results/sae/gemma12b_last_16k_sweep.json

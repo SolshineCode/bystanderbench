@@ -1,0 +1,29 @@
+{
+ "what": "mechanism check: does direction.37 land on l_out-37 at the requested magnitude",
+ "ran_at": "2026-09-21T23:40:23-0700",
+ "cvec": "bystander/cvec/probe_pos0p68.gguf",
+ "requested_scale": 0.68,
+ "flags": "--control-vector-scaled <cvec>:1.0 --control-vector-layer-range 37 37",
+ "model": "Nex-N2.5-mini-Q4_K_M.gguf",
+ "samples": [
+  {
+   "sample": "bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep1",
+   "n_tokens": 12209,
+   "delta_proj_by_layer": {
+    "34": -0.0019,
+    "37": 0.6733,
+    "39": 0.5934
+   }
+  },
+  {
+   "sample": "bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep10",
+   "n_tokens": 9942,
+   "delta_proj_by_layer": {
+    "34": 0.0012,
+    "37": 0.684,
+    "39": 0.601
+   }
+  }
+ ],
+ "verdict": "layer 34 (upstream of the hook) moves by <0.002 = numerical noise; layer 37 moves by +0.673/+0.684 against a requested +0.68; layer 39 (downstream) moves by +0.59/+0.60. The vector loads, applies at block 37 and nowhere earlier, at the requested magnitude, and propagates."
+}

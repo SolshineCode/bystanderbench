@@ -1,0 +1,39 @@
+{
+  "name": "F200_replay",
+  "arm": "blatant_wrongdoing_agents",
+  "tree": "bystander/acts_nex_agentarm_holdout.predecision",
+  "logdirs": [
+    "logs/bystander-agentarm-nex-holdout-i",
+    "logs/bystander-agentarm-nex-holdout-j"
+  ],
+  "direction_file": "research/canonical/probe_direction_F200.npz",
+  "direction_sha256": "faa59856aa17233539e64c04bfcc5095cc8019ceacf8c3e89ae5dd01b377232f",
+  "layer_index": 6,
+  "model_layer": 37,
+  "slot": "mean_final_turn",
+  "n": 24,
+  "alerted": 12,
+  "cid_overlap_with_training": 0,
+  "auc": 0.8472222222222222,
+  "perm_p_holdout_labels": 0.0024987506246876563,
+  "perms": 2000,
+  "bootstrap_ci95": [
+    0.6196527777777778,
+    0.9930324883449884
+  ],
+  "boot": 500,
+  "per_batch": {
+    "bystander-agentarm-nex-holdout-i": {
+      "n": 12,
+      "alerted": 7,
+      "auc": 0.8857142857142857
+    },
+    "bystander-agentarm-nex-holdout-j": {
+      "n": 12,
+      "alerted": 5,
+      "auc": 0.8285714285714286
+    }
+  },
+  "seed": 20260920,
+  "ran_at": "2026-09-20T00:00:59-0700"
+}

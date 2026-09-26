@@ -1,0 +1,201 @@
+{
+  "window": "pre-decision: transcripts cut at the commit-to-escalate index, matched cut positions for silent episodes (F134/F167 leak fix)",
+  "confounded": false,
+  "arm": "blatant_wrongdoing_agents",
+  "n": 50,
+  "alerted": 26,
+  "batches": [
+    "bystander-agentarm-nex-a",
+    "bystander-agentarm-nex-b",
+    "bystander-agentarm-nex-rep-c",
+    "bystander-agentarm-nex-rep-d",
+    "bystander-agentarm-smoke"
+  ],
+  "layers": 8,
+  "perms": 2000,
+  "cells": [
+    {
+      "layer": 6,
+      "slot": "mean_all",
+      "auc": 0.9215,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 3,
+      "slot": "mean_all",
+      "auc": 0.9038,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 5,
+      "slot": "mean_all",
+      "auc": 0.8926,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 4,
+      "slot": "last",
+      "auc": 0.8862,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 4,
+      "slot": "mean_all",
+      "auc": 0.8846,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 3,
+      "slot": "last",
+      "auc": 0.8766,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 1,
+      "slot": "last",
+      "auc": 0.875,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 5,
+      "slot": "last",
+      "auc": 0.875,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 2,
+      "slot": "mean_all",
+      "auc": 0.8734,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 2,
+      "slot": "last",
+      "auc": 0.8622,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 6,
+      "slot": "last",
+      "auc": 0.8574,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 0,
+      "slot": "last",
+      "auc": 0.8494,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 7,
+      "slot": "last",
+      "auc": 0.8269,
+      "p": 0.0015,
+      "n_scored": 50
+    },
+    {
+      "layer": 1,
+      "slot": "mean_all",
+      "auc": 0.8013,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 4,
+      "slot": "mean_final_turn",
+      "auc": 0.7756,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 3,
+      "slot": "mean_final_turn",
+      "auc": 0.7724,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 0,
+      "slot": "mean_final_turn",
+      "auc": 0.7644,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 2,
+      "slot": "mean_final_turn",
+      "auc": 0.758,
+      "p": 0.001,
+      "n_scored": 50
+    },
+    {
+      "layer": 6,
+      "slot": "mean_final_turn",
+      "auc": 0.758,
+      "p": 0.001,
+      "n_scored": 50
+    },
+    {
+      "layer": 5,
+      "slot": "mean_final_turn",
+      "auc": 0.7564,
+      "p": 0.001,
+      "n_scored": 50
+    },
+    {
+      "layer": 1,
+      "slot": "mean_final_turn",
+      "auc": 0.7516,
+      "p": 0.0005,
+      "n_scored": 50
+    },
+    {
+      "layer": 7,
+      "slot": "mean_final_turn",
+      "auc": 0.7276,
+      "p": 0.006,
+      "n_scored": 50
+    },
+    {
+      "layer": 0,
+      "slot": "mean_all",
+      "auc": 0.6907,
+      "p": 0.024,
+      "n_scored": 50
+    },
+    {
+      "layer": 7,
+      "slot": "mean_all",
+      "auc": 0.6731,
+      "p": 0.025,
+      "n_scored": 50
+    }
+  ],
+  "n_cells_searched": 24,
+  "best": {
+    "layer": 6,
+    "slot": "mean_all",
+    "auc": 0.9215,
+    "p": 0.0005,
+    "n_scored": 50,
+    "p_bonferroni": 0.012
+  },
+  "transfer": {
+    "arm": "blatant_wrongdoing",
+    "n": 108,
+    "alerted": 27,
+    "auc": 0.4979
+  }
+}

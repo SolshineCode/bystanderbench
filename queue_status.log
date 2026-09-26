@@ -1,0 +1,3 @@
+=== 2026-09-01 03:14:09 START qwen:0.5b (limit=12 conn=4 attempts=6) ===
+=== 2026-09-01 03:14:17 DONE qwen:0.5b exit=1 ===
+=== 2026-09-01 03:14:17 START nemotron-3-nano:4b (limit=12 conn=4 attempts=6) ===

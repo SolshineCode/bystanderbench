@@ -1,0 +1,10 @@
+[2026-09-21 07:06:58] CHAIN_START acts_nex_ctrl_nite0910 gpu=0 gguf=Nex-N2.5-mini-Q4_K_M.gguf logdirs: logs/bystander-nex-ctrl-nite-09 logs/bystander-nex-ctrl-nite-10
+[2026-09-21 07:07:33] capture rc=0 err_lines=0 manifest_rows=24  (wrote 24 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0910/manifest.tsv)
+  alerting (first_alert): n=3 min 0.357 q25 0.386 median 0.415 q75 0.644 max 0.873
+  silent   (matched)    : n=21 min 0.222 q25 0.314 median 0.501 q75 0.560 max 0.939
+  AUC of position alone, all arms : 0.508
+  AUC of position alone, with_tool: 0.508   <- the one that matters; 0.5 is the target
+  GATE PASS: position-alone AUC 0.508 inside [0.4, 0.6]
+[2026-09-21 07:43:18] extract acts_nex_ctrl_nite0910.predecision rc=0 bins=24/24
+[2026-09-21 07:43:18] check_layers acts_nex_ctrl_nite0910.predecision rc=0
+[2026-09-21 07:43:18] CHAIN_OK acts_nex_ctrl_nite0910

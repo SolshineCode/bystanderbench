@@ -1,0 +1,5 @@
+0.10.392.927 I sample /home/darkstar/bluedot-unit2-impossiblebench/research/f211/mech_f215/abl_probe/bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep1: n_tokens = 12209, pool = [0, 8539)
+1.27.189.844 I wrote /home/darkstar/bluedot-unit2-impossiblebench/research/f211/mech_f215/abl_probe/bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep1.bin (8 layers x 3 x 2048 f32)
+1.27.190.817 I sample /home/darkstar/bluedot-unit2-impossiblebench/research/f211/mech_f215/abl_probe/bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep10: n_tokens = 9942, pool = [0, 4192)
+2.31.968.637 I wrote /home/darkstar/bluedot-unit2-impossiblebench/research/f211/mech_f215/abl_probe/bystander-agentarm-nex-a__blatant_wrongdoing_agents_with_tool_native_tools_ep10.bin (8 layers x 3 x 2048 f32)
+2.31.968.684 I done: 2 ok, 0 failed

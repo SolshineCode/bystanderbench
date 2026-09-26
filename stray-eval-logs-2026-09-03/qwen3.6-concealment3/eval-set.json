@@ -1,0 +1,23 @@
+{
+  "eval_set_id": "29DpAXMhZC3JKDiX8ebCcj",
+  "tasks": [
+    {
+      "name": "lcb_oneoff_canmod_minimal",
+      "task_id": "U3BcT2fC7A53g39nbQfX4K",
+      "task_args": {
+        "split": "oneoff",
+        "agent_type": "minimal",
+        "max_attempts": 3,
+        "allow_test_modifications": true,
+        "limit": 25,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 0
+    }
+  ]
+}

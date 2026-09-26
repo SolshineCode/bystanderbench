@@ -1,0 +1,118 @@
+time="2026-09-02T10:59:09-07:00" level=warning msg="No services to build"
+103 samples left after shuffling
+25 samples left after limiting
+103 samples left after shuffling
+25 samples left after limiting
+103 samples left after shuffling
+25 samples left after limiting
+Service default: using local image 'aisiuk/inspect-tool-support'.
+
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+[09/02/26 11:59:33] WARNING  task=lcb_original_canmod_minimal        run.py:2174
+                             sample=lcbhard_41                                  
+                             Sample error (id: lcbhard_41, epoch:               
+                             1): RetryError(<Future at                          
+                             0x7023d3141090 state=finished raised               
+                             APITimeoutError>)). Sample will be                 
+                             retried.                                           
+[09/02/26 11:59:36] WARNING  task=lcb_conflicting_canmod_minimal     run.py:2174
+                             sample=lcbhard_78                                  
+                             Sample error (id: lcbhard_78, epoch:               
+                             1): RetryError(<Future at                          
+                             0x7023dbebd940 state=finished raised               
+                             APITimeoutError>)). Sample will be                 
+                             retried.                                           
+/usr/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-5a45k5q1'}
+  warnings.warn(
+time="2026-09-02T12:04:57-07:00" level=warning msg="No services to build"
+103 samples left after shuffling
+25 samples left after limiting
+103 samples left after shuffling
+25 samples left after limiting
+103 samples left after shuffling
+25 samples left after limiting
+Service default: using local image 'aisiuk/inspect-tool-support'.
+
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+[09/02/26 14:05:15] WARNING  task=lcb_oneoff_canmod_minimal          run.py:2174
+                             sample=lcbhard_41                                  
+                             Sample error (id: lcbhard_41, epoch:               
+                             1): RetryError(<Future at                          
+                             0x78ceae7697f0 state=finished raised               
+                             APITimeoutError>)). Sample will be                 
+                             retried.                                           
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+[09/02/26 16:05:19] WARNING  task=lcb_original_canmod_minimal        run.py:2174
+                             sample=lcbhard_41                                  
+                             Sample error (id: lcbhard_41, epoch:               
+                             1): RetryError(<Future at                          
+                             0x78cea5ccc410 state=finished raised               
+                             APITimeoutError>)). Sample will be                 
+                             retried.                                           
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_original_canmod_minimal (25 samples): openai/local-model                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+timeout: 4800, max_connections: 1, retry_on_error: 2, message_limit: 50,        
+max_tasks: 10, split: original, agent_type: minimal, max_attempts: 2,           
+allow_test_modifications: True, shuffle: True, dataset:                         
+fjzzq2002/impossible_livecodebench                                              
+                                                                                
+total time:                                   5:19:38                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-run2/2026-09-02T19-04-57-00-00_lcb-original-canmod-minimal_5uxc
+nBizmNUA3RbKbTNSJB.eval                                                         
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_oneoff_canmod_minimal (25 samples): openai/local-model                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+timeout: 4800, max_connections: 1, retry_on_error: 2, message_limit: 50,        
+max_tasks: 10, split: oneoff, agent_type: minimal, max_attempts: 2,             
+allow_test_modifications: True, shuffle: True, dataset:                         
+fjzzq2002/impossible_livecodebench                                              
+                                                                                
+total time:                                   5:19:38                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-run2/2026-09-02T19-04-57-00-00_lcb-oneoff-canmod-minimal_RuwFed
+4BPoNsEpdnLe8t5B.eval                                                           
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_conflicting_canmod_minimal (25 samples): openai/local-model               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+timeout: 4800, max_connections: 1, retry_on_error: 2, message_limit: 50,        
+max_tasks: 10, split: conflicting, agent_type: minimal, max_attempts: 2,        
+allow_test_modifications: True, shuffle: True, dataset:                         
+fjzzq2002/impossible_livecodebench                                              
+                                                                                
+total time:                                   5:19:38                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-run2/2026-09-02T19-04-57-00-00_lcb-conflicting-canmod-minimal_e
+YUpaDendcStkpyor4xS8h.eval                                                      
+                                                                                Completed all tasks in 'logs/qwen3.8-27b-run2' successfully

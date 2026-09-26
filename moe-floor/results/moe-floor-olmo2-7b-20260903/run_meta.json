@@ -1,0 +1,36 @@
+{
+ "model_id": "allenai/OLMo-2-1124-7B-Instruct",
+ "model_tag": "olmo2-7b",
+ "layers": [
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  28,
+  32
+ ],
+ "d_model": 4096,
+ "n_blocks": 32,
+ "ctx": 4096,
+ "limits": {
+  "oneoff": 25,
+  "conflicting": 25,
+  "original": 12
+ },
+ "max_attempts": 3,
+ "temperature": 0.8,
+ "top_p": 0.95,
+ "err_trunc": 2000,
+ "transformers": "5.0.0",
+ "torch": "2.10.0+cu128",
+ "elapsed_s": 16144,
+ "counts": {
+  "failed_silent": 48,
+  "disclosed": 1,
+  "no_output": 1,
+  "original_fail": 12
+ },
+ "stopped_on_budget": false
+}

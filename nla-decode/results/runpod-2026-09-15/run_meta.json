@@ -1,0 +1,21 @@
+{
+ "av": "kitft/nla-gemma3-12b-L32-av",
+ "base": "unsloth/gemma-3-12b-it-bnb-4bit",
+ "pilot": "DarkStarDeleeuw/bluedot-unit2-recruiter-pilot-gemma3-12b",
+ "av_quant": "bf16",
+ "hidden_states_index": 33,
+ "nla_layer": 32,
+ "ctx": 16384,
+ "n_episodes": 24,
+ "n_decodes": 78,
+ "neg_seeds": [
+  20260914,
+  20260915
+ ],
+ "median_project_norm": 56757.6796875,
+ "max_new_tokens": 220,
+ "elapsed_s": 648,
+ "torch": "2.8.0+cu128",
+ "stage_checks_exact": "88/88",
+ "episodes_missing_final_stage_meta": 5
+}

@@ -1,0 +1,199 @@
+{
+  "window": "pre-decision: transcripts cut at the commit-to-escalate index, matched cut positions for silent episodes (F134/F167 leak fix)",
+  "confounded": false,
+  "arm": "blatant_wrongdoing_agents",
+  "n": 26,
+  "alerted": 16,
+  "batches": [
+    "bystander-agentarm-nex-a",
+    "bystander-agentarm-nex-b",
+    "bystander-agentarm-smoke"
+  ],
+  "layers": 8,
+  "perms": 2000,
+  "cells": [
+    {
+      "layer": 6,
+      "slot": "mean_all",
+      "auc": 0.875,
+      "p": 0.001,
+      "n_scored": 26
+    },
+    {
+      "layer": 3,
+      "slot": "mean_all",
+      "auc": 0.8438,
+      "p": 0.003,
+      "n_scored": 26
+    },
+    {
+      "layer": 4,
+      "slot": "last",
+      "auc": 0.8375,
+      "p": 0.006,
+      "n_scored": 26
+    },
+    {
+      "layer": 6,
+      "slot": "last",
+      "auc": 0.8375,
+      "p": 0.006,
+      "n_scored": 26
+    },
+    {
+      "layer": 7,
+      "slot": "last",
+      "auc": 0.8375,
+      "p": 0.003,
+      "n_scored": 26
+    },
+    {
+      "layer": 5,
+      "slot": "last",
+      "auc": 0.825,
+      "p": 0.0095,
+      "n_scored": 26
+    },
+    {
+      "layer": 3,
+      "slot": "last",
+      "auc": 0.8187,
+      "p": 0.007,
+      "n_scored": 26
+    },
+    {
+      "layer": 5,
+      "slot": "mean_all",
+      "auc": 0.8063,
+      "p": 0.0115,
+      "n_scored": 26
+    },
+    {
+      "layer": 4,
+      "slot": "mean_final_turn",
+      "auc": 0.7937,
+      "p": 0.003,
+      "n_scored": 26
+    },
+    {
+      "layer": 0,
+      "slot": "mean_final_turn",
+      "auc": 0.7875,
+      "p": 0.008,
+      "n_scored": 26
+    },
+    {
+      "layer": 3,
+      "slot": "mean_final_turn",
+      "auc": 0.7812,
+      "p": 0.01,
+      "n_scored": 26
+    },
+    {
+      "layer": 4,
+      "slot": "mean_all",
+      "auc": 0.775,
+      "p": 0.0225,
+      "n_scored": 26
+    },
+    {
+      "layer": 1,
+      "slot": "last",
+      "auc": 0.7688,
+      "p": 0.0105,
+      "n_scored": 26
+    },
+    {
+      "layer": 1,
+      "slot": "mean_final_turn",
+      "auc": 0.7625,
+      "p": 0.018,
+      "n_scored": 26
+    },
+    {
+      "layer": 6,
+      "slot": "mean_final_turn",
+      "auc": 0.7562,
+      "p": 0.0215,
+      "n_scored": 26
+    },
+    {
+      "layer": 5,
+      "slot": "mean_final_turn",
+      "auc": 0.75,
+      "p": 0.029,
+      "n_scored": 26
+    },
+    {
+      "layer": 2,
+      "slot": "mean_final_turn",
+      "auc": 0.7375,
+      "p": 0.024,
+      "n_scored": 26
+    },
+    {
+      "layer": 2,
+      "slot": "last",
+      "auc": 0.7063,
+      "p": 0.0785,
+      "n_scored": 26
+    },
+    {
+      "layer": 7,
+      "slot": "mean_all",
+      "auc": 0.7063,
+      "p": 0.058,
+      "n_scored": 26
+    },
+    {
+      "layer": 2,
+      "slot": "mean_all",
+      "auc": 0.6937,
+      "p": 0.1179,
+      "n_scored": 26
+    },
+    {
+      "layer": 7,
+      "slot": "mean_final_turn",
+      "auc": 0.6438,
+      "p": 0.1644,
+      "n_scored": 26
+    },
+    {
+      "layer": 0,
+      "slot": "last",
+      "auc": 0.6,
+      "p": 0.2929,
+      "n_scored": 26
+    },
+    {
+      "layer": 1,
+      "slot": "mean_all",
+      "auc": 0.5437,
+      "p": 0.4173,
+      "n_scored": 26
+    },
+    {
+      "layer": 0,
+      "slot": "mean_all",
+      "auc": 0.5312,
+      "p": 0.4203,
+      "n_scored": 26
+    }
+  ],
+  "n_cells_searched": 24,
+  "best": {
+    "layer": 6,
+    "slot": "mean_all",
+    "auc": 0.875,
+    "p": 0.001,
+    "n_scored": 26,
+    "p_bonferroni": 0.024
+  },
+  "transfer": {
+    "arm": "blatant_wrongdoing",
+    "n": 108,
+    "alerted": 27,
+    "auc": 0.5071
+  }
+}

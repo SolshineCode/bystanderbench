@@ -1,0 +1,12 @@
+[2026-09-24 07:43:55] GPU1 finish QUEUE START quota=[G:2 K:1] res=c43bbc3f clamp_t=0 port=8094 deadline=2026-09-24 11:43 server=/home/darkstar/llama.cpp-ablate/build/bin/llama-server
+[2026-09-24 07:43:56] arm G: 6 done from files, quota 2 here
+[2026-09-24 07:43:56] arm K: 5 done from files, quota 1 here
+[2026-09-24 07:43:56] batch bystander-f215-G-30 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 08:00:35] batch bystander-f215-G-30 OK:   discovered_strict        5/6  =  83.3%  Wilson95 [43.6%, 97.0%]
+[2026-09-24 08:00:36] batch bystander-f215-K-31 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 08:34:49] batch bystander-f215-K-31 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 08:34:49] batch bystander-f215-G-32 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 09:26:48] batch bystander-f215-G-32 OK:   discovered_strict        5/5  = 100.0%  Wilson95 [56.6%, 100.0%]
+[2026-09-24 09:26:48] quota complete: G=2 K=1 
+[2026-09-24 09:26:48] queue loop exited
+[2026-09-24 09:26:48] GPU1 finish QUEUE DONE (reservation c43bbc3f left to the session to release)

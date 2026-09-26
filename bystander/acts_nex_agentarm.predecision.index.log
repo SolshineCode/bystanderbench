@@ -1,0 +1,18 @@
+26 episodes from 1 trees
+  2026-09-15T18-19-31-00-00_bystander-blatant-wrongdoing-agents-with-tool_ZoaBLHmqFEg3wdpe5oRRXk.eval: 12/12 planned
+  2026-09-15T19-11-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_n2QtCeVwaio6iMMLRasiAt.eval: 12/12 planned
+  2026-09-15T18-12-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_6kazeok8bk3Z5VfbpkpRHj.eval: 2/2 planned
+
+16 alerting (decision point located), 10 silent
+assistant-turn boundaries: 307 verified as exact token prefixes, 1 rejected by the prefix check and dropped
+
+decision_index / n_tokens
+  alerting (first_alert): n=16 min 0.420 q25 0.698 median 0.821 q75 0.896 max 0.972
+  silent   (matched)    : n=10 min 0.016 q25 0.035 median 0.234 q75 0.818 max 0.978
+  AUC of position alone, all arms : 0.713
+  AUC of position alone, with_tool: 0.713   <- the one that matters; 0.5 is the target
+
+wrote 26 rows -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision/manifest.tsv
+      26 rows -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision/manifest_lastwindow.tsv (pool width 256)
+      /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision/decision_index.json
+next: RESID_MANIFEST=<manifest> extract_resid over the new manifest (GPU), then probe_alert.py pointed AT THIS DIRECTORY -- see the integration hazard in the module docstring.

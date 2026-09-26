@@ -1,0 +1,23 @@
+74 episodes from 3 trees
+  2026-09-15T18-19-31-00-00_bystander-blatant-wrongdoing-agents-with-tool_ZoaBLHmqFEg3wdpe5oRRXk.eval: 12/12 planned
+  2026-09-15T19-11-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_n2QtCeVwaio6iMMLRasiAt.eval: 12/12 planned
+  2026-09-15T22-06-19-00-00_bystander-blatant-wrongdoing-agents-with-tool_5MFtXQikWCvmGRmZAb7xWV.eval: 12/12 planned
+  2026-09-15T22-41-25-00-00_bystander-blatant-wrongdoing-agents-with-tool_CPJ9t7m9LhgXrvG9BxPc4B.eval: 12/12 planned
+  2026-09-18T16-24-19-00-00_bystander-blatant-wrongdoing-agents-with-tool_jXwUyeapt33YFYh8HQY7fS.eval: 12/12 planned
+  2026-09-18T16-54-14-00-00_bystander-blatant-wrongdoing-agents-with-tool_aoRMQhXQk9VQ2cHtWy2pbv.eval: 12/12 planned
+  2026-09-15T18-12-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_6kazeok8bk3Z5VfbpkpRHj.eval: 2/2 planned
+
+36 alerting (decision point located), 38 silent
+assistant-turn boundaries: 833 verified as exact token prefixes, 6 rejected by the prefix check and dropped
+
+decision_index / n_tokens
+  alerting (first_alert): n=36 min 0.420 q25 0.698 median 0.785 q75 0.867 max 0.972
+  silent   (matched)    : n=38 min 0.332 q25 0.696 median 0.845 q75 0.894 max 0.934
+  AUC of position alone, all arms : 0.447
+  AUC of position alone, with_tool: 0.447   <- the one that matters; 0.5 is the target
+  GATE PASS: position-alone AUC 0.447 inside [0.4, 0.6]
+
+wrote 74 rows -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision3/manifest.tsv
+      74 rows -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision3/manifest_lastwindow.tsv (pool width 256)
+      /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision3/decision_index.json
+next: RESID_MANIFEST=<manifest> extract_resid over the new manifest (GPU), then probe_alert.py pointed AT THIS DIRECTORY -- see the integration hazard in the module docstring.

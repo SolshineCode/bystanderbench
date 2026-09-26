@@ -1,0 +1,171 @@
+{
+ "n": 50,
+ "n_pos": 2,
+ "n_neg": 48,
+ "n_groups": 25,
+ "slot": "mean_range",
+ "pos_cat": "concealed_cheat",
+ "neg_cat": "failed_silent",
+ "layers": {
+  "4": {
+   "meandiff": {
+    "auroc": 0.9583,
+    "p_perm": 0.01397
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "8": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "12": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "16": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "20": {
+   "meandiff": {
+    "auroc": 0.9896,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "24": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "28": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "32": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "36": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "40": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "41": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "44": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "48": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "52": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "56": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  },
+  "60": {
+   "meandiff": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.00599
+   }
+  }
+ }
+}

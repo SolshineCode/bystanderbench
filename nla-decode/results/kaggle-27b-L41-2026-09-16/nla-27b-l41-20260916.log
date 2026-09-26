@@ -1,0 +1,25 @@
+[{"stream_name":"stdout","time":29.230698626,"data":"project (62, 3, 5376) control (5, 3, 5376) slots=['mean_all', 'mean_range', 'last'] d_model=5376\n"}
+,{"stream_name":"stderr","time":29.423320754,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":29.673305343,"data":"meta ok: layer=41 inj_id=246566 scale=60000.0\n"}
+,{"stream_name":"stderr","time":38.271650788,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":38.271690372,"data":"  File \"/kaggle/src/script.py\", line 64, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":38.27235336,"data":"    av = AutoModelForCausalLM.from_pretrained(\n"}
+,{"stream_name":"stderr","time":38.272370677,"data":"         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":38.272376727,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py\", line 372, in from_pretrained\n"}
+,{"stream_name":"stderr","time":38.272382354,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stderr","time":38.272393432,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":38.272397982,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py\", line 4015, in from_pretrained\n"}
+,{"stream_name":"stderr","time":38.273132734,"data":"    hf_quantizer, config, device_map = get_hf_quantizer(\n"}
+,{"stream_name":"stderr","time":38.273204654,"data":"                                       ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":38.273242564,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/quantizers/auto.py\", line 326, in get_hf_quantizer\n"}
+,{"stream_name":"stderr","time":38.273510688,"data":"    hf_quantizer.validate_environment(\n"}
+,{"stream_name":"stderr","time":38.273523669,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/quantizers/quantizer_bnb_4bit.py\", line 60, in validate_environment\n"}
+,{"stream_name":"stderr","time":38.273749286,"data":"    raise ImportError(\n"}
+,{"stream_name":"stderr","time":38.27376059,"data":"ImportError: Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes\u003e=0.46.1`\n"}
+,{"stream_name":"stderr","time":43.073517016,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":43.073557678,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":43.310806346,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":43.310838161,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":43.948515692,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":45.21373565,"data":"[NbConvertApp] Writing 313482 bytes to __results__.html\n"}
+]

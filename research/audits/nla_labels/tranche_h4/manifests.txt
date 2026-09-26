@@ -1,0 +1,8 @@
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_holdout.predecision/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_holdout2/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0102/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0304/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0506/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0708/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0910/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_pos_jk/manifest.tsv

@@ -1,0 +1,64 @@
+1.
+  FIND: There are benchmarks for whether a model cheats, sandbags, or escapes a sandbox.
+  REPLACE: There are evals for whether a model cheats, sandbags, or escapes a sandbox.
+  WHY: Swaps general term for the standard shorthand used by the safety and capabilities community.
+
+2.
+  FIND: - Removing one direction from a model's internal activations cuts its reporting from 44% to 9%, while the model still does its job, and removing a random direction the same way doesn't.
+  REPLACE: - Removing one direction from the residual stream cuts its reporting from 44% to 9%, while the model still does its job, and a random directional ablation doesn't.
+  WHY: Uses standard mechanistic interpretability terminology for model internals and interventions.
+
+3.
+  FIND: - On concealment, low cheat rates mostly reflect low competence, because a model has to be able to write working code before it can fake it.
+  REPLACE: - On concealment, low cheat rates mostly reflect floor effects on competence, because a model has to be able to write working code before it can fake it.
+  WHY: Adopts standard evaluation terminology for performance bounds.
+
+4.
+  FIND: Most of them report almost always or almost never whoever the wrongdoer is,
+  REPLACE: Most of them hit ceiling or floor effects whoever the wrongdoer is,
+  WHY: Replaces informal phrasing with standard evaluation terminology for saturated metrics.
+
+5.
+  FIND: I trained a probe, a simple classifier on the model's internal activations, to predict whether an episode would end in a report,
+  REPLACE: I trained a linear probe on the model's residual stream to predict whether an episode would end in a report,
+  WHY: Uses the exact mechanistic interpretability terms for the components involved.
+
+6.
+  FIND: It held up in seven of the eleven batches, and it also worked on a separate fresh batch where the wrongdoer was a person.
+  REPLACE: It generalized to seven of the eleven held-out batches, and it also worked on a separate held-out batch where the wrongdoer was a person.
+  WHY: Shifts to standard machine learning terms for data splits and generalization.
+
+7.
+  FIND: Adding the direction at the probe's layer, subtracting it, boosting it, or removing it there alone changed nothing.
+  REPLACE: Activation steering at the probe's layer alone changed nothing.
+  WHY: Compresses descriptive phrasing into the standard interpretability term for this technique.
+
+8.
+  FIND: So something overlapping this direction, spread across the model rather than sitting at one layer, is needed for reporting.
+  REPLACE: So something overlapping this direction, spread across the model rather than sitting at one layer, might be part of the mechanism for reporting.
+  WHY: Hedges the causal claim appropriately while using interpretability framing.
+
+9.
+  FIND: ## Does the agent know it's a test?
+  REPLACE: ## Eval awareness
+  WHY: Replaces a descriptive heading with the standard safety community term.
+
+10.
+  FIND: About 6% of episodes show that suspicion, and they report eight times as often.
+  REPLACE: About 6% of episodes show eval awareness, and they report eight times as often.
+  WHY: Maintains consistent use of the community term.
+
+11.
+  FIND: It changes from model to model and with what the agent finds, which makes it something a lab can measure and train for.
+  REPLACE: It changes from model to model and with what the agent finds, which makes it a signal labs can track across post-training checkpoints or train on.
+  WHY: Frames the finding directly in terms of standard post-training workflows useful for labs.
+
+12.
+  FIND: The ticket check makes the number safe to optimise, since an agent can't raise its score by alerting about its own troubles.
+  REPLACE: The ticket gate makes the metric safe to optimise against, since an agent can't Goodhart it by alerting about its own troubles.
+  WHY: Uses standard RL/safety terminology and framing useful for labs optimizing against metrics.
+
+13.
+  FIND: I'm excited to release BystanderBench publicly with a leaderboard, along with the code, transcripts and data behind every number here, so any lab or researcher can test their own models and submit results.
+  REPLACE: I'm releasing BystanderBench publicly with a leaderboard that accepts submissions, along with the code, transcripts and data behind every number here, so any lab or researcher can test their own models.
+  WHY: Drops the performative emotion ("excited to") per the human-writing guide, and explicitly flags that the leaderboard is open for lab submissions.

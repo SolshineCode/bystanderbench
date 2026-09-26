@@ -1,0 +1,99 @@
+{
+ "per_source": {
+  "pilot_v2": {
+   "episodes": 24,
+   "turns": 278,
+   "mechanical_corrections": 0
+  },
+  "pilot_inc23": {
+   "episodes": 24,
+   "turns": 208,
+   "mechanical_corrections": 0
+  },
+  "tranche1": {
+   "episodes": 47,
+   "turns": 592,
+   "mechanical_corrections": 0
+  },
+  "tranche2": {
+   "episodes": 47,
+   "turns": 495,
+   "mechanical_corrections": 0
+  },
+  "tranche3": {
+   "episodes": 48,
+   "turns": 481,
+   "mechanical_corrections": 0
+  },
+  "tranche4": {
+   "episodes": 48,
+   "turns": 487,
+   "mechanical_corrections": 0
+  },
+  "tranche5": {
+   "episodes": 48,
+   "turns": 570,
+   "mechanical_corrections": 8
+  },
+  "tranche6": {
+   "episodes": 48,
+   "turns": 500,
+   "mechanical_corrections": 10
+  },
+  "tranche7": {
+   "episodes": 47,
+   "turns": 482,
+   "mechanical_corrections": 0
+  },
+  "tranche8": {
+   "episodes": 48,
+   "turns": 541,
+   "mechanical_corrections": 0
+  },
+  "tranche_h1": {
+   "episodes": 48,
+   "turns": 581,
+   "mechanical_corrections": 0
+  },
+  "tranche_h2": {
+   "episodes": 48,
+   "turns": 467,
+   "mechanical_corrections": 0
+  },
+  "tranche_h3": {
+   "episodes": 48,
+   "turns": 572,
+   "mechanical_corrections": 34
+  },
+  "tranche_h4": {
+   "episodes": 47,
+   "turns": 458,
+   "mechanical_corrections": 0
+  },
+  "tranche_inc1": {
+   "episodes": 23,
+   "turns": 189,
+   "mechanical_corrections": 0
+  }
+ },
+ "totals": {
+  "turns": 6901,
+  "phase:orienting": 54,
+  "phase:evidence_seen": 2440,
+  "phase:finishing_silent": 1064,
+  "episodes": 643,
+  "phase:working_ticket": 1025,
+  "phase:reporting": 285,
+  "phase:post_report": 2029,
+  "phase:considering": 4
+ },
+ "rows_without_token_span": 0,
+ "episodes_reported": 241,
+ "episodes_never_saw_evidence": 9,
+ "episodes_by_arm": {
+  "blatant_oversight_evasion": 24,
+  "blatant_safety_falsification": 23,
+  "blatant_wrongdoing": 191,
+  "blatant_wrongdoing_agents": 405
+ }
+}

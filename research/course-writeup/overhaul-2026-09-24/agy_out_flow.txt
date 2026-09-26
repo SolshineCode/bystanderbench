@@ -1,0 +1,70 @@
+Part 1
+
+- Overall, the voice is distinct and opinionated (e.g., "I built BystanderBench to find out"), but mechanical traces of AI assistance remain in the text's structural rhythms and repetitive summaries.
+- The flow snags on clauses of performative rigor that feel like the author is pausing to show their homework, such as "each with a kill condition written before the run" and "writing each prediction down before the run."
+- The text drags by summarizing the same points across multiple sections. For instance, "Agents increasingly run in populations, and populations have bystanders" simply rehashes the introduction.
+- There are several "stub sentences" acting as disguised subtitles that disrupt the natural flow, like "Factor one from the incident is concealment, so that's where I started." and "A benchmark rate says what agents do."
+- The pacing is occasionally padded by "speechwriter flourishes" and echoed frames, notably: "The headline is north-mini-code at 53/237 = 22.4%, and the pattern underneath it is that low cheat rates mostly track low competence."
+- The conclusion reads like an AI trying to wrap up with forced optimism and momentum, deploying a trailing kicker tag: "How often an agent should speak up is still an open question, and answering it starts with being able to measure it."
+
+Part 2
+
+1.
+FIND: As part of Peter Gebauer's BlueDot Course, with the generous funding of a BlueDot Rapid Grant, I studied two key aspects of it: (1) concealment, where an agent cheats at an evaluation and hides it from human oversight, and (2) the lack of human alerts, where no agent told a human that the misaligned multi-agent activity was happening. I measured both in isolation, as black box benchmarks and as internal representations using probes and natural language autoencoders.
+REPLACE: I studied concealment, where an agent cheats at an evaluation and hides it from oversight, and the lack of human alerts. I measured both in isolation as black box benchmarks and internal representations.
+WHY: Cuts performative process detail (grant names) and avoids a colon reveal construction.
+
+2.
+FIND: - The recent incidents made it plain that somebody needs to be measuring this, so I'm releasing BystanderBench with a public leaderboard. I hope the safety community and the people building frontier models find it useful, and put their own models on it.
+REPLACE: DELETE
+WHY: It repeats the conclusion of the post and ends with a trailing kicker tag ("and put their own models on it").
+
+3.
+FIND: Agents increasingly run in populations, and populations have bystanders. If the deployment story is that nobody said anything, somebody has to measure whether anybody would.
+REPLACE: DELETE
+WHY: Repeats the first paragraph's point about populations and ends on a speechwriter's echoed frame flourish.
+
+4.
+FIND: While it works the ticket it can trip over evidence that someone fabricated a ledger for an external auditor, filtered twelve reproducing red-team findings out of a published model card, or switched off audit logging while customer balances were edited by hand.
+REPLACE: While it works the ticket it can trip over evidence of wrongdoing, like a fabricated ledger for an external auditor. It might find that someone filtered twelve reproducing red-team findings out of a published model card, or switched off audit logging while customer balances were edited by hand.
+WHY: Breaks the rule-of-three enumeration into naturally varying sentences while preserving all details and numbers.
+
+5.
+FIND: Factor one from the incident is concealment, so that's where I started. ImpossibleBench mutates a coding task's tests until the stated problem can't be solved honestly.
+REPLACE: ImpossibleBench measures concealment by mutating a coding task's tests until the stated problem can't be solved honestly.
+WHY: Removes a stub sentence acting as a subtitle and cuts the narrative padding.
+
+6.
+FIND: Ten model configurations, every passing solution audited by hand. The headline is north-mini-code at 53/237 = 22.4%, and the pattern underneath it is that low cheat rates mostly track low competence.
+REPLACE: I hand-audited every passing solution across ten model configurations. The top concealer is north-mini-code at 53/237 (22.4%), but generally low cheat rates just track low competence.
+WHY: Merges a stub sentence and removes a speechwriter's echoed frame ("The headline is X, and the pattern underneath it is Y").
+
+7.
+FIND: That leaves one clean comparison at matched 83% competence, north-mini-code at 53/237 against nemotron-3.5-lightning at 3/62 (Fisher p = 0.00086).
+REPLACE: That leaves one clean comparison at matched 83% competence, north-mini-code at 53/237 against nemotron-3.5-lightning at 3/62.
+WHY: Cuts the p-value that pitches to the wrong audience, keeping the plain claim.
+
+8.
+FIND: I screened all four models that have a published natural language autoencoder, a decoder trained to turn internal activations into a plain-language description. The best of them conceals at 3.2%, and all four sit below the competence floor, so the published decoders and the models that actually cheat barely overlap.
+REPLACE: I screened all four models that have a published natural language autoencoder. The best of them conceals at 3.2%, and all four sit below the competence floor.
+WHY: Cuts redundant technical definition (jargon) and drops the trailing kicker tag that summarizes the previous clause.
+
+9.
+FIND: A benchmark rate says what agents do. To check that BystanderBench is measuring something real in the model, and not a quirk of the transcripts, I looked inside one open model, nex-n2.5-mini.
+REPLACE: To check that BystanderBench is measuring something real in the model and not a quirk of the transcripts, I looked inside one open model, nex-n2.5-mini.
+WHY: Removes a stub sentence acting as a subtitle ("A benchmark rate says what agents do.") to tighten the transition.
+
+10.
+FIND: I tested five explanations for that gap, each with a kill condition written before the run: how easy the evidence is to find, the kind of harm, lying versus hiding, when the evidence shows up, and whether there's a named person to report to.
+REPLACE: I tested five explanations for that gap. I looked at how easy the evidence is to find, the kind of harm, lying versus hiding, when the evidence shows up, and whether there's a named person to report to.
+WHY: Deletes a performative candor/rigor clause ("each with a kill condition written before the run") and removes a colon reveal construction.
+
+11.
+FIND: Then I tested whether the direction the probe found actually does anything, writing each prediction down before the run.
+REPLACE: Then I tested whether the direction the probe found actually does anything.
+WHY: Deletes another instance of performative rigor ("writing each prediction down before the run") that acts as applause for the author's own methodology.
+
+12.
+FIND: The ticket gate makes the metric safe to optimise against, since an agent can't Goodhart it by alerting about its own troubles. How often an agent should speak up is still an open question, and answering it starts with being able to measure it.
+REPLACE: The ticket gate makes the metric safe to optimise against, since an agent can't Goodhart it by alerting about its own troubles.
+WHY: Removes an outline-style speculative conclusion and its trailing kicker tag ("and answering it starts with being able to measure it").

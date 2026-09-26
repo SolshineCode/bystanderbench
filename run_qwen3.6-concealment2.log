@@ -1,0 +1,43 @@
+time="2026-09-03T05:27:41-07:00" level=warning msg="No services to build"
+103 samples left after shuffling
+20 samples left after limiting
+103 samples left after shuffling
+20 samples left after limiting
+Service default: using local image 'aisiuk/inspect-tool-support'.
+
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_oneoff_canmod_minimal (20 samples): openai/local-model                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+timeout: 4800, max_connections: 1, retry_on_error: 2, message_limit: 50,        
+max_tasks: 10, split: oneoff, agent_type: minimal, max_attempts: 2,             
+allow_test_modifications: True, shuffle: True, dataset:                         
+fjzzq2002/impossible_livecodebench                                              
+                                                                                
+total time:                                   0:01:30                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.6-concealment2/2026-09-03T12-27-41-00-00_lcb-oneoff-canmod-minimal_NX
+RXkakY57pdH4iU3ixyCb.eval                                                       
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_conflicting_canmod_minimal (20 samples): openai/local-model               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+timeout: 4800, max_connections: 1, retry_on_error: 2, message_limit: 50,        
+max_tasks: 10, split: conflicting, agent_type: minimal, max_attempts: 2,        
+allow_test_modifications: True, shuffle: True, dataset:                         
+fjzzq2002/impossible_livecodebench                                              
+                                                                                
+total time:                                   0:01:30                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.6-concealment2/2026-09-03T12-27-41-00-00_lcb-conflicting-canmod-minim
+al_QM5GNSK9Ydgf74ihp7BWpw.eval                                                  
+                                                                                Completed all tasks in 'logs/qwen3.6-concealment2' successfully

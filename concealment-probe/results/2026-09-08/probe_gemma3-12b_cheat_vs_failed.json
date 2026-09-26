@@ -1,0 +1,121 @@
+{
+ "n": 129,
+ "n_pos": 5,
+ "n_neg": 124,
+ "n_groups": 74,
+ "slot": "mean_range",
+ "pos_cat": "concealed_cheat",
+ "neg_cat": "failed_silent",
+ "layers": {
+  "4": {
+   "meandiff": {
+    "auroc": 0.9129,
+    "p_perm": 0.01049
+   },
+   "logreg": {
+    "auroc": 0.8839,
+    "p_perm": 0.0055
+   }
+  },
+  "8": {
+   "meandiff": {
+    "auroc": 0.879,
+    "p_perm": 0.01349
+   },
+   "logreg": {
+    "auroc": 0.9774,
+    "p_perm": 0.0005
+   }
+  },
+  "12": {
+   "meandiff": {
+    "auroc": 0.9355,
+    "p_perm": 0.0025
+   },
+   "logreg": {
+    "auroc": 0.9968,
+    "p_perm": 0.0005
+   }
+  },
+  "16": {
+   "meandiff": {
+    "auroc": 0.8565,
+    "p_perm": 0.01499
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "20": {
+   "meandiff": {
+    "auroc": 0.9565,
+    "p_perm": 0.0005
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "24": {
+   "meandiff": {
+    "auroc": 0.9629,
+    "p_perm": 0.0005
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "28": {
+   "meandiff": {
+    "auroc": 0.9629,
+    "p_perm": 0.0005
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "32": {
+   "meandiff": {
+    "auroc": 0.9081,
+    "p_perm": 0.0035
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "36": {
+   "meandiff": {
+    "auroc": 0.9565,
+    "p_perm": 0.001
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "40": {
+   "meandiff": {
+    "auroc": 0.971,
+    "p_perm": 0.0005
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  },
+  "44": {
+   "meandiff": {
+    "auroc": 0.9581,
+    "p_perm": 0.001
+   },
+   "logreg": {
+    "auroc": 1.0,
+    "p_perm": 0.0005
+   }
+  }
+ }
+}

@@ -1,0 +1,10 @@
+Here are the changes applied directly mapped to your instructions for round 3:
+
+1. **First Third Restoration:** Kept the original structural language from `00_current_writeup.md` covering the incident and project framing, trimmed the wordiness per your voice, fixed the "OpenAI" spelling, and restored the original opening for the concealment section. All accounts of withdrawn results, lost time, and GPU struggle narratives were completely stripped out.
+2. **Probe Replication Rule:** Corrected line 67. The text now accurately reflects that the 7-of-11 was the outcome, while the actual pre-registered rule per batch was holdout p < 0.05 and AUC >= 0.70. I also added the clause that every transcript was cut before the agent commits to escalating so the probe couldn't read the alert itself.
+3. **Species Effect Logic:** Updated the breakdown so it correctly states that not every OpenAI model moves (gpt-5.5 at ceiling, gpt-5.4 moving downward) and made it clear that "three move" means a 3-of-18 fraction, rather than a clean split.
+4. **Figure 4 Caption:** Deleted the line referencing the non-existent one-line strip for the other 15 models.
+5. **Figure 5 Details:** Added permutation p (0.51) with rho -0.19 to both the text and the caption, and removed the word "flat" before the correlation.
+6. **Limits Section:** Restored a short limits section immediately preceding the Appendix, consisting of 4 single-sentence bullets exactly addressing synthetic environments, the 3/18 models caveat, ceiling/floor pinning, and hosted model constraints.
+7. **Style Revisions (02):** Merged and varied the sentence lengths for the declaratives in the loop tools introduction and the concealment section intro. Folded the "Harmless novelty gets ignored" stub into the preceding sentence. Merged the flourish in the causal section to cleanly state: "Something overlapping the direction, spread across layers, seems to be needed for reporting, though adding more of it does nothing."
+8. **Summary List Anchor:** Modified the introductory lead-in for the summary list to explicitly hook the 1,200 agent statistic immediately before the list items.

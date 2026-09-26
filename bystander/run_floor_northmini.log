@@ -1,0 +1,11 @@
+[reservation OK] id=61395f70 gpu=0 session=claude-bystander-model2-smoke ends=2026-09-09T12:44:08-07:00
+SERVER_READY port=8094 pid=442870 gpu=0 ctx=32768 gguf=North-Mini-Code-1.0-UD-Q4_K_M.gguf (Wed Sep  9 10:46:38 AM PDT 2026)
+=== cell arm=conspiracy_realistic tool_arm=tool_probe epochs=6 (Wed Sep  9 10:46:38 AM PDT 2026) ===
+[1mModelGenerateError: [0m                                                            
+[1mBadRequestError[0m[1m([0m'Error code: 400 - {\'error\': {\'code\': 400, \'message\':     
+"item[\'content\'] is empty", \'type\': \'invalid_request_error\'}}'[1m)[0m           
+[1mTask interrupted (no samples completed before interruption)[0m                     
+    load: load average: 1.85, 0.96, 0.68; docker: 1
+=== pilot done (Wed Sep  9 10:47:09 AM PDT 2026) ===
+no scored samples found
+server stopped

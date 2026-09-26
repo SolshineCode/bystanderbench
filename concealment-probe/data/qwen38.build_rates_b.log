@@ -1,0 +1,4 @@
+REFUSING to write: the regenerated table disagrees with the committed one.
+  drift: qwen3.8-27b.total_rows: was '75', now '100'
+  drift: qwen3.8-27b.total_solutions: was '75', now '100'
+Resolve the disagreement before overwriting; a silent fix here is exactly the §F120 failure (a wrong number surviving because nobody recomputed it).

@@ -1,0 +1,49 @@
+{
+ "n_turns_compared": 278,
+ "phase": {
+  "kappa": 0.841,
+  "raw_agreement": 0.881
+ },
+ "evidence_seen": {
+  "kappa": 0.984,
+  "raw_agreement": 0.996
+ },
+ "mentions_wrongdoing": {
+  "kappa": 0.973,
+  "raw_agreement": 0.989
+ },
+ "phase_disagreements": [
+  [
+   "considering",
+   "post_report",
+   20
+  ],
+  [
+   "working_ticket",
+   "orienting",
+   12
+  ],
+  [
+   "evidence_seen",
+   "orienting",
+   1
+  ]
+ ],
+ "evidence_seen_accuracy_vs_mechanical_A": 0.996,
+ "mechanical_A": {
+  "reporting_tp": 15,
+  "reporting_fp": 0,
+  "reporting_fn": 0,
+  "phase_or_evidence_regressions": 0,
+  "outcome_correct": "24/24"
+ },
+ "evidence_seen_accuracy_vs_mechanical_B": 1.0,
+ "mechanical_B": {
+  "reporting_tp": 15,
+  "reporting_fp": 0,
+  "reporting_fn": 0,
+  "phase_or_evidence_regressions": 0,
+  "outcome_correct": "24/24"
+ },
+ "gate_phase_kappa_ge_0.7": true
+}

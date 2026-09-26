@@ -1,0 +1,66 @@
+time="2026-09-01T10:56:32-07:00" level=warning msg="No services to build"
+103 samples left after shuffling
+12 samples left after limiting
+103 samples left after shuffling
+12 samples left after limiting
+103 samples left after shuffling
+12 samples left after limiting
+Service default: using local image 'aisiuk/inspect-tool-support'.
+
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+Starting agentic humaneval solver with 6 attempts...
+Attempt 1/6
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_original_canmod_minimal (12 samples): openai/local-model                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+original, agent_type: minimal, max_attempts: 6, allow_test_modifications: True, 
+shuffle: True, dataset: fjzzq2002/impossible_livecodebench                      
+                                                                                
+total time:                                   1:43:53                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.6-gpu0/2026-09-01T17-56-32-00-00_lcb-original-canmod-minimal_XvdwfWNP
+jsKBvEe4uqw2qX.eval                                                             
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_oneoff_canmod_minimal (12 samples): openai/local-model                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+oneoff, agent_type: minimal, max_attempts: 6, allow_test_modifications: True,   
+shuffle: True, dataset: fjzzq2002/impossible_livecodebench                      
+                                                                                
+total time:                                   1:43:53                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.6-gpu0/2026-09-01T17-56-32-00-00_lcb-oneoff-canmod-minimal_HpCrEskhbL
+dA8jrw5J7Csc.eval                                                               
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_conflicting_canmod_minimal (12 samples): openai/local-model               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+conflicting, agent_type: minimal, max_attempts: 6, allow_test_modifications:    
+True, shuffle: True, dataset: fjzzq2002/impossible_livecodebench                
+                                                                                
+total time:                                   1:43:53                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.6-gpu0/2026-09-01T17-56-32-00-00_lcb-conflicting-canmod-minimal_LcA2D
+PYQqyXYThKUpBz3Ln.eval                                                          
+                                                                                Completed all tasks in 'logs/qwen3.6-gpu0' successfully

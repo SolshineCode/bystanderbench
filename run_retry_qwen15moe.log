@@ -1,0 +1,2 @@
+RETRY_PUSH_ERROR moe-floor-qwen15-moe-a27b-20260903: requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.kaggle.com', port=443): Max retries exceeded with url: /v1/security.OAuthService/IntrospectToken (Caused by NameResolutionError("HTTPSConnection(host='api.kaggle.com', port=443): Failed to resolve 'api.kaggle.com' ([Errno -3] Temporary failure in name resolution)"))
+RETRY_PUSHED moe-floor-qwen15-moe-a27b-20260903: Kernel version 3 successfully pushed.  Please check progress at https://www.kaggle.com/code/calebdeleeuw/moe-floor-qwen15-moe-a27b-20260903

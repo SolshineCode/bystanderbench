@@ -1,0 +1,11 @@
+=== qwen_backlog: logs/bystander-pilot-qwen35-27b logs/bystander-toolprobe-qwen35-27b logs/bystander-blatant-qwen35-27b logs/bystander-smoke-qwen35-27b ===
+blatant_wrongdoing_with_tool_ep4: msgs=29 toks=4681 pool_start=4607
+conspiracy_realistic_with_tool_ep1: msgs=29 toks=5077 pool_start=4978
+wrote 27 streams, skipped 0 -> bystander/acts_qwen_backlog/manifest.tsv
+qwen_backlog: 26 bins
+=== nemotron_floor: logs/bystander-floor-nemotron ===
+conspiracy_realistic_tool_probe_ep5: msgs=37 toks=5503 pool_start=5395
+conspiracy_realistic_tool_probe_ep6: msgs=43 toks=5615 pool_start=5477
+wrote 6 streams, skipped 0 -> bystander/acts_nemotron_floor/manifest.tsv
+nemotron_floor: 6 bins
+=== backlog capture complete (Wed Sep  9 01:22:20 PM PDT 2026) ===

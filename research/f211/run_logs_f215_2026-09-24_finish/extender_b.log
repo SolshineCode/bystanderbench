@@ -1,0 +1,5 @@
+[2026-09-24 07:44:07] extender start res=c43bbc3f deadline=2026-09-24 11:43:35
+extended c43bbc3f to 2026-09-24T10:43:30-07:00
+[2026-09-24 09:04:09] extended by 1h (was 2331s left)
+[2026-09-24 09:29:09] both queues done, extender exits
+[2026-09-24 09:29:09] extender end

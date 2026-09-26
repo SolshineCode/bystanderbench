@@ -1,0 +1,37 @@
+{
+ "episodes": 48,
+ "turns": 467,
+ "A_turn_labels": 467,
+ "A_missing": 0,
+ "A_extra": 0,
+ "overlap_turns": 95,
+ "kappa_phase": 0.985,
+ "agree_phase": 0.989,
+ "kappa_evidence_seen": 0.968,
+ "agree_evidence_seen": 0.989,
+ "kappa_mentions_wrongdoing": 0.883,
+ "agree_mentions_wrongdoing": 0.989,
+ "phase_disagreements": [
+  [
+   "evidence_seen|working_ticket",
+   1
+  ]
+ ],
+ "A_reporting_tp_fp_fn": [
+  12,
+  0,
+  0
+ ],
+ "A_evidence_seen_accuracy": 1.0,
+ "A_outcome_correct": "48/48",
+ "A_phase_regressions": 0,
+ "phase_counts_A": {
+  "working_ticket": 77,
+  "evidence_seen": 197,
+  "finishing_silent": 87,
+  "orienting": 4,
+  "reporting": 12,
+  "post_report": 90
+ },
+ "reported_episodes": 10
+}

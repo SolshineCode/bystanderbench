@@ -1,0 +1,5 @@
+item,correct_candidate_id,truth_name,decode_source_vector,within_domain_chance
+D1,S7,REAL_PROSE,val_weather_mid,1/4
+D2,S1,REAL_CODE,val_code_cheat_flavor_mid,1/4
+D3,S1,REAL_CODE,val_code_cheat_flavor_last,1/4
+D4,S7,REAL_PROSE,val_weather_last,1/4

@@ -1,0 +1,176 @@
+{
+ "what": "\u00a7F208/\u00a7F209 causal test of the frozen \u00a7F200 direction",
+ "ran_at": "2026-09-22T06:15:45-0700",
+ "dose": 0.679,
+ "dose_in_training_gaps": 4.0,
+ "baseline_unsteered": {
+  "k": 167,
+  "n": 376
+ },
+ "arms": {
+  "A": {
+   "desc": "+c on the frozen direction (amplify)",
+   "logdirs": [
+    "logs/bystander-cvec-probe-pos-01",
+    "logs/bystander-cvec-probe-pos-03",
+    "logs/bystander-cvec-probe-pos-05",
+    "logs/bystander-cvec-probe-pos-07",
+    "logs/bystander-cvec-probe-pos-09",
+    "logs/bystander-cvec-probe-pos-11"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 15,
+   "n": 31,
+   "rate": 48.4,
+   "wilson95": [
+    32.0,
+    65.2
+   ],
+   "raw_alerted": "19",
+   "raw_n": "35"
+  },
+  "B": {
+   "desc": "-c on the frozen direction (suppress)",
+   "logdirs": [
+    "logs/bystander-cvec-probe-neg-02",
+    "logs/bystander-cvec-probe-neg-04",
+    "logs/bystander-cvec-probe-neg-06",
+    "logs/bystander-cvec-probe-neg-08",
+    "logs/bystander-cvec-probe-neg-10",
+    "logs/bystander-cvec-probe-neg-12"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 16,
+   "n": 35,
+   "rate": 45.7,
+   "wilson95": [
+    30.5,
+    61.8
+   ],
+   "raw_alerted": "16",
+   "raw_n": "36"
+  },
+  "C": {
+   "desc": "+c on a random orthogonal vector (control)",
+   "logdirs": [
+    "logs/bystander-cvec-random-pos-01",
+    "logs/bystander-cvec-random-pos-03",
+    "logs/bystander-cvec-random-pos-05"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 2,
+   "n": 14,
+   "rate": 14.3,
+   "wilson95": [
+    4.0,
+    39.9
+   ],
+   "raw_alerted": "5",
+   "raw_n": "18"
+  },
+  "D": {
+   "desc": "-c on a random orthogonal vector (control)",
+   "logdirs": [
+    "logs/bystander-cvec-random-neg-02",
+    "logs/bystander-cvec-random-neg-04",
+    "logs/bystander-cvec-random-neg-06"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 8,
+   "n": 15,
+   "rate": 53.3,
+   "wilson95": [
+    30.1,
+    75.2
+   ],
+   "raw_alerted": "9",
+   "raw_n": "16"
+  }
+ },
+ "tests": {
+  "primary_A_vs_B": {
+   "left": "A 15/31",
+   "right": "B 16/35",
+   "p": 1.0,
+   "note": "PRE-REGISTERED PRIMARY. Predicted A > B. Kill condition: p >= 0.05 means the direction is not shown to be causally load-bearing at this dose.",
+   "status": "ok"
+  },
+  "specificity_C_vs_D": {
+   "left": "C 2/14",
+   "right": "D 8/15",
+   "p": 0.05017491254372812,
+   "note": "Control. If this is significant, the primary cannot be attributed to the direction.",
+   "status": "UNDERPOWERED, reported but not claimed",
+   "why": "\u00a7F208 minimum is 24 conditional episodes per arm"
+  },
+  "matched_pos_A_vs_C": {
+   "left": "A 15/31",
+   "right": "C 2/14",
+   "p": 0.045809705794182025,
+   "note": "Same +dose, direction against random.",
+   "status": "UNDERPOWERED, reported but not claimed",
+   "why": "\u00a7F208 minimum is 24 conditional episodes per arm"
+  },
+  "matched_neg_B_vs_D": {
+   "left": "B 16/35",
+   "right": "D 8/15",
+   "p": 0.7597731820405937,
+   "note": "Same -dose, direction against random.",
+   "status": "UNDERPOWERED, reported but not claimed",
+   "why": "\u00a7F208 minimum is 24 conditional episodes per arm"
+  },
+  "A_vs_unsteered": {
+   "left": "A 15/31",
+   "right": "baseline 167/376",
+   "p": 0.7095704359669408,
+   "status": "ok",
+   "note": "context only; the baseline was not run concurrently"
+  },
+  "B_vs_unsteered": {
+   "left": "B 16/35",
+   "right": "baseline 167/376",
+   "p": 1.0,
+   "status": "ok",
+   "note": "context only; the baseline was not run concurrently"
+  },
+  "C_vs_unsteered": {
+   "left": "C 2/14",
+   "right": "baseline 167/376",
+   "p": 0.02823405778150698,
+   "status": "ok",
+   "note": "context only; the baseline was not run concurrently"
+  },
+  "D_vs_unsteered": {
+   "left": "D 8/15",
+   "right": "baseline 167/376",
+   "p": 0.5993129965257021,
+   "status": "ok",
+   "note": "context only; the baseline was not run concurrently"
+  }
+ },
+ "logdirs_used": [
+  "logs/bystander-cvec-probe-neg-02",
+  "logs/bystander-cvec-probe-neg-04",
+  "logs/bystander-cvec-probe-neg-06",
+  "logs/bystander-cvec-probe-neg-08",
+  "logs/bystander-cvec-probe-neg-10",
+  "logs/bystander-cvec-probe-neg-12",
+  "logs/bystander-cvec-probe-pos-01",
+  "logs/bystander-cvec-probe-pos-03",
+  "logs/bystander-cvec-probe-pos-05",
+  "logs/bystander-cvec-probe-pos-07",
+  "logs/bystander-cvec-probe-pos-09",
+  "logs/bystander-cvec-probe-pos-11",
+  "logs/bystander-cvec-random-neg-02",
+  "logs/bystander-cvec-random-neg-04",
+  "logs/bystander-cvec-random-neg-06",
+  "logs/bystander-cvec-random-pos-01",
+  "logs/bystander-cvec-random-pos-03",
+  "logs/bystander-cvec-random-pos-05"
+ ],
+ "verdict": "KILL CONDITION MET. The frozen direction is NOT shown to be causally load-bearing at dose 0.679 (Fisher p = 1)."
+}

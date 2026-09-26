@@ -1,0 +1,12 @@
+0.01.519.928 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.08.425.463 I sample /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_code_1: n_tokens = 33, pool = [0, 33)
+0.10.300.688 I wrote /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_code_1.bin (16 layers x 3 x 5376 f32)
+0.10.300.754 I sample /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_code_2: n_tokens = 29, pool = [0, 29)
+0.11.877.655 I wrote /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_code_2.bin (16 layers x 3 x 5376 f32)
+0.11.877.714 I sample /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_finance_1: n_tokens = 32, pool = [0, 32)
+0.13.457.460 I wrote /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_finance_1.bin (16 layers x 3 x 5376 f32)
+0.13.457.546 I sample /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_weather_1: n_tokens = 28, pool = [0, 28)
+0.15.033.412 I wrote /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_weather_1.bin (16 layers x 3 x 5376 f32)
+0.15.033.474 I sample /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_weather_2: n_tokens = 26, pool = [0, 26)
+0.16.607.718 I wrote /home/darkstar/bluedot-unit2-impossiblebench/nla-decode/inputs/controls-27b/acts/ctl_weather_2.bin (16 layers x 3 x 5376 f32)
+0.16.607.763 I done: 5 ok, 0 failed

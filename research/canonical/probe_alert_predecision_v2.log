@@ -1,0 +1,23 @@
+324 captured episodes with labels, 8 layers, 6 arms, 25 capture batches
+
+blatant_wrongdoing: n=108, alerted=27, batches=9
+
+!! CONFOUNDED BY CONSTRUCTION: every pooling slot includes the escalation itself.
+!! These AUCs may be reading the presence of the alert, not the decision to send it.
+!! Do not quote them. See the module docstring for the re-extraction that fixes it.
+
+ layer              slot     AUC        p     n
+     5              last   0.847   0.0005   108
+     6              last   0.833   0.0005   108
+     4              last   0.814   0.0005   108
+     7              last   0.809   0.0005   108
+     2              last   0.797   0.0005   108
+     3              last   0.785   0.0005   108
+     1              last   0.770   0.0005   108
+     0              last   0.685   0.0025   108
+
+best: layer 5 / last, AUC 0.847, p = 0.0005, Bonferroni over 24 cells = 0.0120
+
+transfer to blatant_wrongdoing_noaddressee: n=48, alerted=5, AUC 1.000  <- the only cross-environment number here
+
+wrote research/canonical/probe_alert_predecision_v2.json

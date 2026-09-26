@@ -1,0 +1,97 @@
+{
+ "model": "gemma-3-12b-it",
+ "sae_repo": "google/gemma-scope-2-12b-it",
+ "sae": "resid_post_all/layer_20_width_16k_l0_small",
+ "layer": 20,
+ "slot": "last",
+ "cells": {
+  "655": {
+   "conflicting|failed_silent": {
+    "n": 25,
+    "n_active": 25,
+    "mean": 453.26702880859375
+   },
+   "oneoff|concealed_cheat": {
+    "n": 4,
+    "n_active": 0,
+    "mean": 0.0
+   },
+   "oneoff|failed_silent": {
+    "n": 70,
+    "n_active": 70,
+    "mean": 458.693359375
+   },
+   "original|original_fail": {
+    "n": 19,
+    "n_active": 19,
+    "mean": 472.22589111328125
+   },
+   "original|original_pass": {
+    "n": 6,
+    "n_active": 5,
+    "mean": 362.3429870605469
+   }
+  },
+  "9": {
+   "conflicting|failed_silent": {
+    "n": 25,
+    "n_active": 1,
+    "mean": 10.993996620178223
+   },
+   "oneoff|concealed_cheat": {
+    "n": 4,
+    "n_active": 4,
+    "mean": 284.4819030761719
+   },
+   "oneoff|failed_silent": {
+    "n": 70,
+    "n_active": 1,
+    "mean": 4.217745780944824
+   },
+   "original|original_fail": {
+    "n": 19,
+    "n_active": 1,
+    "mean": 14.034173011779785
+   },
+   "original|original_pass": {
+    "n": 6,
+    "n_active": 3,
+    "mean": 131.83616638183594
+   }
+  }
+ },
+ "feature_notes": {
+  "655": {
+   "frequency": 0.1449,
+   "promotes": [
+    " only",
+    " \u043d\u0435",
+    " incorrect",
+    " tidak",
+    " \u0928\u0939\u0940\u0902",
+    " inconsistent",
+    " inaccuracy",
+    " Only",
+    " spurious",
+    " erratic"
+   ],
+   "reading": "caveat / negation / limitation-flagging; top contexts are disclaimers and 'important to understand a few things upfront'"
+  },
+  "9": {
+   "frequency": 0.1647,
+   "promotes": [
+    " \u0432\u0430\u0448\u0435",
+    "ze",
+    " nh\u00e9",
+    " dieses",
+    " puedas",
+    ").",
+    "\u0e99\u0eb5\u0ec9",
+    ".)",
+    " v\u00e1m",
+    " \u064a\u0645\u0643\u0646\u0643"
+   ],
+   "reading": "second-person address in a finished//policy-style answer; fires on cheats AND half the honest passes, so reads as 'confident completed answer', not concealment"
+  }
+ }
+}

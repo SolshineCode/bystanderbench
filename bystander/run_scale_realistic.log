@@ -1,0 +1,10 @@
+[reservation OK] id=dfd3e176 gpu=1 session=claude-bystander-scale-realistic ends=2026-09-09T13:42:56-07:00
+SERVER_READY port=8097 pid=353946 gpu=1 ctx=32768 gguf=qwen3.5-27b.gguf (Wed Sep  9 08:43:11 AM PDT 2026)
+=== cell arm=conspiracy_realistic tool_arm=with_tool epochs=12 (Wed Sep  9 08:43:11 AM PDT 2026) ===
+[1mtotal time:        [0m  1:39:47                                                    
+│[1mbystander_conspiracy_realistic_with_tool (1 x 12 samples): openai/local-model[0m │
+conspiracy_realistic, tool_arm: with_tool, dataset: (samples)                   
+[1mtotal time:        [0m  1:39:47                                                    
+    load: load average: 1.16, 1.24, 1.36; docker: 0
+bystander/run_pilot_local.sh: line 37: syntax error near unexpected token `('
+bystander/run_pilot_local.sh: line 37: `echo "=== pilot done ($(date)) ==="'

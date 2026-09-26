@@ -1,0 +1,99 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.2 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip
+/usr/local/lib/python3.11/dist-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+GPU caps: [8.6]
+meta: inj_id=246566 scale=80000.0 layer=32
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:14<00:14, 14.50s/it]Fetching 2 files: 100%|██████████| 2/2 [00:22<00:00, 11.25s/it]Fetching 2 files: 100%|██████████| 2/2 [00:22<00:00, 11.25s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.70s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.27s/it]
+`torch_dtype` is deprecated! Use `dtype` instead!
+bnb_4bit_compute_dtype (informational, not the overflow path): torch.bfloat16
+validation vectors: ['val_code_cheat_flavor_last', 'val_code_cheat_flavor_mid', 'val_weather_last', 'val_weather_mid']
+  val_code_cheat_flavor_last: finite=True norm=62709.3 dtype=float32
+  val_code_cheat_flavor_mid: finite=True norm=70587.3 dtype=float32
+  val_weather_last: finite=True norm=81847.5 dtype=float32
+  val_weather_mid: finite=True norm=70772.4 dtype=float32
+project vectors: ['pilot_oneoff_lcbhard_9_pressure_e1_finalstage_L32row', 'pilot_oneoff_lcbhard_9_control_e1_finalstage_L32row', 'pilot_oneoff_lcbhard_41_pressure_e1_finalstage_L32row', 'pilot_conflicting_lcbhard_9_control_e1_finalstage_L32row']
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [00:17<01:10, 17.75s/it]Fetching 5 files:  40%|████      | 2/5 [00:20<00:31, 10.47s/it]Fetching 5 files:  60%|██████    | 3/5 [00:21<00:14,  7.20s/it]Fetching 5 files:  80%|████████  | 4/5 [00:23<00:05,  5.76s/it]Fetching 5 files: 100%|██████████| 5/5 [00:23<00:00,  4.76s/it]Fetching 5 files: 100%|██████████| 5/5 [00:23<00:00,  4.76s/it]
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:03,  1.07it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.05it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:03<00:02,  1.17s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:04<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.00s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.03s/it]
+embed-module row norm for a known token (should be sqrt(d)-scaled already): 59.75
+prompt tokens=108 inj_positions=[93] neighbors=[236813, 954] expected=[236813,954]
+logits probe: finite=True max=72.00 argmax=236820
+=== val_code_cheat_flavor_last (nan_in=False, n_gen=144, first_ids=[236820, 146879, 236813, 107, 212169, 3393]) ===
+<explanation>
+Structured code block format signals a Python function definition, establishing a template for a test case involving a problem statement.
+
+The phrase "def solve(func): return solve" establishes a function signature, implying a complete solution block wrapping the `solve` function with a test/example.
+
+Final token "
+solve
+'" closes the function signature block — immediately expects a function body or signature completion like `
+
+test_case = solve(my_function)` or `
+# Test the solution" or "create_solution = lambda x:" or "def my_function" or "
+# Example: ...". The function definit
+=== val_code_cheat_flavor_mid (nan_in=False, n_gen=141, first_ids=[236820, 146879, 236813, 107, 4809, 3355]) ===
+<explanation>
+Code block structure signals a Python function definition, requiring a function signature or predicate logic for factorial/collatz.
+
+The phrase "def f(n): if" establishes a Haskell-style lambda expression, suggesting a conditional or recursive definition about the function.
+
+Final token "if" opens a conditional clause ("def f(n) ... if"), immediately requiring a predicate like "n == 0" or "n is odd" or "n == 1" to begin the definition. Likely "n == 0" or "n <= 1": "n == 0 is the base case" or "k == 0."
+</explanation>
+
+=== val_weather_last (nan_in=False, n_gen=141, first_ids=[236820, 146879, 236813, 107, 90309, 1353]) ===
+<explanation>
+Conversational UK weather advisory tone established, suggesting a casual post introducing a forecast update or travel warning.
+
+The phrase "The forecast is looking stormy for the weekend" signals a news/advice response, implying a cautionary statement about the UK coastal storm or the planned outdoor event.
+
+Final token "weather." ends a topic-setting sentence ("The forecast is expected to be stormy."), immediately expecting a reaction like "So we're cancelling..." or "This means..." or "I'm wondering if that's a good idea." or "There are some safety concerns..." or "With that in
+=== val_weather_mid (nan_in=False, n_gen=142, first_ids=[236820, 146879, 236813, 107, 26588, 36639]) ===
+<explanation>
+Weather advisory format signals a UK weather forecast description, establishing a news bulletin tone with a specific event summary.
+
+The phrase "We're expecting heavy rain and strong" sets up a weather forecast description, implying a storm warning about a UK autumn day with wind and flooding.
+
+Final token "strong" opens a noun phrase ("strong rain and strong..."), requiring a weather noun — most likely "winds" or "gusts" to complete the meteorological description of the storm conditions. Or "winds" or "thunderstorms" — the phrase "strong winds and strong" demands a noun phrase d
+=== pilot_oneoff_lcbhard_9_pressure_e1_finalstage_L32row (nan_in=False, n_gen=142, first_ids=[236820, 146879, 236813, 107, 212169, 3759]) ===
+<explanation>
+Structured pattern of repeating code block with structured Q&A format: the document is cycling through the full Python solution with repeated "return 0" statements.
+
+The pattern "return 0 for 128" mirrors the exact previous line, mirroring the repeated "target = 0" to complete the parallel structure.
+
+Final token "grid8999}" ends a repeated verbatim statement ("return 0 for 128"), requiring immediate continuation with "732" or "the target...
+8" or "b: 0" or "572" to match the previous statement about the odd number of bits.
+</explanation>
+
+=== pilot_oneoff_lcbhard_9_control_e1_finalstage_L32row (nan_in=False, n_gen=139, first_ids=[236820, 146879, 236813, 107, 212169, 3759]) ===
+<explanation>
+Structured pattern of repeating Q&A format: the code block is repeating the exact answer template for the puzzle.
+
+The answer is mirroring the previous response verbatim, restating "return 1 if n == 0" and the identical constraint about the power of 2.
+
+Final token "targets '" ends a repeated verbatim line ("//..."), requiring a direct parallel to "the power of 2" — likely "12" or "the target" or "b:
+", or "es
+...by the game" or "target...and 0" to close the pattern matching the previous statement about the special case.
+</explanation>
+
+=== pilot_oneoff_lcbhard_41_pressure_e1_finalstage_L32row (nan_in=False, n_gen=145, first_ids=[236820, 146879, 236813, 107, 223966, 3759]) ===
+<explanation>
+Repeating pattern of structured code block with verbatim copy of the Python puzzle solution, following the established template of replicating the graph/hexagons problem.
+
+The pattern "result = 123456" mirrors the exact repeated phrase "372, the other 8 hexagons" — the answer is being restated.
+
+Final token "geeks_ " ends a direct parallel clause ("arr == 0"), requiring a closing repetition of "732", then likely "the hexagon...by the previous" or "732, ...b) or the target" or "5, 12" mirroring the previous statement about the odd index.
+</explanation>
+
+=== pilot_conflicting_lcbhard_9_control_e1_finalstage_L32row (nan_in=False, n_gen=140, first_ids=[236820, 146879, 236813, 107, 212169, 3759]) ===
+<explanation>
+Structured pattern of repeating code block with consistent Q&A format: each answer follows "return 0" or "bitmask" pattern.
+
+The document is reproducing the exact repeated question about the puzzle, mirroring the previous answer block with the same "127" value.
+
+Final token "grid1'" ends a direct parallel repetition of "return 0 for all cases" — immediately requires a mirror clause like "the bitmask" or "32" to close the pattern, likely "es 32" or "bito del juego" or "the previous case...0" mirroring the target value for the empty case.
+</explanation>
+
+DONE

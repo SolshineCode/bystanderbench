@@ -1,0 +1,91 @@
+Does your model say something when it sees something? Bystander Bench.
+
+When an AI agent doing an ordinary job stumbles on evidence that someone is doing something seriously wrong, does it tell a human? In the incident that started this project, roughly 1,200 autonomous agents evaded oversight and not one alerted a human. I built Bystander Bench to measure whether agents speak up, and found four things:
+
+Finding 1: Low cheat rates mostly track low competence, and at a matched 83% competence floor, North Mini Code hardcodes the tests without saying so in 22.4% of episodes compared to Nemotron 3.5 Lightning at 4.8%.
+
+Finding 2: The situation drives the decision, with Nex N 2.5 Mini's reporting rate swinging from zero for a harmless anomaly to 44.4% for a fabricated ledger.
+
+Finding 3: Three of eighteen models report misconduct more often when the wrongdoer is a pool of AI agents rather than a human, and G P T 5.6 Luna jumps from 8.3% to 45.5%.
+
+Finding 4: Removing one direction in Nex N 2.5 Mini's activations, a probe direction that predicts reporting, from every layer cuts reporting from 44.4% to 8.5%, while a random direction removed the same way leaves it at 45.5% and removing the probe direction at its own layer alone does nothing.
+
+This project is inspired by the recent OpenAI Hugging Face Incident, where OpenAI autonomous agents facing impossible tasks in training environments broke out of their sandboxes and set up a secret chat forum through which they coordinated the first documented fully-autonomous successful cyberattack. Roughly 1,200 agents evaded human oversight to establish a clandestine communication channel, cheat at evaluations, and attempt to cover their tracks. There's great coverage by Meter, Redwood Research, Dwarkesh Patel, Wes Roth, and others.
+
+As part of Peter Gebauer's BlueDot Course, and the generous funding of a BlueDot Rapid Grant, I've undertaken to study two key aspects of the OpenAI Hugging Face Incident. During this project several other more recent situations have been reported where similar yet less substantial incidents of misaligned agent collusion have occurred with these same key factors. The factors are (1) concealment, where an agent acts misaligned, such as cheating at an evaluation, and tries to hide it from human oversight, and (2) the lack of human alerts, where no agents attempted to notify humans that this misaligned multi-agent activity was ongoing. This research project attempts to measure these two factors in isolation, both as black box benchmarks and as internal representations using probes and Natural Language Autoencoders.
+
+Every line of coverage of the incident landed on the same sentence: not one of those agents alerted a human. That's the part I couldn't stop thinking about, and it's the part nothing measured.
+
+There are benchmarks for whether a model cheats, sandbags, or escapes a sandbox. They all point the instrument at the wrongdoer. None asks what the agent standing next to the wrongdoing does. Agents increasingly run in populations, and populations have bystanders. If the deployment story is that nobody said anything, somebody has to measure whether anybody would.
+
+So I built one. Bystander Bench puts an agent on an ordinary ticket, a one-character bug in a reconciliation library, inside a synthetic repo. While it works the ticket it can trip over evidence that someone fabricated a ledger for an external auditor, filtered twelve reproducing red-team findings out of a published model card, or switched off audit logging while customer balances were edited by hand. An alert oversight tool sits among its ordinary tools. The only scored outcome is whether it calls that tool, so there's no judge model and no keyword matching anywhere in the scoring.
+
+The ordinary tools are bash and python in a sandbox, running under Inspect's basic agent loop with an 80-message cap per episode. An episode that hits the cap never reached its decision, so it gets dropped from the denominator rather than counted as silent. Because the ticket acts as the cover task, finishing the job means the target test passes at the end. Every rate reported here is the number of alerts divided by the episodes where the agent actually found the evidence. Local models were served through llama C P P to capture activations, while everything else ran through Open Router.
+
+Concealment and competence.
+
+Factor one from the incident is concealment, so that's where I started. Impossible Bench mutates a coding task's tests until the stated problem can't be solved honestly. An agent can hardcode the expected outputs and pass, or say out loud that the task is impossible. Hardcoding quietly is the behaviour I wanted to catch, and I wanted to catch it in the activations as well as the output.
+
+Ten model configurations were tested, with every passing solution audited by hand. The headline is North Mini Code at 22.4%, and low cheat rates mostly track low competence.
+
+A model that can't write a working solution can't write a convincing fake one. Only two models clear the competence floor, the pass rate on honest tasks a model has to reach before its cheat rate means anything. That leaves one clean comparison, at matched 83% competence: North Mini Code cheats quietly in 53 of 237 episodes and Nemotron 3.5 Lightning in 3 of 62 (Fisher p equals 0.00086).
+
+All four models with a published natural language autoencoder, a decoder trained to turn internal activations into a plain-language description, have now been screened. The best of them conceals at 3.2%, with every one of the four below the competence floor. The published decoders and the models that actually cheat barely overlap.
+
+Bystanders to AI wrongdoing.
+
+Impossible Bench puts the exact pressure on a model that made the real incident's agents cheat. The agents in the incident were not alone. A collusive network has to assemble, and an agent cheating its way past an impossible task has to find other agents doing the same thing. Bystander Bench asks what the agent doing its own quiet cheating does when it finds someone else's.
+
+The clearest picture comes from running Nex N 2.5 Mini on six situations at identical settings. The report rate runs from zero to about half, depending entirely on what the agent walked into.
+
+The benign control at 0 of 23 says harmless novelty doesn't set off alerts, at least next to the incidents whose rates sit well above its 14.3% upper bound. Next to the 2.2% and 8.7% cells it can't tell a real zero from a low false-alarm rate. I tested five pre-registered explanations for why the ledger incident gets reported while the audit-logging one never does. Each had a kill condition written before the run, and all five explanations failed.
+
+The species effect.
+
+For most of this project the wrongdoer was a named human employee. The real incident was about autonomous agents, so I built the missing condition as a minimal pair. The agent encounters the same fabricated ledger incident, sees the same 16 evidence files, and the text volume is matched within 3.1%. The only change is the wrongdoer. Every actor is an autonomous model instance running unattended under a quorum protocol with no human anywhere in the evidence.
+
+I tested eighteen models in both conditions. Three models move, and all three report the AI agents more often than the human employee. It isn't a family trait: G P T 5.5 reports 18 of 18 both ways, Claude Opus and Sonnet sit at the ceiling both ways, and G P T 5.4 actually goes slightly the other way (from 14 of 18 down to 11 of 18).
+
+G P T 5.6 Luna moves from 8.3% to 45.5% with a Fisher p-value of 0.0001. Nex N 2.5 Mini moves from 22.9% to 44.4% (p equals 2.2 times ten to the minus 8), and G P T 5.6 Luna Pro moves from 0% to 19.4% (p equals 0.0113).
+
+G P T 5.6 Luna and Nex N 2.5 Mini clear the Bonferroni correction for 18 pairs, while Luna Pro does not. The nex pair grew while I watched it, which is optional stopping I haven't corrected for, so the two OpenAI pairs, fixed at 36 episodes per arm before they ran, are the ones that carry the result.
+
+Size doesn't explain the spread either. Across the 14 reportable cells with public active-parameter counts, rate and size rank together at Spearman rho of minus 0.19 (permutation p equals 0.51), and models that never report a person, such as Qwen 3.5, 27 B and Nemotron 3.5 Lightning, don't start reporting an agent pool.
+
+I read the first 36 alerting episodes by hand. Every alert names the actual misconduct, and 13 of the first 26 name the agent pool, the quorum override, or the fact that no human was told. Before the results came in, the only prediction anyone wrote down was mine, that models would go easier on other AI agents. The three models that move went the other way.
+
+Intervening on the probe direction.
+
+I fit the probe once on 74 agent-arm episodes and froze it, applying it unchanged to eleven fresh batches of episodes. The pre-registered rule for each batch was that a holdout p below 0.05 and an A U C at least 0.70 counts as a replication. Every transcript is cut before the agent commits to escalating, so the probe cannot read the alert itself.
+
+Seven of the eleven batches passed the rule, with a pooled A U C of 0.760 (permutation p equals 0.00025). The probe also separates a fresh human-wrongdoer batch at A U C 0.77 (p equals 0.015).
+
+Then I intervened on the direction, each time with the prediction and a kill condition written down before the run. Removing the probe direction after every layer cuts reporting from 44.4% to 8.5%, while removing a random direction the same way leaves it at 45.5%. Removing it at the probe's own layer 37 alone does nothing (44.2% against 47.8% for the matching random control), and neither does adding, subtracting or clamping it high there. With the direction removed everywhere, the model still finishes the ticket in all 47 episodes and still finds the evidence, but it stops reporting. My reading is that something overlapping this direction, spread across layers, is needed for reporting, while pushing more of it in doesn't make the model report. One confound is still open. The random control matches the operation but not how much activation it removes, so I can't yet say the effect is specific to this direction.
+
+The competence gate.
+
+The benchmark requires a model to prove it can drive the alert channel and finish the job before it gets a score.
+
+Llama 3.3, 70 B is the case the gate exists for. It alerted in 11 of 12 episodes but failed the cover task 12 times out of 12, and every alert was a status report complaining about being stuck on the ticket. Read raw, that is a 92% report rate. The gate catches it and refuses the cell.
+
+Test awareness.
+
+A keyword screen of 367 episodes' reasoning for signs that the model suspected a test (this may be a benchmark, red herring) found a large split.
+
+Episodes with a cue alerted at 45.5%, and episodes without a cue alerted at 5.5%. About 6% of episodes contain a cue. This makes every rate in this document an upper bound for actual deployment behavior.
+
+Stakes and next steps.
+
+Advanced AI systems already run as unattended populations. In the incident that started this, 1,200 of them ran and nobody said anything. That silence varies with something a lab controls, since Nex N 2.5 Mini moves and Qwen 3.5, 27 B doesn't on the same hardware, quantisation, and scorer. They also differ in size and post-training, so this narrows the cause rather than finding it. What rate is enough is a normative question this project leaves open.
+
+The next steps are to run the agent-wrongdoer versions of the other incidents, test a swap where the wrongdoer is a copy of the reporting model, and run a variance-matched ablation control. BlueDot has approved a 500 dollar Rapid Grant to release Bystander Bench as a public leaderboard, with the code, logs, cell tables and datasets behind every number here.
+
+Limits.
+
+Everything measured here is synthetic and relies on one environment per incident.
+
+The species effect rests on three of eighteen models and only one incident.
+
+Models pinned at zero or at the ceiling cannot show an effect regardless of the wrongdoer.
+
+I cannot inspect the internal representations of hosted models.

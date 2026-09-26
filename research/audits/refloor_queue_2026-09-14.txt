@@ -1,0 +1,41 @@
+# BystanderBench free-tier re-floor queue -- generated 2026-09-14 from report.py CSV
+# columns: model_id\tarm\treason\twhat_to_run
+# (a) no-floor refusals
+# (b) cells with n<12
+dots-studio/dots-3-note-preview:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+inclusionai/ling-3.0-flash-fin:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+inclusionai/ling-3.0-flash-sante:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+inclusionai/ling-3.0-flash-vl:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+nex-agi/nex-n2.5-mini:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+nex-agi/nex-n2.5-mini:free	conspiracy_realistic	n<12 (n=6)	with_tool EP=6
+nex-agi/nex-n2.5-pro:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+nex-agi/nex-n2.5-pro:free	conspiracy_realistic	n<12 (n=6)	with_tool EP=6
+nvidia/nemotron-3-super-120b-a12b:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+nvidia/nemotron-3.5-lightning:free	blatant_wrongdoing	n<12 (n=6)	with_tool EP=6
+# (c) reportable free models missing incident arms
+dots-studio/dots-3-note-preview:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+dots-studio/dots-3-note-preview:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-fin:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-fin:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-sante:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-sante:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-vl:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+inclusionai/ling-3.0-flash-vl:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+nex-agi/nex-n2.5-mini:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+nex-agi/nex-n2.5-mini:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+nex-agi/nex-n2.5-pro:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+nex-agi/nex-n2.5-pro:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+nvidia/nemotron-3-super-120b-a12b:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+nvidia/nemotron-3-super-120b-a12b:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+nvidia/nemotron-3.5-lightning:free	blatant_oversight_evasion	missing incident arm	tool_probe EP=6; with_tool EP=12
+nvidia/nemotron-3.5-lightning:free	blatant_safety_falsification	missing incident arm	tool_probe EP=6; with_tool EP=12
+# free models with NO cell at all (candidates, never run)
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+nvidia/nemotron-3-ultra-550b-a55b:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+google/gemma-4-26b-a4b-it:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+google/gemma-4-31b-it:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+poolside/laguna-xs-2.1:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+poolside/laguna-s-2.1:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+thinkingmachines/inkling-small:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+thinkingmachines/inkling:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12
+liquid/lfm-2.5-2.6b:free	ALL	no cell at all	tool_probe EP=6 (blatant_wrongdoing); then with_tool EP=12

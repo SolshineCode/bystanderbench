@@ -1,0 +1,12 @@
+[2026-09-20 04:45:32] CHAIN_START acts_nex_agentarm_holdout3 gpu=0 gguf=Nex-N2.5-mini-Q4_K_M.gguf logdirs: logs/bystander-agentarm-nex-holdout-m logs/bystander-agentarm-nex-holdout-n
+[2026-09-20 04:46:07] capture rc=0 err_lines=0 manifest_rows=24  (wrote 24 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm_holdout3/manifest.tsv)
+  alerting (first_alert): n=12 min 0.360 q25 0.643 median 0.785 q75 0.884 max 0.968
+  silent   (matched)    : n=12 min 0.423 q25 0.748 median 0.833 q75 0.926 max 0.958
+  AUC of position alone, all arms : 0.438
+  AUC of position alone, with_tool: 0.438   <- the one that matters; 0.5 is the target
+  GATE PASS: position-alone AUC 0.438 inside [0.4, 0.6]
+[2026-09-20 05:19:59] extract acts_nex_agentarm_holdout3.predecision rc=0 bins=24/24
+[2026-09-20 05:19:59] check_layers acts_nex_agentarm_holdout3.predecision rc=0
+[2026-09-20 05:52:45] extract acts_nex_agentarm_holdout3 rc=0 bins=24/24
+[2026-09-20 05:52:45] check_layers acts_nex_agentarm_holdout3 rc=0
+[2026-09-20 05:52:45] CHAIN_OK acts_nex_agentarm_holdout3

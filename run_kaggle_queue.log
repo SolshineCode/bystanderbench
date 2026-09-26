@@ -1,0 +1,22 @@
+TERMINAL moe-floor-qwen15-moe-a27b-20260903: calebdeleeuw/moe-floor-qwen15-moe-a27b-20260903 has status "KernelWorkerStatus.ERROR"
+COLLECTED moe-floor-qwen15-moe-a27b-20260903 -- AUDIT_NEEDED
+PUSH moe-floor-qwen15-14b-20260903: Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/calebdeleeuw/moe-floor-qwen15-14b-20260903
+TERMINAL moe-floor-qwen15-14b-20260903: calebdeleeuw/moe-floor-qwen15-14b-20260903 has status "KernelWorkerStatus.ERROR"
+COLLECTED moe-floor-qwen15-14b-20260903 -- AUDIT_NEEDED
+PUSH moe-floor-olmo-0724-7b-ext-20260903: Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/calebdeleeuw/moe-floor-olmo-0724-7b-ext-20260903
+TERMINAL moe-floor-olmoe-1b7b-ext-20260903: calebdeleeuw/moe-floor-olmoe-1b7b-ext-20260903 has status "KernelWorkerStatus.COMPLETE"
+COLLECTED moe-floor-olmoe-1b7b-ext-20260903 -- AUDIT_NEEDED
+PUSH moe-floor-olmo2-7b-ext-20260903: Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/calebdeleeuw/moe-floor-olmo2-7b-ext-20260903
+TERMINAL moe-floor-olmo-0724-7b-ext-20260903: calebdeleeuw/moe-floor-olmo-0724-7b-ext-20260903 has status "KernelWorkerStatus.COMPLETE"
+COLLECTED moe-floor-olmo-0724-7b-ext-20260903 -- AUDIT_NEEDED
+PUSH moe-floor-qwen15-4b-20260903: Kernel push error: Maximum batch GPU session count of 2 reached.
+PUSH moe-floor-qwen15-4b-20260903: Kernel push error: Maximum batch GPU session count of 2 reached.
+PUSH moe-floor-qwen15-4b-20260903: Kernel push error: Maximum batch GPU session count of 2 reached.
+PUSH moe-floor-qwen15-4b-20260903: Kernel push error: Maximum batch GPU session count of 2 reached.
+PUSH moe-floor-qwen15-4b-20260903: Kernel push error: Maximum batch GPU session count of 2 reached.
+PUSH moe-floor-qwen15-4b-20260903: Kernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/calebdeleeuw/moe-floor-qwen15-4b-20260903
+TERMINAL moe-floor-qwen15-4b-20260903: calebdeleeuw/moe-floor-qwen15-4b-20260903 has status "KernelWorkerStatus.COMPLETE"
+COLLECTED moe-floor-qwen15-4b-20260903 -- AUDIT_NEEDED
+TERMINAL moe-floor-olmo2-7b-ext-20260903: calebdeleeuw/moe-floor-olmo2-7b-ext-20260903 has status "KernelWorkerStatus.COMPLETE"
+COLLECTED moe-floor-olmo2-7b-ext-20260903 -- AUDIT_NEEDED
+KAGGLE_QUEUE_DONE

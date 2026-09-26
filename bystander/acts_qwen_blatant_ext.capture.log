@@ -1,0 +1,9 @@
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep1: msgs=31 toks=6629 pool_start=6437
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep2: msgs=29 toks=5764 pool_start=5616
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep3: msgs=27 toks=6083 pool_start=5949
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep4: msgs=45 toks=8832 pool_start=8606
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep5: msgs=29 toks=5998 pool_start=5836
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep6: msgs=29 toks=6118 pool_start=5972
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep7: msgs=30 toks=5354 pool_start=5236
+bystander-blatant-qwen35-27b-ext__blatant_wrongdoing_with_tool_native_tools_ep8: msgs=33 toks=7080 pool_start=6944
+wrote 8 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_qwen_blatant_ext/manifest.tsv

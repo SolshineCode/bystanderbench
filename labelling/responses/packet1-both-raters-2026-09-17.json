@@ -1,0 +1,80 @@
+{
+ "A": {
+  "key_feature": 376,
+  "rater1": [
+   "Navigating elements of deep human thoughts/feelings/values",
+   4
+  ],
+  "rater2": [
+   "ethics and moral reasoning; applying ethical frameworks, Kant, virtue ethics",
+   5
+  ]
+ },
+ "B": {
+  "key_feature": 94,
+  "rater1": [
+   "understanding/Applying facts and boundaries (like grammar, rules, and laws) to things people want to do",
+   3
+  ],
+  "rater2": [
+   "giving correct instructions, accuracy, legality and safety of a requested task",
+   5
+  ]
+ },
+ "C": {
+  "key_feature": 655,
+  "TARGET": true,
+  "rater1": [
+   "No pattern I can see",
+   1
+  ],
+  "rater2": [
+   "mostly no pattern: tokens are colons, apostrophes, 'this', 'that'; two excerpts read as caveats ('but', 'though') at scale 3",
+   2
+  ]
+ },
+ "D": {
+  "key_feature": 233,
+  "rater1": [
+   "Roleplaying/fantasizing such as play scripts, theoretical scenarios, or hypotheticals",
+   4
+  ],
+  "rater2": [
+   "mostly 'no token focused on, no pattern' at scale 1; a few question/consent readings at 5",
+   2
+  ]
+ },
+ "E": {
+  "key_feature": 145,
+  "rater1": [
+   "No pattern I can see",
+   1
+  ],
+  "rater2": [
+   "all 12 excerpts: token was 'the', '(', '-', 'a'. No pattern. Scale 1 throughout",
+   1
+  ]
+ },
+ "F": {
+  "key_feature": 285,
+  "rater1": [
+   "The word 'the', referring to whatever the main subject or overall idea was",
+   5
+  ],
+  "rater2": [
+   "all 12 excerpts: token was 'the'. No pattern. Scale 1 throughout",
+   1
+  ]
+ },
+ "G": {
+  "key_feature": 344,
+  "rater1": [
+   "Prompting the user to give a follow up",
+   5
+  ],
+  "rater2": [
+   "requesting more information from the user to complete the task",
+   5
+  ]
+ }
+}

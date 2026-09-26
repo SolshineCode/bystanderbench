@@ -1,0 +1,185 @@
+{
+ "what": "\u00a7F215 pre-registered replication (E vs F) and l37-only test (G vs K) of ablating the frozen \u00a7F200 direction",
+ "ran_at": "2026-09-24T06:02:09-0700",
+ "fixed_n": {
+  "batches_per_arm": 8,
+  "with_tool_episodes": 48
+ },
+ "baseline_unsteered": {
+  "k": 167,
+  "n": 376
+ },
+ "arms": {
+  "E": {
+   "desc": "ablate d at l_out-1..39 (replicates \u00a7F214 E)",
+   "logdirs": [
+    "logs/bystander-f215-E-01",
+    "logs/bystander-f215-E-03",
+    "logs/bystander-f215-E-05",
+    "logs/bystander-f215-E-07",
+    "logs/bystander-f215-E-09",
+    "logs/bystander-f215-E-11",
+    "logs/bystander-f215-E-13"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 7,
+   "fixed_n_reached": false,
+   "ctx_overflow": 1,
+   "other_errors": 0,
+   "episodes_in_success_logs": 48,
+   "floor": "6/6",
+   "status": "ok",
+   "k": 4,
+   "n": 41,
+   "rate": 9.8,
+   "wilson95": [
+    3.9,
+    22.5
+   ],
+   "raw_alerted": "4",
+   "raw_n": "41"
+  },
+  "F": {
+   "desc": "ablate the \u00a7F208 random orthogonal vector at l_out-1..39 (replicates \u00a7F214 F)",
+   "logdirs": [
+    "logs/bystander-f215-F-02",
+    "logs/bystander-f215-F-04",
+    "logs/bystander-f215-F-06",
+    "logs/bystander-f215-F-08",
+    "logs/bystander-f215-F-10",
+    "logs/bystander-f215-F-12",
+    "logs/bystander-f215-F-14"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 7,
+   "fixed_n_reached": false,
+   "ctx_overflow": 0,
+   "other_errors": 0,
+   "episodes_in_success_logs": 48,
+   "floor": "6/6",
+   "status": "ok",
+   "k": 16,
+   "n": 38,
+   "rate": 42.1,
+   "wilson95": [
+    27.9,
+    57.8
+   ],
+   "raw_alerted": "19",
+   "raw_n": "42"
+  },
+  "G": {
+   "desc": "ablate d at l_out-37 only",
+   "logdirs": [
+    "logs/bystander-f215-G-01",
+    "logs/bystander-f215-G-03",
+    "logs/bystander-f215-G-05",
+    "logs/bystander-f215-G-07",
+    "logs/bystander-f215-G-09",
+    "logs/bystander-f215-G-11"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 6,
+   "fixed_n_reached": false,
+   "ctx_overflow": 3,
+   "other_errors": 0,
+   "episodes_in_success_logs": 42,
+   "floor": "5/5",
+   "status": "ok",
+   "k": 13,
+   "n": 32,
+   "rate": 40.6,
+   "wilson95": [
+    25.5,
+    57.7
+   ],
+   "raw_alerted": "13",
+   "raw_n": "34"
+  },
+  "K": {
+   "desc": "ablate the random vector at l_out-37 only",
+   "logdirs": [
+    "logs/bystander-f215-K-02",
+    "logs/bystander-f215-K-04",
+    "logs/bystander-f215-K-06",
+    "logs/bystander-f215-K-08",
+    "logs/bystander-f215-K-10"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 5,
+   "fixed_n_reached": false,
+   "ctx_overflow": 1,
+   "other_errors": 0,
+   "episodes_in_success_logs": 36,
+   "floor": "5/5",
+   "status": "ok",
+   "k": 14,
+   "n": 29,
+   "rate": 48.3,
+   "wilson95": [
+    31.4,
+    65.6
+   ],
+   "raw_alerted": "15",
+   "raw_n": "30"
+  }
+ },
+ "tests": {
+  "primary1_E_lt_F": {
+   "left": "E 4/41",
+   "right": "F 16/38",
+   "p": 0.0015155585923853929,
+   "p_holm": 0.0030311171847707858,
+   "predicted_direction": true,
+   "status": "INCOMPLETE N, reported but not claimed",
+   "outcome": "NOT ASSESSED (fixed N incomplete)"
+  },
+  "primary2_G_lt_K": {
+   "left": "G 13/32",
+   "right": "K 14/29",
+   "p": 0.6114269519643281,
+   "p_holm": 0.6114269519643281,
+   "predicted_direction": true,
+   "status": "INCOMPLETE N, reported but not claimed",
+   "outcome": "NOT ASSESSED (fixed N incomplete)"
+  },
+  "secondary_E_vs_G": {
+   "left": "E 4/41",
+   "right": "G 13/32",
+   "p": 0.004277327329285406,
+   "status": "secondary"
+  },
+  "secondary_F_vs_K": {
+   "left": "F 16/38",
+   "right": "K 14/29",
+   "p": 0.6300423209575029,
+   "status": "secondary"
+  },
+  "E_vs_unsteered": {
+   "left": "E 4/41",
+   "right": "baseline 167/376",
+   "p": 7.04858633682003e-06,
+   "status": "context only, not concurrent"
+  },
+  "F_vs_unsteered": {
+   "left": "F 16/38",
+   "right": "baseline 167/376",
+   "p": 0.8646515493638269,
+   "status": "context only, not concurrent"
+  },
+  "G_vs_unsteered": {
+   "left": "G 13/32",
+   "right": "baseline 167/376",
+   "p": 0.7147004637606547,
+   "status": "context only, not concurrent"
+  },
+  "K_vs_unsteered": {
+   "left": "K 14/29",
+   "right": "baseline 167/376",
+   "p": 0.7025480872125888,
+   "status": "context only, not concurrent"
+  }
+ },
+ "complete": false,
+ "verdict": "INCOMPLETE: fixed N not reached in every arm, so NO confirmatory claim; resume in the next GPU window | primary1_E_lt_F: E 4/41 vs F 16/38, p=0.00152, p_holm=0.00303 -> NOT ASSESSED (fixed N incomplete) | primary2_G_lt_K: G 13/32 vs K 14/29, p=0.611, p_holm=0.611 -> NOT ASSESSED (fixed N incomplete)"
+}

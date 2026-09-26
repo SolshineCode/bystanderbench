@@ -1,0 +1,49 @@
+{
+ "sae": "google/gemma-scope-2-12b-it/resid_post_all/layer_20_width_16k_l0_small",
+ "target": 655,
+ "seed": 20260908,
+ "components": [
+  {
+   "letter": "A",
+   "feature_id": 376,
+   "is_target": false,
+   "frequency": 0.1421585152011283
+  },
+  {
+   "letter": "B",
+   "feature_id": 94,
+   "is_target": false,
+   "frequency": 0.14766542761392237
+  },
+  {
+   "letter": "C",
+   "feature_id": 655,
+   "is_target": true,
+   "frequency": 0.14491932259686122
+  },
+  {
+   "letter": "D",
+   "feature_id": 233,
+   "is_target": false,
+   "frequency": 0.14913016686928543
+  },
+  {
+   "letter": "E",
+   "feature_id": 145,
+   "is_target": false,
+   "frequency": 0.14695509086249417
+  },
+  {
+   "letter": "F",
+   "feature_id": 285,
+   "is_target": false,
+   "frequency": 0.15009535034386512
+  },
+  {
+   "letter": "G",
+   "feature_id": 344,
+   "is_target": false,
+   "frequency": 0.14684896320410323
+  }
+ ]
+}

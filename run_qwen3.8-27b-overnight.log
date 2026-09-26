@@ -1,0 +1,146 @@
+time="2026-09-01T22:31:22-07:00" level=warning msg="No services to build"
+103 samples left after shuffling
+15 samples left after limiting
+103 samples left after shuffling
+15 samples left after limiting
+103 samples left after shuffling
+15 samples left after limiting
+Service default: using local image 'aisiuk/inspect-tool-support'.
+
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+Starting agentic humaneval solver with 2 attempts...
+Attempt 1/2
+[09/02/26 03:57:36] WARNING  task=lcb_original_canmod_minimal     _model.py:2697
+                             sample=lcbhard_41                                  
+                             [apERo4Uwy8RkcMwoMiWxM3                            
+                             lcb_original_canmod_minimal/lcbhard_               
+                             41/1 openai/local-model] ->                        
+                             local-model retry 10 (retrying in                  
+                             1,537 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+                    WARNING  task=lcb_conflicting_canmod_minimal  _model.py:2697
+                             sample=lcbhard_41                                  
+                             [GJK9KiPbMuyZhHwtnw5mPP                            
+                             lcb_conflicting_canmod_minimal/lcbha               
+                             rd_41/1 openai/local-model] ->                     
+                             local-model retry 10 (retrying in                  
+                             1,537 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+[09/02/26 04:53:14] WARNING  task=lcb_original_canmod_minimal     _model.py:2697
+                             sample=lcbhard_41                                  
+                             [apERo4Uwy8RkcMwoMiWxM3                            
+                             lcb_original_canmod_minimal/lcbhard_               
+                             41/1 openai/local-model] ->                        
+                             local-model retry 11 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+[09/02/26 04:53:15] WARNING  task=lcb_conflicting_canmod_minimal  _model.py:2697
+                             sample=lcbhard_41                                  
+                             [GJK9KiPbMuyZhHwtnw5mPP                            
+                             lcb_conflicting_canmod_minimal/lcbha               
+                             rd_41/1 openai/local-model] ->                     
+                             local-model retry 11 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 1 in backoff]                           
+[09/02/26 05:53:16] WARNING  task=lcb_original_canmod_minimal     _model.py:2697
+                             sample=lcbhard_41                                  
+                             [apERo4Uwy8RkcMwoMiWxM3                            
+                             lcb_original_canmod_minimal/lcbhard_               
+                             41/1 openai/local-model] ->                        
+                             local-model retry 12 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+                    WARNING  task=lcb_conflicting_canmod_minimal  _model.py:2697
+                             sample=lcbhard_41                                  
+                             [GJK9KiPbMuyZhHwtnw5mPP                            
+                             lcb_conflicting_canmod_minimal/lcbha               
+                             rd_41/1 openai/local-model] ->                     
+                             local-model retry 12 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 1 in backoff]                           
+[09/02/26 06:53:17] WARNING  task=lcb_original_canmod_minimal     _model.py:2697
+                             sample=lcbhard_41                                  
+                             [apERo4Uwy8RkcMwoMiWxM3                            
+                             lcb_original_canmod_minimal/lcbhard_               
+                             41/1 openai/local-model] ->                        
+                             local-model retry 13 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+[09/02/26 06:53:18] WARNING  task=lcb_conflicting_canmod_minimal  _model.py:2697
+                             sample=lcbhard_41                                  
+                             [GJK9KiPbMuyZhHwtnw5mPP                            
+                             lcb_conflicting_canmod_minimal/lcbha               
+                             rd_41/1 openai/local-model] ->                     
+                             local-model retry 13 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 1 in backoff]                           
+[09/02/26 07:53:19] WARNING  task=lcb_original_canmod_minimal     _model.py:2697
+                             sample=lcbhard_41                                  
+                             [apERo4Uwy8RkcMwoMiWxM3                            
+                             lcb_original_canmod_minimal/lcbhard_               
+                             41/1 openai/local-model] ->                        
+                             local-model retry 14 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 0 in backoff]                           
+                    WARNING  task=lcb_conflicting_canmod_minimal  _model.py:2697
+                             sample=lcbhard_41                                  
+                             [GJK9KiPbMuyZhHwtnw5mPP                            
+                             lcb_conflicting_canmod_minimal/lcbha               
+                             rd_41/1 openai/local-model] ->                     
+                             local-model retry 14 (retrying in                  
+                             1,800 seconds) [APITimeoutError] [0                
+                             out-tok/s, 1 in backoff]                           
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_original_canmod_minimal (15 samples): openai/local-model                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+original, agent_type: minimal, max_attempts: 2, allow_test_modifications: True, 
+shuffle: True, dataset: fjzzq2002/impossible_livecodebench                      
+                                                                                
+total time:                                   9:57:39                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-overnight/2026-09-02T05-31-22-00-00_lcb-original-canmod-minimal
+_k3yKNe4EXNFGAkkJhUfGVv.eval                                                    
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_oneoff_canmod_minimal (15 samples): openai/local-model                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+oneoff, agent_type: minimal, max_attempts: 2, allow_test_modifications: True,   
+shuffle: True, dataset: fjzzq2002/impossible_livecodebench                      
+                                                                                
+total time:                                   9:57:38                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-overnight/2026-09-02T05-31-22-00-00_lcb-oneoff-canmod-minimal_i
+GB9NLne8hAbQKKWxCsqfX.eval                                                      
+                                                                                
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lcb_conflicting_canmod_minimal (15 samples): openai/local-model               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+max_connections: 2, retry_on_error: 2, message_limit: 50, max_tasks: 10, split: 
+conflicting, agent_type: minimal, max_attempts: 2, allow_test_modifications:    
+True, shuffle: True, dataset: fjzzq2002/impossible_livecodebench                
+                                                                                
+total time:                                   9:57:39                           
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+logs/qwen3.8-27b-overnight/2026-09-02T05-31-22-00-00_lcb-conflicting-canmod-mini
+mal_bJ2YWjbkYwW4Tf9tuWcm4P.eval                                                 
+                                                                                Completed all tasks in 'logs/qwen3.8-27b-overnight' successfully

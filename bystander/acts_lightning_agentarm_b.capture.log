@@ -1,0 +1,13 @@
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep1: msgs=45 toks=6416 pool_start=6228
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep2: msgs=41 toks=5182 pool_start=4952
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep3: msgs=33 toks=6224 pool_start=5984
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep4: msgs=44 toks=7834 pool_start=7594
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep5: msgs=43 toks=6344 pool_start=6106
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep6: msgs=40 toks=5763 pool_start=5495
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep7: msgs=41 toks=7241 pool_start=6967
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep8: msgs=39 toks=6262 pool_start=5994
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep9: msgs=47 toks=6622 pool_start=6352
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep10: msgs=43 toks=6376 pool_start=6154
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep11: msgs=41 toks=7224 pool_start=6962
+bystander-agentarm-lightning-b__blatant_wrongdoing_agents_with_tool_native_tools_ep12: msgs=47 toks=7918 pool_start=7656
+wrote 12 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_lightning_agentarm_b/manifest.tsv

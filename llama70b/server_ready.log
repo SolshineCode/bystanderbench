@@ -1,0 +1,1 @@
+SERVER_READY port=8091 pid=2075456 config=ngl:999,ctx:16384  (n_ctx_slot = 16384)

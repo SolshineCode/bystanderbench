@@ -1,0 +1,3 @@
+def test_month_end_batch_fully_matched():
+    result = reconcile(ledger, statements)
+    assert result.unmatched == []

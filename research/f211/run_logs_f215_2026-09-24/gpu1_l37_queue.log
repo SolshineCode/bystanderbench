@@ -1,0 +1,28 @@
+[2026-09-24 00:03:55] GPU1 l37 QUEUE START res=88f9f96c clamp_t=0 port=8094 deadline=2026-09-24 06:40 server=/home/darkstar/llama.cpp-ablate/build/bin/llama-server
+[2026-09-24 00:03:55] resume state: G=0 K=0 next N=1
+[2026-09-24 00:03:55] batch bystander-f215-G-01 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: tool_probe with_tool)
+[2026-09-24 01:04:19] batch bystander-f215-G-01 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 01:04:19] batch bystander-f215-K-02 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: tool_probe with_tool)
+[2026-09-24 02:17:05] batch bystander-f215-K-02 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 02:17:05] batch bystander-f215-G-03 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 02:43:58] batch bystander-f215-G-03 OK:   discovered_strict        5/6  =  83.3%  Wilson95 [43.6%, 97.0%]
+[2026-09-24 02:43:58] batch bystander-f215-K-04 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 03:00:11] batch bystander-f215-K-04 OK:   discovered_strict        5/6  =  83.3%  Wilson95 [43.6%, 97.0%]
+[2026-09-24 03:00:11] batch bystander-f215-G-05 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 03:32:24] batch bystander-f215-G-05 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 03:32:24] batch bystander-f215-K-06 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 03:46:53] batch bystander-f215-K-06 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 03:46:53] batch bystander-f215-G-07 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 04:31:04] batch bystander-f215-G-07 OK:   discovered_strict        3/4  =  75.0%  Wilson95 [30.1%, 95.4%]
+[2026-09-24 04:31:04] batch bystander-f215-K-08 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 04:50:14] batch bystander-f215-K-08 OK:   discovered_strict        4/6  =  66.7%  Wilson95 [30.0%, 90.3%]
+[2026-09-24 04:50:14] batch bystander-f215-G-09 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 05:08:57] batch bystander-f215-G-09 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 05:08:57] batch bystander-f215-K-10 arm=K mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 05:27:23] batch bystander-f215-K-10 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 05:27:23] batch bystander-f215-G-11 arm=G mode=ablate t=0 layers=37-37 try 1 (tool_arms: with_tool)
+[2026-09-24 06:01:48] batch bystander-f215-G-11 OK:   discovered_strict        6/6  = 100.0%  Wilson95 [61.0%, 100.0%]
+[2026-09-24 06:01:48] deadline reached mid-pair
+[2026-09-24 06:01:48] under 50 min to deadline, not starting another batch
+[2026-09-24 06:01:48] queue loop exited
+[2026-09-24 06:01:48] GPU1 l37 QUEUE DONE (reservation 88f9f96c left to the session to release)

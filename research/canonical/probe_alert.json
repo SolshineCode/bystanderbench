@@ -1,0 +1,202 @@
+{
+  "CONFOUNDED": "pooling window includes the escalation; see module docstring",
+  "arm": "blatant_wrongdoing",
+  "n": 90,
+  "alerted": 22,
+  "batches": [
+    "bystander-nex-local-n6",
+    "bystander-nex-pos-g",
+    "bystander-nex-pos-h",
+    "bystander-nex-pos-i",
+    "bystander-nex-scale-a",
+    "bystander-nex-scale-b",
+    "bystander-nex-scale-c"
+  ],
+  "layers": 8,
+  "perms": 2000,
+  "cells": [
+    {
+      "layer": 1,
+      "slot": "last",
+      "auc": 0.8282,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 2,
+      "slot": "mean_final_turn",
+      "auc": 0.8162,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 0,
+      "slot": "last",
+      "auc": 0.8122,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 2,
+      "slot": "last",
+      "auc": 0.8122,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 6,
+      "slot": "mean_final_turn",
+      "auc": 0.8082,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 5,
+      "slot": "last",
+      "auc": 0.8055,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 6,
+      "slot": "last",
+      "auc": 0.8035,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 3,
+      "slot": "last",
+      "auc": 0.7854,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 3,
+      "slot": "mean_all",
+      "auc": 0.7801,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 6,
+      "slot": "mean_all",
+      "auc": 0.7761,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 4,
+      "slot": "last",
+      "auc": 0.7754,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 3,
+      "slot": "mean_final_turn",
+      "auc": 0.7747,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 2,
+      "slot": "mean_all",
+      "auc": 0.756,
+      "p": 0.001,
+      "n_scored": 90
+    },
+    {
+      "layer": 1,
+      "slot": "mean_final_turn",
+      "auc": 0.7527,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 5,
+      "slot": "mean_all",
+      "auc": 0.752,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 7,
+      "slot": "mean_all",
+      "auc": 0.7507,
+      "p": 0.0005,
+      "n_scored": 90
+    },
+    {
+      "layer": 0,
+      "slot": "mean_final_turn",
+      "auc": 0.7493,
+      "p": 0.002,
+      "n_scored": 90
+    },
+    {
+      "layer": 4,
+      "slot": "mean_all",
+      "auc": 0.7433,
+      "p": 0.0015,
+      "n_scored": 90
+    },
+    {
+      "layer": 7,
+      "slot": "last",
+      "auc": 0.7346,
+      "p": 0.003,
+      "n_scored": 90
+    },
+    {
+      "layer": 0,
+      "slot": "mean_all",
+      "auc": 0.7012,
+      "p": 0.013,
+      "n_scored": 90
+    },
+    {
+      "layer": 5,
+      "slot": "mean_final_turn",
+      "auc": 0.6979,
+      "p": 0.0115,
+      "n_scored": 90
+    },
+    {
+      "layer": 4,
+      "slot": "mean_final_turn",
+      "auc": 0.6972,
+      "p": 0.0155,
+      "n_scored": 90
+    },
+    {
+      "layer": 1,
+      "slot": "mean_all",
+      "auc": 0.6785,
+      "p": 0.0195,
+      "n_scored": 90
+    },
+    {
+      "layer": 7,
+      "slot": "mean_final_turn",
+      "auc": 0.3924,
+      "p": 0.7901,
+      "n_scored": 90
+    }
+  ],
+  "n_cells_searched": 24,
+  "best": {
+    "layer": 1,
+    "slot": "last",
+    "auc": 0.8282,
+    "p": 0.0005,
+    "n_scored": 90,
+    "p_bonferroni": 0.012
+  },
+  "transfer": {
+    "arm": "blatant_wrongdoing_noaddressee",
+    "n": 54,
+    "alerted": 11,
+    "auc": 0.7125
+  }
+}

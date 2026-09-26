@@ -1,0 +1,203 @@
+{
+  "window": "pre-decision: transcripts cut at the commit-to-escalate index, matched cut positions for silent episodes (F134/F167 leak fix)",
+  "confounded": false,
+  "arm": "blatant_wrongdoing_agents",
+  "n": 74,
+  "alerted": 36,
+  "batches": [
+    "bystander-agentarm-nex-a",
+    "bystander-agentarm-nex-b",
+    "bystander-agentarm-nex-rep-c",
+    "bystander-agentarm-nex-rep-d",
+    "bystander-agentarm-nex-rep-e",
+    "bystander-agentarm-nex-rep-f",
+    "bystander-agentarm-smoke"
+  ],
+  "layers": 8,
+  "perms": 2000,
+  "cells": [
+    {
+      "layer": 6,
+      "slot": "mean_all",
+      "auc": 0.8677,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 3,
+      "slot": "mean_all",
+      "auc": 0.8618,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 2,
+      "slot": "mean_all",
+      "auc": 0.8509,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 5,
+      "slot": "mean_all",
+      "auc": 0.8421,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 5,
+      "slot": "last",
+      "auc": 0.8414,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 6,
+      "slot": "last",
+      "auc": 0.8392,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 4,
+      "slot": "mean_all",
+      "auc": 0.8355,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 3,
+      "slot": "last",
+      "auc": 0.8311,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 4,
+      "slot": "last",
+      "auc": 0.8304,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 1,
+      "slot": "last",
+      "auc": 0.8289,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 0,
+      "slot": "last",
+      "auc": 0.8282,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 2,
+      "slot": "last",
+      "auc": 0.8165,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 1,
+      "slot": "mean_all",
+      "auc": 0.7968,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 7,
+      "slot": "last",
+      "auc": 0.777,
+      "p": 0.0005,
+      "n_scored": 74
+    },
+    {
+      "layer": 7,
+      "slot": "mean_all",
+      "auc": 0.7368,
+      "p": 0.001,
+      "n_scored": 74
+    },
+    {
+      "layer": 0,
+      "slot": "mean_all",
+      "auc": 0.7186,
+      "p": 0.002,
+      "n_scored": 74
+    },
+    {
+      "layer": 4,
+      "slot": "mean_final_turn",
+      "auc": 0.6469,
+      "p": 0.0105,
+      "n_scored": 74
+    },
+    {
+      "layer": 5,
+      "slot": "mean_final_turn",
+      "auc": 0.6228,
+      "p": 0.035,
+      "n_scored": 74
+    },
+    {
+      "layer": 7,
+      "slot": "mean_final_turn",
+      "auc": 0.5658,
+      "p": 0.2194,
+      "n_scored": 74
+    },
+    {
+      "layer": 6,
+      "slot": "mean_final_turn",
+      "auc": 0.5336,
+      "p": 0.2569,
+      "n_scored": 74
+    },
+    {
+      "layer": 2,
+      "slot": "mean_final_turn",
+      "auc": 0.5132,
+      "p": 0.3443,
+      "n_scored": 74
+    },
+    {
+      "layer": 3,
+      "slot": "mean_final_turn",
+      "auc": 0.5007,
+      "p": 0.3723,
+      "n_scored": 74
+    },
+    {
+      "layer": 1,
+      "slot": "mean_final_turn",
+      "auc": 0.4737,
+      "p": 0.6567,
+      "n_scored": 74
+    },
+    {
+      "layer": 0,
+      "slot": "mean_final_turn",
+      "auc": 0.4525,
+      "p": 0.7386,
+      "n_scored": 74
+    }
+  ],
+  "n_cells_searched": 24,
+  "best": {
+    "layer": 6,
+    "slot": "mean_all",
+    "auc": 0.8677,
+    "p": 0.0005,
+    "n_scored": 74,
+    "p_bonferroni": 0.012
+  },
+  "transfer": {
+    "arm": "blatant_wrongdoing",
+    "n": 108,
+    "alerted": 27,
+    "auc": 0.4952
+  }
+}

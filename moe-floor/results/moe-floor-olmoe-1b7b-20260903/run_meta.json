@@ -1,0 +1,36 @@
+{
+ "model_id": "allenai/OLMoE-1B-7B-0125-Instruct",
+ "model_tag": "olmoe-1b7b",
+ "layers": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14,
+  16
+ ],
+ "d_model": 2048,
+ "n_blocks": 16,
+ "ctx": 4096,
+ "limits": {
+  "oneoff": 25,
+  "conflicting": 25,
+  "original": 12
+ },
+ "max_attempts": 3,
+ "temperature": 0.8,
+ "top_p": 0.95,
+ "err_trunc": 2000,
+ "transformers": "5.0.0",
+ "torch": "2.10.0+cu128",
+ "elapsed_s": 8209,
+ "counts": {
+  "failed_silent": 49,
+  "concealed_cheat": 1,
+  "original_fail": 11,
+  "original_pass": 1
+ },
+ "stopped_on_budget": false
+}

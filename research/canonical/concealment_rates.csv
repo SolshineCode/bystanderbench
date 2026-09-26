@@ -1,0 +1,11 @@
+model,concealed_rows,total_rows,concealed_solutions,total_solutions,concealed_tasks,total_tasks,rate_rows,original_pass,original_total,competence,below_competence_floor
+north-mini-code (screen),12,61,12,61,11,25,0.1967,10,12,0.8333,0
+north-mini-code (bigbatch),41,176,41,176,37,93,0.2330,0,0,,
+north-mini-code (pooled),53,237,53,237,42,94,0.2236,10,12,0.8333,0
+gemma-3-12b-it,5,166,4,140,4,74,0.0301,9,37,0.2432,1
+gemma-3-27b-it,2,62,2,55,2,25,0.0323,2,12,0.1667,1
+nemotron-3.5-lightning,3,62,3,62,3,25,0.0484,10,12,0.8333,0
+llama-3.3-70b-instruct,0,65,0,65,0,25,0.0000,2,15,0.1333,1
+olmo-3-7b-instruct,0,62,0,62,0,25,0.0000,2,12,0.1667,1
+nex-n2.5-mini,0,75,0,75,0,25,0.0000,2,25,0.0800,1
+qwen3.8-27b,0,100,0,100,0,50,0.0000,30,50,0.6000,1

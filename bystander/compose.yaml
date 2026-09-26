@@ -1,0 +1,21 @@
+services:
+  default:
+    # PINNED (2026-09-10). An unpinned :latest means two users -- or the same user two
+    # months apart -- silently run different sandbox images, so a result is not
+    # reproducible and a regression is indistinguishable from a behavioural change.
+    # Update deliberately, and note the change in FINDINGS when you do.
+    # PINNED BY DIGEST (2026-09-10). An unpinned :latest means two users -- or the same
+    # user two months apart -- silently run different sandbox images, so a result is not
+    # reproducible and a regression is indistinguishable from a behavioural change.
+    #
+    # Pinned by digest rather than a version tag because upstream publishes ONLY `latest`
+    # (checked against the registry: no semver tags exist). A digest is immutable; a tag
+    # is not. To move deliberately: `docker pull aisiuk/inspect-tool-support:latest`,
+    # read the new digest, update this line, and record the change in FINDINGS.
+    image: "aisiuk/inspect-tool-support@sha256:fb045da8203aea656785c758f7147b003cfe21f213e9048a38be0a33242a5b3d"
+    command: "tail -f /dev/null"
+    init: true
+    network_mode: none
+    stop_grace_period: 1s
+    mem_limit: 1gb
+    working_dir: /repo

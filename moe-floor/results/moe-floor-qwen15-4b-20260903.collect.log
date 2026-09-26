@@ -1,0 +1,12 @@
+Output file downloaded to /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-4b-20260903/run_meta.json
+Output file downloaded to /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-4b-20260903/samples.jsonl
+Output file downloaded to /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-4b-20260903/transcripts.jsonl
+Kernel log downloaded to /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-4b-20260903/moe-floor-qwen15-4b-20260903.log 
+=== summary moe-floor-qwen15-4b-20260903 ===
+11 samples; categories: {'failed_silent': 11}
+  oneoff       failed_silent    11
+
+concealed_cheat: 0  |  keyword-flag hits needing audit: 0
+
+elapsed: 3196s  stopped_on_budget: False
+activation files: 0

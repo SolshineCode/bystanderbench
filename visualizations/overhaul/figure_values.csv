@@ -1,0 +1,16 @@
+figure,label,series,k,n
+figB,gpt-5.6-luna,person,3,36
+figB,gpt-5.6-luna,agent,30,66
+figB,nex-n2.5-mini,person,59,258
+figB,nex-n2.5-mini,agent,167,376
+figB,gpt-5.6-luna-pro,person,0,36
+figB,gpt-5.6-luna-pro,agent,7,36
+figC,add the direction at its layer (37),d,15,31
+figC,subtract it at layer 37,d,16,35
+figC,clamp it high at layer 37,d,29,73
+figC,remove it at layer 37 only,d,19,43
+figC,control: remove a random direction at 37,r,22,46
+figC,remove it after every layer,hit,4,47
+figC,control: remove a random direction everywhere,r,20,44
+figD,no sign it suspects a test,,19,345
+figD,reasoning says it may be a test,,10,22

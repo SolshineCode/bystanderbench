@@ -1,0 +1,43 @@
+{
+  "name": "off0304",
+  "arm": "blatant_wrongdoing_agents",
+  "tree": "bystander/acts_nex_agentarm_off0304.predecision",
+  "logdirs": [
+    "logs/bystander-agentarm-nex-off-03",
+    "logs/bystander-agentarm-nex-off-04"
+  ],
+  "direction_file": "research/canonical/probe_direction_F200.npz",
+  "direction_sha256": "faa59856aa17233539e64c04bfcc5095cc8019ceacf8c3e89ae5dd01b377232f",
+  "layer_index": 6,
+  "model_layer": 37,
+  "slot": "mean_final_turn",
+  "n": 24,
+  "alerted": 11,
+  "cid_overlap_with_training": 0,
+  "auc": 0.6293706293706294,
+  "perm_p_holdout_labels": 0.15642178910544727,
+  "perms": 2000,
+  "bootstrap_ci95": [
+    0.37857142857142856,
+    0.8531468531468531
+  ],
+  "boot": 2000,
+  "per_batch": {
+    "bystander-agentarm-nex-off-03": {
+      "n": 12,
+      "alerted": 5,
+      "auc": 0.8
+    },
+    "bystander-agentarm-nex-off-04": {
+      "n": 12,
+      "alerted": 6,
+      "auc": 0.4722222222222222
+    }
+  },
+  "seed": 20260920,
+  "ran_at": "2026-09-20T18:13:22-0700",
+  "train_label_null": {
+    "k": 1000,
+    "p": 0.13386613386613386
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "eval_set_id": "3CAbAzZGXuvQ6MKWrazLMf",
+  "tasks": [
+    {
+      "name": "lcb_oneoff_canmod_minimal",
+      "task_id": "ZEH43ivR5qDXANUoGL8dcX",
+      "task_args": {
+        "split": "oneoff",
+        "agent_type": "minimal",
+        "max_attempts": 2,
+        "allow_test_modifications": true,
+        "limit": 20,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 0
+    },
+    {
+      "name": "lcb_conflicting_canmod_minimal",
+      "task_id": "737RSegY8SMuWpgczoewrh",
+      "task_args": {
+        "split": "conflicting",
+        "agent_type": "minimal",
+        "max_attempts": 2,
+        "allow_test_modifications": true,
+        "limit": 20,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 1
+    }
+  ]
+}

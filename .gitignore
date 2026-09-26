@@ -1,0 +1,92 @@
+# Python environment (729MB, regenerable via requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+
+# Model weight symlinks (host-specific paths into local Ollama blob storage,
+# invalid on any other machine anyway)
+gguf/
+
+# HF publish staging directories: this IS the content already published to
+# huggingface.co/DarkStarDeleeuw, kept out of git per the "data lives on HF,
+# this repo holds code/docs" split. See MANIFEST.md for the live dataset URLs.
+hf_upload/
+hf_upload2/
+hf_upload_*/
+
+# Recruiter-trial raw source data: already folded into the published HF
+# dataset (DarkStarDeleeuw/bluedot-unit2-recruiter-pilot-gemma3-12b).
+recruiter-trial/results/*/
+
+# Large raw run logs (multi-MB): too big for the "small evidence" convention
+# other run_*.log files follow, and every one below is either regenerable or
+# already folded into a published HF dataset.
+run_free_screens.log
+run_nla-screen-qwen25-7b.log
+
+# Raw eval logs and activation tensors: regenerable from the harness, or
+# already folded into a published HF dataset. Local-only copies stay on disk,
+# not in git. See MANIFEST.md "Local-only, not in git or on HF" section for
+# anything here that hasn't been published anywhere yet.
+logs/
+llamacpp_logs/
+*.eval
+**/acts/*.bin
+*.bin
+
+# Nested clone of the upstream ImpossibleBench project (has its own git
+# history, not ours to absorb) — see README for the clone instructions.
+repo/
+
+# Kaggle kernel run outputs (large, regenerable)
+moe-floor/kernels/*/output/
+
+# MoE-floor Kaggle results: keep small summaries/sidecars, exclude raw transcripts+tokens+logs (policy: transcripts/activations -> HF or local-only)
+moe-floor/results/*/transcripts.jsonl
+moe-floor/results/*/tokens/
+moe-floor/results/*/*.log
+
+# Oversized run logs (added 2026-09-07). Both were swept into git by a `git add -A`
+# and would have blocked or bloated the push:
+#   olmo3/cpu_load_test.log        1.9 GB, left by an earlier session; GitHub's hard
+#                                  limit is 100 MB, so this alone made the push fail.
+#   run_northmini_realbatch.log    ~30 MB and still growing; it was committed 10 times
+#                                  as it grew, ~257 MB of near-duplicate blobs.
+# MANIFEST's rule is "small raw run logs -> git". These are not small. Keep them
+# local-only like the eval transcripts and activation tensors.
+olmo3/cpu_load_test.log   # deleted 2026-09-07; see cpu_load_test_SALVAGED.md
+run_northmini_realbatch.log
+
+# north-mini big batch (2026-09-08): screen-only dir with NO activations, fully published
+# at DarkStarDeleeuw/bluedot-unit2-concealment-probe-north-mini-code under bigbatch/.
+# Its samples.jsonl (21 MB) and rendered teacher-forcing tokens (76 MB) stay out of git per
+# the "data lives on HF, this repo holds code/docs" split; the small sidecars that the
+# findings ledger cites (mechanism_audit.json, manifests, prioritize.log, skipped_sids.json)
+# ARE tracked.
+concealment-probe/data/north-mini-bigbatch/*/tokens/
+concealment-probe/data/north-mini-bigbatch/*/samples.jsonl
+
+# SAE causal/harvest run outputs: generated continuations (large, and each run is
+# tied to one server config). Rows + control vectors go to HF with the run.
+sae-causal/*.jsonl
+sae-causal/*.log
+sae-causal/*.pid
+bystander/acts_*.predecision/
+
+# Activation capture trees and HF staging (2026-09-13). *.bin was already ignored, but the
+# sidecars were not: 3,859 files / 41.7 MB of token streams, manifests and extract logs sat
+# one `git add -A` away from the repo. These trees ARE the published HF content -- one home,
+# not two (storage policy in CLAUDE.md) -- and the 2026-09-07 incident that put a 1.9 GB log
+# into fifteen unpushed commits is why staging is deliberate here.
+bystander/acts_*/
+bystander/.hf_stage/
+bystander/.*_env/
+visualizations/out2/
+.envcache_gpu*/
+
+# sae-causal token streams (2026-09-22): 140 MB of rendered token streams from the steering arm.
+# Same policy as the other tokens/ entries above -- transcripts, tokens and activations go to
+# Hugging Face or stay local-only, never into git.
+sae-causal/tokens/
+sae-causal/tokens_negatives/
+sae-causal/tokens_positives/

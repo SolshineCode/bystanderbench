@@ -1,0 +1,1 @@
+SERVER_READY port=8096 pid=3022607 gpu=0 config=ngl:999,ctx:8192  (n_ctx_slot = 8192)

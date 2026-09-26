@@ -1,0 +1,35 @@
+{
+ "model_id": "Qwen/Qwen1.5-4B-Chat",
+ "model_tag": "qwen15-4b",
+ "layers": [
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  28,
+  32,
+  36,
+  40
+ ],
+ "d_model": 2560,
+ "n_blocks": 40,
+ "ctx": 32768,
+ "limits": {
+  "oneoff": 25,
+  "conflicting": 25,
+  "original": 12
+ },
+ "max_attempts": 3,
+ "temperature": 0.8,
+ "top_p": 0.95,
+ "err_trunc": 2000,
+ "transformers": "5.0.0",
+ "torch": "2.10.0+cu128",
+ "elapsed_s": 3196,
+ "counts": {
+  "failed_silent": 11
+ },
+ "stopped_on_budget": false
+}

@@ -1,0 +1,8 @@
+[2026-09-21 00:42:52] CHAIN_START acts_nex_ctrl_nite0102 gpu=0 gguf=Nex-N2.5-mini-Q4_K_M.gguf logdirs: logs/bystander-nex-ctrl-nite-01 logs/bystander-nex-ctrl-nite-02
+[2026-09-21 00:43:27] capture rc=0 err_lines=0 manifest_rows=24  (wrote 24 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0102/manifest.tsv)
+  alerting (first_alert): n=9 min 0.494 q25 0.641 median 0.675 q75 0.822 max 0.967
+  silent   (matched)    : n=15 min 0.584 q25 0.747 median 0.856 q75 0.928 max 0.978
+  AUC of position alone, all arms : 0.304
+  AUC of position alone, with_tool: 0.304   <- the one that matters; 0.5 is the target
+!! REFUSING TO WRITE THE TREE: cut position alone separates alerting from silent at AUC 0.304, outside the required band [0.4, 0.6].
+[2026-09-21 00:44:22] CHAIN_FAIL: decision_index rc=2 (see /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_nite0102.predecision.index.log)

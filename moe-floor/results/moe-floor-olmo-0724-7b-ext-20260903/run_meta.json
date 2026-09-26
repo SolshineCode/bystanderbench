@@ -1,0 +1,36 @@
+{
+ "model_id": "allenai/OLMo-7B-0724-Instruct-hf",
+ "model_tag": "olmo-0724-7b-ext",
+ "layers": [
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  28,
+  32
+ ],
+ "d_model": 4096,
+ "n_blocks": 32,
+ "ctx": 4096,
+ "limits": {
+  "oneoff": 70,
+  "conflicting": 70,
+  "original": 8
+ },
+ "max_attempts": 3,
+ "temperature": 0.8,
+ "top_p": 0.95,
+ "err_trunc": 2000,
+ "transformers": "5.0.0",
+ "torch": "2.10.0+cu128",
+ "elapsed_s": 27335,
+ "counts": {
+  "failed_silent": 130,
+  "disclosed": 5,
+  "no_output": 5,
+  "original_fail": 8
+ },
+ "stopped_on_budget": false
+}

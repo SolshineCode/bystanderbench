@@ -1,0 +1,106 @@
+CONFLICT — extension overlaps:
+  c829e6dd  gpu=1    2026-09-06T04:00 -> 2026-09-06T13:00  claude-gemma12b-ext (claude-code): lever-2 N extension: gemma-3-12b-it wave-2 at LIMIT_IMP=75/LIMIT_ORIG=25 (~175 samples), folds into existing audited counts; honeypot rows get elevated audit per standing instruction
+EXTEND_REFUSED 0e7725d0 (2354s left) -- someone queued behind; finishing in window
+CONFLICT — extension overlaps:
+  c829e6dd  gpu=1    2026-09-06T04:00 -> 2026-09-06T13:00  claude-gemma12b-ext (claude-code): lever-2 N extension: gemma-3-12b-it wave-2 at LIMIT_IMP=75/LIMIT_ORIG=25 (~175 samples), folds into existing audited counts; honeypot rows get elevated audit per standing instruction
+EXTEND_REFUSED 0e7725d0 (1754s left) -- someone queued behind; finishing in window
+CONFLICT — extension overlaps:
+  c829e6dd  gpu=1    2026-09-06T04:00 -> 2026-09-06T13:00  claude-gemma12b-ext (claude-code): lever-2 N extension: gemma-3-12b-it wave-2 at LIMIT_IMP=75/LIMIT_ORIG=25 (~175 samples), folds into existing audited counts; honeypot rows get elevated audit per standing instruction
+EXTEND_REFUSED 0e7725d0 (1154s left) -- someone queued behind; finishing in window
+CONFLICT — extension overlaps:
+  c829e6dd  gpu=1    2026-09-06T04:00 -> 2026-09-06T13:00  claude-gemma12b-ext (claude-code): lever-2 N extension: gemma-3-12b-it wave-2 at LIMIT_IMP=75/LIMIT_ORIG=25 (~175 samples), folds into existing audited counts; honeypot rows get elevated audit per standing instruction
+EXTEND_REFUSED 0e7725d0 (554s left) -- someone queued behind; finishing in window
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+RESERVATION_GONE 0e7725d0 while pid 2177784 still alive
+released 0e7725d0 (gpu=1, was until 2026-09-06T03:50)
+RELEASED 0e7725d0 (pid 2177784 exited)

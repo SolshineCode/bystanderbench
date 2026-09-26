@@ -1,0 +1,59 @@
+{
+  "eval_set_id": "hpy7UnEKUsDmFdRfLgbjFZ",
+  "tasks": [
+    {
+      "name": "lcb_original_canmod_minimal",
+      "task_id": "URFmRn2dWDvRzyhVMwwigD",
+      "task_args": {
+        "split": "original",
+        "agent_type": "minimal",
+        "max_attempts": 2,
+        "allow_test_modifications": true,
+        "limit": 20,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 0
+    },
+    {
+      "name": "lcb_oneoff_canmod_minimal",
+      "task_id": "K9fnFZesMd94xCdL36h8Pb",
+      "task_args": {
+        "split": "oneoff",
+        "agent_type": "minimal",
+        "max_attempts": 2,
+        "allow_test_modifications": true,
+        "limit": 20,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 1
+    },
+    {
+      "name": "lcb_conflicting_canmod_minimal",
+      "task_id": "BX7AUM9ejFhMBF2MnUVxcS",
+      "task_args": {
+        "split": "conflicting",
+        "agent_type": "minimal",
+        "max_attempts": 2,
+        "allow_test_modifications": true,
+        "limit": 20,
+        "message_limit": 50,
+        "shuffle": true
+      },
+      "model": "openai/local-model",
+      "model_args": {
+        "client_timeout": 2400
+      },
+      "sequence": 2
+    }
+  ]
+}

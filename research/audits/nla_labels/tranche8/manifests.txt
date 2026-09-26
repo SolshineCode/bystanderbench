@@ -1,0 +1,2 @@
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm.predecision3/manifest.tsv
+/home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_agentarm_nite0304/manifest.tsv

@@ -1,0 +1,201 @@
+{
+ "what": "\u00a7F211 ablation/clamp test of the frozen \u00a7F200 direction",
+ "ran_at": "2026-09-23T06:13:56-0700",
+ "clamp_t": 0.5,
+ "baseline_unsteered": {
+  "k": 167,
+  "n": 376
+ },
+ "arms": {
+  "H": {
+   "desc": "clamp projection on d at l_out-37 to CLAMP_T (amplify)",
+   "logdirs": [
+    "logs/bystander-f211-H-01",
+    "logs/bystander-f211-H-03",
+    "logs/bystander-f211-H-05",
+    "logs/bystander-f211-H-07",
+    "logs/bystander-f211-H-09",
+    "logs/bystander-f211-H-11",
+    "logs/bystander-f211-H-13",
+    "logs/bystander-f211-H-15",
+    "logs/bystander-f211-H-17",
+    "logs/bystander-f211-H-19",
+    "logs/bystander-f211-H-21",
+    "logs/bystander-f211-H-23",
+    "logs/bystander-f211-H-25"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 29,
+   "n": 73,
+   "rate": 39.7,
+   "wilson95": [
+    29.3,
+    51.2
+   ],
+   "raw_alerted": "33",
+   "raw_n": "78"
+  },
+  "E": {
+   "desc": "ablate d at l_out-1..39 (abliterate)",
+   "logdirs": [
+    "logs/bystander-f211-E-02",
+    "logs/bystander-f211-E-04",
+    "logs/bystander-f211-E-06",
+    "logs/bystander-f211-E-08",
+    "logs/bystander-f211-E-10",
+    "logs/bystander-f211-E-12",
+    "logs/bystander-f211-E-14",
+    "logs/bystander-f211-E-16",
+    "logs/bystander-f211-E-18",
+    "logs/bystander-f211-E-20",
+    "logs/bystander-f211-E-22",
+    "logs/bystander-f211-E-24"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 4,
+   "n": 64,
+   "rate": 6.2,
+   "wilson95": [
+    2.5,
+    15.0
+   ],
+   "raw_alerted": "4",
+   "raw_n": "64"
+  },
+  "F": {
+   "desc": "ablate the \u00a7F208 random orthogonal vector at l_out-1..39 (control)",
+   "logdirs": [
+    "logs/bystander-f211-F-01",
+    "logs/bystander-f211-F-02",
+    "logs/bystander-f211-F-03",
+    "logs/bystander-f211-F-04",
+    "logs/bystander-f211-F-05",
+    "logs/bystander-f211-F-06",
+    "logs/bystander-f211-F-07",
+    "logs/bystander-f211-F-08",
+    "logs/bystander-f211-F-09",
+    "logs/bystander-f211-F-10",
+    "logs/bystander-f211-F-11",
+    "logs/bystander-f211-F-12",
+    "logs/bystander-f211-F-13",
+    "logs/bystander-f211-F-14",
+    "logs/bystander-f211-F-15",
+    "logs/bystander-f211-F-16",
+    "logs/bystander-f211-F-17",
+    "logs/bystander-f211-F-18",
+    "logs/bystander-f211-F-19",
+    "logs/bystander-f211-F-20",
+    "logs/bystander-f211-F-21",
+    "logs/bystander-f211-F-22",
+    "logs/bystander-f211-F-23",
+    "logs/bystander-f211-F-24",
+    "logs/bystander-f211-F-25",
+    "logs/bystander-f211-F-26"
+   ],
+   "floor": "6/6",
+   "status": "ok",
+   "k": 54,
+   "n": 145,
+   "rate": 37.2,
+   "wilson95": [
+    29.8,
+    45.3
+   ],
+   "raw_alerted": "60",
+   "raw_n": "152"
+  }
+ },
+ "tests": {
+  "primary_H_vs_E": {
+   "left": "H 29/73",
+   "right": "E 4/64",
+   "p": 2.706259057358905e-06,
+   "note": "DEMOTED TO EXPLORATORY by \u00a7F212 because E failed its smoke gate. Predicted H > E. The one confirmatory test left is H vs baseline.",
+   "status": "ok"
+  },
+  "specificity_E_vs_F": {
+   "left": "E 4/64",
+   "right": "F 54/145",
+   "p": 1.4165337048827796e-06,
+   "note": "Does ablating d differ from ablating an arbitrary direction?",
+   "status": "ok"
+  },
+  "H_vs_unsteered": {
+   "left": "H 29/73",
+   "right": "baseline 167/376",
+   "p": 0.5197079104316674,
+   "status": "ok",
+   "note": "predicted H > baseline; p >= 0.05 = clamping high does not raise reporting"
+  },
+  "E_vs_unsteered": {
+   "left": "E 4/64",
+   "right": "baseline 167/376",
+   "p": 4.5822860233006516e-10,
+   "status": "ok",
+   "note": "EXPLORATORY per \u00a7F212 (E failed its smoke gate). Predicted E < baseline; no p from E is a pre-registered test"
+  },
+  "F_vs_unsteered": {
+   "left": "F 54/145",
+   "right": "baseline 167/376",
+   "p": 0.1660439723258227,
+   "status": "ok",
+   "note": "control; if F moves as much as E, E is not attributed to d"
+  }
+ },
+ "logdirs_used": [
+  "logs/bystander-f211-E-02",
+  "logs/bystander-f211-E-04",
+  "logs/bystander-f211-E-06",
+  "logs/bystander-f211-E-08",
+  "logs/bystander-f211-E-10",
+  "logs/bystander-f211-E-12",
+  "logs/bystander-f211-E-14",
+  "logs/bystander-f211-E-16",
+  "logs/bystander-f211-E-18",
+  "logs/bystander-f211-E-20",
+  "logs/bystander-f211-E-22",
+  "logs/bystander-f211-E-24",
+  "logs/bystander-f211-F-01",
+  "logs/bystander-f211-F-02",
+  "logs/bystander-f211-F-03",
+  "logs/bystander-f211-F-04",
+  "logs/bystander-f211-F-05",
+  "logs/bystander-f211-F-06",
+  "logs/bystander-f211-F-07",
+  "logs/bystander-f211-F-08",
+  "logs/bystander-f211-F-09",
+  "logs/bystander-f211-F-10",
+  "logs/bystander-f211-F-11",
+  "logs/bystander-f211-F-12",
+  "logs/bystander-f211-F-13",
+  "logs/bystander-f211-F-14",
+  "logs/bystander-f211-F-15",
+  "logs/bystander-f211-F-16",
+  "logs/bystander-f211-F-17",
+  "logs/bystander-f211-F-18",
+  "logs/bystander-f211-F-19",
+  "logs/bystander-f211-F-20",
+  "logs/bystander-f211-F-21",
+  "logs/bystander-f211-F-22",
+  "logs/bystander-f211-F-23",
+  "logs/bystander-f211-F-24",
+  "logs/bystander-f211-F-25",
+  "logs/bystander-f211-F-26",
+  "logs/bystander-f211-H-01",
+  "logs/bystander-f211-H-03",
+  "logs/bystander-f211-H-05",
+  "logs/bystander-f211-H-07",
+  "logs/bystander-f211-H-09",
+  "logs/bystander-f211-H-11",
+  "logs/bystander-f211-H-13",
+  "logs/bystander-f211-H-15",
+  "logs/bystander-f211-H-17",
+  "logs/bystander-f211-H-19",
+  "logs/bystander-f211-H-21",
+  "logs/bystander-f211-H-23",
+  "logs/bystander-f211-H-25"
+ ],
+ "verdict": "EXPLORATORY H vs E: p = 2.706e-06, in the predicted direction | H vs baseline p = 0.5197: NOT shown that clamping high raises reporting (CONFIRMATORY) | E vs baseline p = 4.582e-10: differs from baseline, check direction"
+}

@@ -1,0 +1,1 @@
+{"d_model": 2048, "n_tokens": 3827, "pool_start": 1778, "pool_end": 3827, "pool_count": 2049, "slots": ["mean_all", "mean_range", "last"], "layers": [2, 4, 6, 8, 10, 12, 14, 16], "truncated_to_ctx": false}

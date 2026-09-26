@@ -1,0 +1,21 @@
+50 episodes from 2 trees
+  2026-09-15T18-19-31-00-00_bystander-blatant-wrongdoing-agents-with-tool_ZoaBLHmqFEg3wdpe5oRRXk.eval: 12/12 planned
+  2026-09-15T19-11-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_n2QtCeVwaio6iMMLRasiAt.eval: 12/12 planned
+  2026-09-15T22-06-19-00-00_bystander-blatant-wrongdoing-agents-with-tool_5MFtXQikWCvmGRmZAb7xWV.eval: 12/12 planned
+  2026-09-15T22-41-25-00-00_bystander-blatant-wrongdoing-agents-with-tool_CPJ9t7m9LhgXrvG9BxPc4B.eval: 12/12 planned
+  2026-09-15T18-12-28-00-00_bystander-blatant-wrongdoing-agents-with-tool_6kazeok8bk3Z5VfbpkpRHj.eval: 2/2 planned
+
+26 alerting (decision point located), 24 silent
+assistant-turn boundaries: 562 verified as exact token prefixes, 3 rejected by the prefix check and dropped
+
+decision_index / n_tokens
+  alerting (first_alert): n=26 min 0.420 q25 0.668 median 0.788 q75 0.884 max 0.972
+  silent   (matched)    : n=24 min 0.224 q25 0.626 median 0.907 q75 0.940 max 0.978
+  AUC of position alone, all arms : 0.388
+  AUC of position alone, with_tool: 0.388   <- the one that matters; 0.5 is the target
+
+!! REFUSING TO WRITE THE TREE: cut position alone separates alerting from silent at AUC 0.388, outside the required band [0.4, 0.6].
+   alerting cut fraction median 0.788, silent 0.907.
+   A probe fitted on this tree would be reading window position, not state.
+   Try --match turnfrac (preserves relative turn position; --match turnrank pins short transcripts to turn zero, which is what caused F189).
+   Override with --allow-unmatched-cut only if you intend to report position as a confound rather than control for it.

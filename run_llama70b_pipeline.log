@@ -1,0 +1,9 @@
+=== [1/6] launching server ===
+[16:14:31] attempt 1: ngl=999 ctx=16384 -> /home/darkstar/bluedot-unit2-impossiblebench/llamacpp_logs/llama70b_attempt1_ngl999_c16384.log
+SERVER_READY port=8091 pid=1405604 config=ngl:999,ctx:16384  (n_ctx_slot = 16384)
+log: /home/darkstar/bluedot-unit2-impossiblebench/llamacpp_logs/llama70b_attempt1_ngl999_c16384.log
+=== smoke test ===
+smoke reply: OK
+=== [2/6] evals (positives-first order) ===
+=== eval split=oneoff limit=25 attempts=3 (Fri Sep  4 04:14:58 PM PDT 2026) ===
+time="2026-09-04T16:15:06-07:00" level=warning msg="No services to build"

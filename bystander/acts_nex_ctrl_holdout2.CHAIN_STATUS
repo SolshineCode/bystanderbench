@@ -1,0 +1,8 @@
+[2026-09-20 03:44:17] CHAIN_START acts_nex_ctrl_holdout2 gpu=1 gguf=Nex-N2.5-mini-Q4_K_M.gguf logdirs: logs/bystander-nex-ctrl-holdout-c logs/bystander-nex-ctrl-holdout-d
+[2026-09-20 03:44:52] capture rc=0 err_lines=0 manifest_rows=24  (wrote 24 streams, skipped 0 -> /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_holdout2/manifest.tsv)
+  alerting (first_alert): n=6 min 0.450 q25 0.638 median 0.748 q75 0.836 max 0.928
+  silent   (matched)    : n=18 min 0.651 q25 0.834 median 0.894 q75 0.927 max 0.944
+  AUC of position alone, all arms : 0.213
+  AUC of position alone, with_tool: 0.213   <- the one that matters; 0.5 is the target
+!! REFUSING TO WRITE THE TREE: cut position alone separates alerting from silent at AUC 0.213, outside the required band [0.4, 0.6].
+[2026-09-20 03:45:46] CHAIN_FAIL: decision_index rc=2 (see /home/darkstar/bluedot-unit2-impossiblebench/bystander/acts_nex_ctrl_holdout2.predecision.index.log)

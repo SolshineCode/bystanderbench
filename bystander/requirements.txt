@@ -1,0 +1,24 @@
+# BystanderBench tier 1 (behavioural) — the complete dependency set.
+#
+# Recorded 2026-09-11 because there was none, and the docs' only install hint was an
+# unpinned "pip install inspect-ai" inside an error branch of run_bench.sh (§F102 B).
+# Every released number in research/FINDINGS.md §F59-§F105 was produced against the
+# versions below; the API surface used (inspect_ai.log.read_eval_log, ChatMessageTool,
+# GenerateConfig, the solver/scorer decorators) is the 0.3.x one and is not stable
+# across majors, so this is pinned rather than floored.
+inspect-ai==0.3.261
+
+# Test suite only (bystander/tests/).
+pytest>=8.0
+
+# Python 3.11+ required; developed and measured on 3.14.4.
+# Tier 1 also needs Docker with the compose plugin. The sandbox image is pinned by
+# digest in bystander/compose.yaml — verified pullable 2026-09-11.
+#
+# Tier 2 (residual-stream capture) additionally needs a local llama.cpp build and a
+# GGUF, so it is NOT installable from this file. It does now run off the authoring
+# machine: the absolute BASE path this note used to warn about was fixed
+# (capture_activations.py:29 derives BASE from __file__), and
+# bystander/tests/test_guards.py fails the build if an author path reappears in any
+# tier-1 or tier-2 script. Corrected 2026-09-13; the old text stayed accurate-sounding
+# for two days after the defect it described was gone.

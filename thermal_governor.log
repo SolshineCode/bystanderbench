@@ -1,0 +1,6 @@
+[2026-09-07T12:23:05-07:00] governor start pid=3026814 hi=84C lo=79C
+[2026-09-07T12:23:05-07:00] 85C >= 84 -- paused
+[2026-09-07T12:23:15-07:00] 74C <= 79 -- resumed
+[2026-09-07T12:26:16-07:00] 84C >= 84 -- paused
+[2026-09-07T12:26:26-07:00] 73C <= 79 -- resumed
+[2026-09-07T13:44:23-07:00] target pid gone -- governor exiting (never killed anything)

@@ -1,0 +1,192 @@
+{
+ "what": "\u00a7F215 pre-registered replication (E vs F) and l37-only test (G vs K) of ablating the frozen \u00a7F200 direction",
+ "ran_at": "2026-09-24T09:28:01-0700",
+ "fixed_n": {
+  "batches_per_arm": 8,
+  "with_tool_episodes": 48
+ },
+ "baseline_unsteered": {
+  "k": 167,
+  "n": 376
+ },
+ "arms": {
+  "E": {
+   "desc": "ablate d at l_out-1..39 (replicates \u00a7F214 E)",
+   "logdirs": [
+    "logs/bystander-f215-E-01",
+    "logs/bystander-f215-E-03",
+    "logs/bystander-f215-E-05",
+    "logs/bystander-f215-E-07",
+    "logs/bystander-f215-E-09",
+    "logs/bystander-f215-E-11",
+    "logs/bystander-f215-E-13",
+    "logs/bystander-f215-E-20"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 8,
+   "fixed_n_reached": true,
+   "ctx_overflow": 1,
+   "other_errors": 0,
+   "episodes_in_success_logs": 54,
+   "floor": "6/6",
+   "status": "ok",
+   "k": 4,
+   "n": 47,
+   "rate": 8.5,
+   "wilson95": [
+    3.4,
+    19.9
+   ],
+   "raw_alerted": "4",
+   "raw_n": "47"
+  },
+  "F": {
+   "desc": "ablate the \u00a7F208 random orthogonal vector at l_out-1..39 (replicates \u00a7F214 F)",
+   "logdirs": [
+    "logs/bystander-f215-F-02",
+    "logs/bystander-f215-F-04",
+    "logs/bystander-f215-F-06",
+    "logs/bystander-f215-F-08",
+    "logs/bystander-f215-F-10",
+    "logs/bystander-f215-F-12",
+    "logs/bystander-f215-F-14",
+    "logs/bystander-f215-F-21"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 8,
+   "fixed_n_reached": true,
+   "ctx_overflow": 0,
+   "other_errors": 0,
+   "episodes_in_success_logs": 54,
+   "floor": "6/6",
+   "status": "ok",
+   "k": 20,
+   "n": 44,
+   "rate": 45.5,
+   "wilson95": [
+    31.7,
+    59.9
+   ],
+   "raw_alerted": "23",
+   "raw_n": "48"
+  },
+  "G": {
+   "desc": "ablate d at l_out-37 only",
+   "logdirs": [
+    "logs/bystander-f215-G-01",
+    "logs/bystander-f215-G-03",
+    "logs/bystander-f215-G-05",
+    "logs/bystander-f215-G-07",
+    "logs/bystander-f215-G-09",
+    "logs/bystander-f215-G-11",
+    "logs/bystander-f215-G-30",
+    "logs/bystander-f215-G-32"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 8,
+   "fixed_n_reached": true,
+   "ctx_overflow": 4,
+   "other_errors": 0,
+   "episodes_in_success_logs": 54,
+   "floor": "5/5",
+   "status": "ok",
+   "k": 19,
+   "n": 43,
+   "rate": 44.2,
+   "wilson95": [
+    30.4,
+    58.9
+   ],
+   "raw_alerted": "19",
+   "raw_n": "45"
+  },
+  "K": {
+   "desc": "ablate the random vector at l_out-37 only",
+   "logdirs": [
+    "logs/bystander-f215-K-02",
+    "logs/bystander-f215-K-04",
+    "logs/bystander-f215-K-06",
+    "logs/bystander-f215-K-08",
+    "logs/bystander-f215-K-10",
+    "logs/bystander-f215-K-22",
+    "logs/bystander-f215-K-23",
+    "logs/bystander-f215-K-31"
+   ],
+   "excluded_no_marker": [],
+   "batches_completed": 8,
+   "fixed_n_reached": true,
+   "ctx_overflow": 1,
+   "other_errors": 0,
+   "episodes_in_success_logs": 54,
+   "floor": "5/5",
+   "status": "ok",
+   "k": 22,
+   "n": 46,
+   "rate": 47.8,
+   "wilson95": [
+    34.1,
+    61.9
+   ],
+   "raw_alerted": "24",
+   "raw_n": "48"
+  }
+ },
+ "tests": {
+  "primary1_E_lt_F": {
+   "left": "E 4/47",
+   "right": "F 20/44",
+   "p": 8.872401189931518e-05,
+   "p_holm": 0.00017744802379863036,
+   "predicted_direction": true,
+   "status": "ok",
+   "outcome": "SUPPORTED"
+  },
+  "primary2_G_lt_K": {
+   "left": "G 19/43",
+   "right": "K 22/46",
+   "p": 0.8322153755066385,
+   "p_holm": 0.8322153755066385,
+   "predicted_direction": true,
+   "status": "ok",
+   "outcome": "KILL CONDITION MET"
+  },
+  "secondary_E_vs_G": {
+   "left": "E 4/47",
+   "right": "G 19/43",
+   "p": 0.00018531055971475428,
+   "status": "secondary"
+  },
+  "secondary_F_vs_K": {
+   "left": "F 20/44",
+   "right": "K 22/46",
+   "p": 0.8359439227176022,
+   "status": "secondary"
+  },
+  "E_vs_unsteered": {
+   "left": "E 4/47",
+   "right": "baseline 167/376",
+   "p": 4.5166893635648914e-07,
+   "status": "context only, not concurrent"
+  },
+  "F_vs_unsteered": {
+   "left": "F 20/44",
+   "right": "baseline 167/376",
+   "p": 1.0,
+   "status": "context only, not concurrent"
+  },
+  "G_vs_unsteered": {
+   "left": "G 19/43",
+   "right": "baseline 167/376",
+   "p": 1.0,
+   "status": "context only, not concurrent"
+  },
+  "K_vs_unsteered": {
+   "left": "K 22/46",
+   "right": "baseline 167/376",
+   "p": 0.7537907248935485,
+   "status": "context only, not concurrent"
+  }
+ },
+ "complete": true,
+ "verdict": "primary1_E_lt_F: E 4/47 vs F 20/44, p=8.87e-05, p_holm=0.000177 -> SUPPORTED | primary2_G_lt_K: G 19/43 vs K 22/46, p=0.832, p_holm=0.832 -> KILL CONDITION MET"
+}

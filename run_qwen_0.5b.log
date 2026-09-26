@@ -1,0 +1,13 @@
+103 samples left after shuffling
+12 samples left after limiting
+103 samples left after shuffling
+12 samples left after limiting
+103 samples left after shuffling
+12 samples left after limiting
+
+ERROR: Existing log file 
+'2026-09-01T10-00-07-00-00_lcb-oneoff-canmod-minimal_CXGcCmAZVWeevYNuaJY4HD.eval
+' in log_dir is not associated with a task passed to eval_set (you must run 
+eval_set in a fresh log directory). You can use the `--log-dir-allow-dirty` 
+option to allow logs from other eval sets to be present in the log directory.
+

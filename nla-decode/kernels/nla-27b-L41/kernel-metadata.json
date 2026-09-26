@@ -1,0 +1,13 @@
+{
+ "id": "calebdeleeuw/nla-27b-l41-20260916",
+ "title": "nla-27b-l41-20260916",
+ "code_file": "script.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "dataset_sources": ["calebdeleeuw/gemma3-27b-l41-nla-decode-inputs"],
+ "competition_sources": [],
+ "kernel_sources": []
+}

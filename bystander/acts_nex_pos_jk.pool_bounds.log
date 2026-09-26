@@ -1,0 +1,5 @@
+11 decision points located. cut fraction of episode: min 0.35, median 0.67, max 0.88
+  acts_nex_pos_jk.predecision: 24 streams
+
+24 truncated streams, 11 at a real decision point, 13 at a matched draw
+next: re-run extract_resid over each new manifest, then probe_alert.py pointed at the .predecision dirs

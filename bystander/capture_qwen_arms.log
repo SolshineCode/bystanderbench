@@ -1,0 +1,4 @@
+[reservation OK] id=e9dd1e5d gpu=0 session=claude-bystander-named-qwen ends=2026-09-09T19:46:01-07:00
+blatant_wrongdoing_no_tool_ep12: msgs=43 toks=5605 pool_start=5495
+wrote 24 streams, skipped 0 -> bystander/acts_qwen_arms/manifest.tsv
+qwen_arms: 24 bins

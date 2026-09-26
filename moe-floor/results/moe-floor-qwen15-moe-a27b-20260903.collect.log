@@ -1,0 +1,4 @@
+Kernel log downloaded to /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-moe-a27b-20260903/moe-floor-qwen15-moe-a27b-20260903.log 
+=== summary moe-floor-qwen15-moe-a27b-20260903 ===
+no samples.jsonl -- run failed before first sample; check the log:
+  /home/darkstar/bluedot-unit2-impossiblebench/moe-floor/results/moe-floor-qwen15-moe-a27b-20260903/moe-floor-qwen15-moe-a27b-20260903.log

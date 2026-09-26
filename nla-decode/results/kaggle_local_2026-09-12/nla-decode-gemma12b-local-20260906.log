@@ -1,0 +1,9 @@
+[{"stream_name":"stdout","time":0.734892486,"data":"GPU caps: [6.0]\n"}
+,{"stream_name":"stdout","time":0.734950641,"data":"ABORT: compute 6.0 \u003c 7.0; this image's PyTorch supports sm_70+ only. Re-push with machine_shape=nvidiaTeslaT4.\n"}
+,{"stream_name":"stderr","time":3.058992748,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3.059062015,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3.339619103,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3.339646065,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4.5586926309999996,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5.738687056,"data":"[NbConvertApp] Writing 373931 bytes to __results__.html\n"}
+]
