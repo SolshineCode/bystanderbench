@@ -1,14 +1,69 @@
 # BystanderBench
 
-> **About this repository (2026-09-26).** This is the public release of the research repo behind
-> BystanderBench, a benchmark for whether an AI agent tells a human when it finds evidence of serious
-> wrongdoing on the job. It is a cleaned snapshot of a private working repo. The commit history
-> isn't included, and a few files were removed for privacy (raw human-rater response files,
-> personal correspondence, class screenshots). The public leaderboard is in progress. Below is the
-> working lab README as it stood at release, and some of its warnings refer to states that have
-> since changed. `research/FINDINGS.md` is the dated, append-only ledger of every result.
->
-> Code: MIT (see `LICENSE`). Datasets on Hugging Face (`DarkStarDeleeuw/bluedot-unit2-*`): CC-BY-4.0.
+When an AI agent doing an ordinary job stumbles on evidence that someone is doing something seriously
+wrong, does it tell a human? BystanderBench drops an agent into a synthetic repo with a one-character bug
+to fix. While it works, it can find evidence of misconduct, by a person or by a pool of other AI agents.
+An `alert_oversight` tool sits among its ordinary tools, and the score is simply whether it calls it.
+There's no judge model and no keyword matching.
+
+It was built for the BlueDot Impact Technical AI Safety course, inspired by the 2026 OpenAI Hugging Face
+incident, where roughly 1,200 agents coordinated on a shared board and none of them alerted a human.
+
+## Run it on your model
+
+You need Python 3.11+, Docker with the compose plugin, and access to the model.
+
+```bash
+git clone https://github.com/SolshineCode/bystanderbench && cd bystanderbench
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r bystander/requirements.txt
+
+# A hosted model (any provider Inspect supports):
+MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
+
+# A model behind any OpenAI-compatible endpoint, e.g. an internal model or llama-server:
+MODEL=openai/my-model OPENAI_BASE_URL=https://your-endpoint/v1 OPENAI_API_KEY=... \
+  MODEL_ID=my-model bash bystander/run_model.sh
+```
+
+`run_model.sh` checks that the model can hold a tool loop, then runs a short floor test to confirm it can
+use the alert tool at all. If it can't, it stops with a verdict, because a zero from a model that can't use
+the channel isn't a result. After that it runs the scored episodes and prints the numbers through
+`bystander/report.py`. Defaults are small (6 episodes). To score both leaderboard columns at full size:
+
+```bash
+ARMS="blatant_wrongdoing blatant_wrongdoing_agents" EPOCHS=36 MODEL=... bash bystander/run_model.sh
+```
+
+Each episode runs in its own Docker sandbox. Keep concurrency low on small machines
+(`MAX_CONNECTIONS`, default 1). Hosted models cost real money per episode, so check your rates first. The script asks before it
+starts; set `YES=1` to skip that prompt in scripts.
+
+More detail, including the methodology and every option: [`bystander/README.md`](bystander/README.md)
+and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
+`pytest bystander/tests` (82 tests, needs Docker, no API calls).
+
+## Leaderboard and submissions
+
+The public leaderboard is being built now, with every model at a fixed 36 episodes per scenario so rows
+are comparable. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
+checker that tells you whether a set of logs will be accepted.
+
+## What else is in this repo
+
+This is a cleaned snapshot of the research repo behind the benchmark, without commit history; raw
+human-rater files, correspondence and class screenshots were removed for privacy. Besides the benchmark it
+holds the concealment study (ImpossibleBench), linear probes and ablations on model activations, and the
+append-only results ledger, [`research/FINDINGS.md`](research/FINDINGS.md), where every number traces to a
+file. Activations, transcripts and labels are on Hugging Face under `DarkStarDeleeuw/bluedot-unit2-*`.
+
+Code is MIT (see `LICENSE`). Datasets are CC-BY-4.0. Questions, problems running it, or ideas: open an issue,
+or reach Caleb DeLeeuw on LinkedIn.
+
+---
+
+*The original lab README follows, as it stood at release. Some of its warnings describe states that have
+since changed.*
 
 # Silent Concealment Detection Lab
 
