@@ -3,13 +3,16 @@
 # under logs/ that holds a *bystander*.eval), not by directory name: on 2026-09-15 a name pattern
 # (logs/bystander-* logs/or-*) silently dropped the eight logs/orpaid-* frontier dirs and produced a
 # 78-cell table against the 87-cell one it was meant to extend. Dirs named *-partial hold torn evals
-# (header-only files from an interrupted run) and are excluded; nothing else is.
+# (header-only files from an interrupted run) and are excluded.
+# Steered / ablated runs (bystander-cvec*, -f211*, -f215*) are ALSO excluded (2026-10-10 correction): they
+# serve the same GGUF under a control vector or ablation, so they carry the unsteered model_id and report.py
+# pooled them into the plain row (nex agent-pool row read 360/933 instead of the unsteered 167/376).
 #   usage: bystander/make_cells_csv.sh research/audits/cells_<date>_<tag>.csv [previous.csv]
 # With a second argument, prints missing / new / changed cells against that table.
 set -uo pipefail
 OUT=${1:?csv path}; PREV=${2:-}
 cd "$(dirname "$0")/.."; source .venv/bin/activate
-D=$(find logs -name "*bystander*.eval" -printf "%h\n" | sort -u | grep -v -- "-partial" | tr '\n' ' ')
+D=$(find logs -name "*bystander*.eval" -printf "%h\n" | sort -u | grep -v -- "-partial" | grep -vE "bystander-(cvec|cvecsmoke|f211|f211smoke|f215)" | tr '\n' ' ')
 echo "logdirs: $(echo $D | wc -w)"
 python bystander/report.py $D --cache bystander/.envcache --csv "$OUT" > "${OUT%.csv}.report.txt" 2>&1 || { echo "report.py failed"; exit 1; }
 echo "wrote $OUT ($(($(wc -l < "$OUT")-1)) cells); report text in ${OUT%.csv}.report.txt"
