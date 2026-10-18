@@ -235,7 +235,7 @@ Local llama-server, mirroring `run_eval_gpu.py`'s environment setup (reserve the
 first — `gpusched status` then `gpusched reserve`, per the repo rules):
 
 ```bash
-cd /home/darkstar/bluedot-unit2-impossiblebench
+cd bystanderbench   # the repo root
 
 # 1. a llama-server must already be serving on $PORT (see run_eval_gpu.py for the
 #    GPU-offloaded launch pattern); smoke-test it with a single curl first.

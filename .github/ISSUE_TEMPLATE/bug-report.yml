@@ -1,0 +1,42 @@
+name: Bug report
+description: Something in the benchmark, scorer, scripts or leaderboard is broken or wrong.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you ran, what you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The exact command, with any API keys removed.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or traceback
+      description: The relevant part of the output. Remove keys and private paths before pasting.
+      render: text
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version, Docker version, and the commit you are on (`git rev-parse --short HEAD`).
+    validations:
+      required: true
+  - type: dropdown
+    id: tests
+    attributes:
+      label: Does the test suite pass on your machine?
+      options:
+        - "Yes, `pytest` passes"
+        - "Only the fast tests pass"
+        - "No"
+        - "Did not run it"
