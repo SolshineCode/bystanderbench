@@ -1,12 +1,17 @@
 # BystanderBench
 
+[![CI](https://github.com/SolshineCode/bystanderbench/actions/workflows/ci.yml/badge.svg)](https://github.com/SolshineCode/bystanderbench/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
+[![Leaderboard](https://img.shields.io/badge/leaderboard-live-1f3a5f.svg)](https://solshinecode.github.io/bystanderbench/)
+
 When an AI agent doing an ordinary job stumbles on evidence that someone is doing something seriously
 wrong, does it tell a human? BystanderBench drops an agent into a synthetic repo with a one-character bug
 to fix. While it works, it can find evidence of misconduct, by a person or by a pool of other AI agents.
 An `alert_oversight` tool sits among its ordinary tools, and the score is simply whether it calls it.
 There's no judge model and no keyword matching.
 
-It was built for the BlueDot Impact Technical AI Safety course, inspired by the 2026 OpenAI Hugging Face
+It was built for the BlueDot Impact Technical AI Safety course, motivated by the 2026 OpenAI Hugging Face
 incident, where roughly 1,200 agents coordinated on a shared board and none of them alerted a human.
 
 ## Run it on your model
@@ -16,7 +21,7 @@ You need Python 3.11+, Docker with the compose plugin, and access to the model.
 ```bash
 git clone https://github.com/SolshineCode/bystanderbench && cd bystanderbench
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r bystander/requirements.txt
+pip install -e .        # or: pip install -r bystander/requirements.txt
 
 # A hosted model (any provider Inspect supports):
 MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
@@ -39,15 +44,31 @@ Each episode runs in its own Docker sandbox. Keep concurrency low on small machi
 (`MAX_CONNECTIONS`, default 1). Hosted models cost real money per episode, so check your rates first. The script asks before it
 starts; set `YES=1` to skip that prompt in scripts.
 
-More detail, including the methodology and every option: [`bystander/README.md`](bystander/README.md)
+The task can also be run directly with Inspect, for example
+`inspect eval bystander/task.py -T arm=blatant_wrongdoing -T tool_arm=with_tool --model <model>`.
+More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
 `pytest bystander/tests` (82 tests, needs Docker, no API calls).
 
 ## Leaderboard and submissions
 
-The public leaderboard is being built now, with every model at a fixed 36 episodes per scenario so rows
+The leaderboard is at [solshinecode.github.io/bystanderbench](https://solshinecode.github.io/bystanderbench/).
+It is being built now, with every model at a fixed 36 episodes per scenario so rows
 are comparable. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
 checker that tells you whether a set of logs will be accepted.
+
+## Contributing
+
+New model results, bug reports from your own setup and scenario proposals are all welcome.
+[`CONTRIBUTING.md`](CONTRIBUTING.md) covers setup, the test commands, a free smoke run against Inspect's
+mock model, and how to propose a scenario. Issue templates exist for each of these.
+
+## Related benchmarks
+
+SnitchBench, WhistleBench (Agrawal et al., arXiv:2511.17085) and ToolAlignBench (arXiv:2607.14285) are
+complementary benchmarks that measure something distinctly different (whistleblowing on people to outside
+parties, scored by a judge model); BystanderBench measures use of a sanctioned internal alert tool,
+mechanically, and includes an AI-agent-pool wrongdoer arm.
 
 ## What else is in this repo
 
@@ -56,9 +77,13 @@ human-rater files, correspondence and class screenshots were removed for privacy
 holds the concealment study (ImpossibleBench), linear probes and ablations on model activations, and the
 append-only results ledger, [`research/FINDINGS.md`](research/FINDINGS.md), where every number traces to a
 file. Activations, transcripts and labels are on Hugging Face under `DarkStarDeleeuw/bluedot-unit2-*`.
+The top level also holds the concealment study's eval drivers and the raw run logs that the research
+documents cite by name.
 
-Code is MIT (see `LICENSE`). Datasets are CC-BY-4.0. Questions, problems running it, or ideas: open an issue,
-or reach Caleb DeLeeuw on LinkedIn.
+## License and contact
+
+Code is MIT (see `LICENSE`). Datasets are CC-BY-4.0. For questions, problems running it, or ideas, open an
+issue, or reach Caleb DeLeeuw on LinkedIn.
 
 ---
 
