@@ -37,8 +37,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[test]"
 
-      - name: Task resolves
+      - name: Task resolves by path
         run: inspect list tasks bystander/task.py
+
+      - name: Task resolves by registry name, outside the repo
+        # Builds the Task object only. No sandbox, no model.
+        run: |
+          cd "$RUNNER_TEMP"
+          python -I -c "
+          from inspect_ai._eval.loader import load_tasks
+          ts = load_tasks(['bystanderbench/bystander'], task_args={'arm': 'blatant_wrongdoing', 'tool_arm': 'with_tool'})
+          assert len(ts) == 1, f'bystanderbench/bystander resolved to {len(ts)} tasks'
+          print('bystanderbench/bystander ->', ts[0].name)
+          "
 
       - name: Fast tests (no Docker, no API calls)
         run: pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py -q

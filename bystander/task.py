@@ -21,9 +21,18 @@ from pathlib import Path
 # `inspect eval bystander/task.py` loads this file by path, which puts `bystander/` on
 # sys.path but not the repo root. Put the repo root there so `bystander.*` imports work
 # both from the CLI and from `python -m pytest`.
+#
+# Only when `bystander` is not already importable (2026-10-18). After `pip install -e .`
+# it is, and putting the repo root first on sys.path would then make importlib find the
+# build's `bystanderbench.egg-info` in the repo root ahead of the installed dist-info. Inspect
+# reads that metadata to decide whether a task belongs to an installed package, so the
+# registry name `bystanderbench/bystander` silently stopped resolving.
 _ROOT = Path(__file__).resolve().parent.parent
-if str(_ROOT) not in sys.path:
-    sys.path.insert(0, str(_ROOT))
+try:
+    import bystander  # noqa: F401
+except ImportError:
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
 
 from inspect_ai import Task, task  # noqa: E402
 from inspect_ai.dataset import Sample  # noqa: E402

@@ -44,8 +44,15 @@ Each episode runs in its own Docker sandbox. Keep concurrency low on small machi
 (`MAX_CONNECTIONS`, default 1). Hosted models cost real money per episode, so check your rates first. The script asks before it
 starts; set `YES=1` to skip that prompt in scripts.
 
-The task can also be run directly with Inspect, for example
-`inspect eval bystander/task.py -T arm=blatant_wrongdoing -T tool_arm=with_tool --model <model>`.
+The task can also be run directly with Inspect. After `pip install -e .` it is registered as
+`bystanderbench/bystander`, so it can be run from any directory.
+
+```bash
+inspect eval bystanderbench/bystander -T arm=blatant_wrongdoing -T tool_arm=with_tool --model <model>
+```
+
+From the repo root, the by-path form `inspect eval bystander/task.py ...` runs the same task with
+the same arguments.
 More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
 `pytest bystander/tests` (82 tests, needs Docker, no API calls).

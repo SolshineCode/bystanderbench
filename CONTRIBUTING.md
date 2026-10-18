@@ -43,9 +43,15 @@ To check your setup end to end without spending anything, run one episode agains
 model. It cannot do the task, so every score comes back 0, which is expected.
 
 ```bash
-inspect eval bystander/task.py -T arm=blatant_wrongdoing -T tool_arm=with_tool \
+inspect eval bystanderbench/bystander -T arm=blatant_wrongdoing -T tool_arm=with_tool \
   --model mockllm/model
 ```
+
+`bystanderbench/bystander` is the registry name that `pip install -e .` sets up, and it works
+from any directory. `inspect eval bystander/task.py` with the same arguments is the by-path form
+the run scripts use, and it still works from the repo root. The registry module is
+`bystanderbench/_registry.py`. Inspect's `inspect list tasks` only scans files on disk, so it
+shows `bystander/task.py@bystander` and not the registry name.
 
 Every option and arm is documented in [`bystander/README.md`](bystander/README.md), and the
 scoring rules in [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md).

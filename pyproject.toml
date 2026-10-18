@@ -34,10 +34,16 @@ Homepage = "https://github.com/SolshineCode/bystanderbench"
 Leaderboard = "https://solshinecode.github.io/bystanderbench/"
 Issues = "https://github.com/SolshineCode/bystanderbench/issues"
 
+# Lets Inspect find the task by name after install: `inspect eval bystanderbench/bystander`.
+# Inspect loads every module in the `inspect_ai` group and namespaces tasks by the top-level
+# package that defines them, which is why the registry lives in `bystanderbench/`.
+[project.entry-points.inspect_ai]
+bystanderbench = "bystanderbench._registry"
+
 [tool.setuptools]
 # The repo root also holds research directories that are not Python packages, so the
 # package list is explicit rather than auto-discovered.
-packages = ["bystander", "bystander.env"]
+packages = ["bystander", "bystander.env", "bystanderbench"]
 
 [tool.setuptools.package-data]
 bystander = ["compose.yaml"]
