@@ -78,14 +78,17 @@ just the map.
   `linkedin-os-notepad` repo (career-ops workspace, kept separate, see below).
 - `messages/` — grant-related communication logs (BlueDot scope-change heads-up, grant
   update email). Job-application/interview correspondence is NOT here, see below.
-- `stray-eval-logs-2026-09-03/` — a handful of partial `.eval`/`logs.json` files that
-  ended up in the wrong repo (`linkedin-os-notepad`) at some point, likely from a
+- `stray-eval-logs-2026-09-03/` (removed from the public repo on 2026-10-17; byte-identical
+  copies are kept in the maintainer's private provenance archive) — a handful of partial
+  `.eval`/`logs.json` files that ended up in the wrong repo (`linkedin-os-notepad`) at some point, likely from a
   mis-`cd`'d eval invocation. Kept as-found rather than reconciled against whatever the
   live run's actual current log state is, since the runs that produced them
   (`qwen3.5-27b-run3`, `qwen3.6-concealment`) may still be in progress. Treat as
   possibly-stale partial snapshots, not the authoritative record.
 - `run_*.log`, `llamacpp_logs/` — raw run output kept in git (small, real evidence of
-  what actually happened on each run).
+  what actually happened on each run). On 2026-10-17 the root logs that no document cites
+  were removed from the public repo, with byte-identical copies kept in the maintainer's
+  private provenance archive. The cited ones are still at the root.
 
 ## NOT in this repo, intentionally (see `.gitignore`)
 
@@ -96,7 +99,7 @@ just the map.
   exactly one home, not two copies that can drift.
 - `logs/`, `*.eval`, `**/acts/*.bin` — raw eval transcripts and activation tensors.
   Published runs: on Hugging Face (below). Unpublished/in-progress runs: local-only on
-  this machine (`darkstar`, `/home/darkstar/bluedot-unit2-impossiblebench/`), not backed
+  this machine (`darkstar`, the maintainer's private working copy), not backed
   up anywhere else yet. If a run's data needs to survive independent of this specific
   machine, it needs to actually get published, not just committed here.
 
