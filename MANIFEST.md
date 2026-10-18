@@ -74,13 +74,13 @@ just the map.
   (`build_charts.py` + `out/` PNGs + `verification_table.csv`); registry-driven,
   Wilson CIs + N on every rate bar, pending sources auto-join on re-run. See its
   README for the audited-only data discipline and the agy review provenance.
-- `research/` — every research doc, moved here 2026-09-03 from the private
-  `linkedin-os-notepad` repo (career-ops workspace, kept separate, see below).
+- `research/` — every research doc, moved here 2026-09-03 from a separate private repo
+  (kept separate, see below).
 - `messages/` — grant-related communication logs (BlueDot scope-change heads-up, grant
   update email). Job-application/interview correspondence is NOT here, see below.
 - `stray-eval-logs-2026-09-03/` (removed from the public repo on 2026-10-17; byte-identical
   copies are kept in the maintainer's private provenance archive) — a handful of partial
-  `.eval`/`logs.json` files that ended up in the wrong repo (`linkedin-os-notepad`) at some point, likely from a
+  `.eval`/`logs.json` files that ended up in a different, private repo at some point, likely from a
   mis-`cd`'d eval invocation. Kept as-found rather than reconciled against whatever the
   live run's actual current log state is, since the runs that produced them
   (`qwen3.5-27b-run3`, `qwen3.6-concealment`) may still be in progress. Treat as
@@ -190,11 +190,11 @@ just the map.
 ## External, not in any repo
 
 - **Course research log**: Google Doc "Research Log BlueDot Technical AI Safety" — short
-  dated log entries, course-facing. Ask Caleb for the link, or find it via Google Drive
-  search under the `caleb.deleeuw@gmail.com` account (a second Google account on this
-  machine, a second Google account, also has read access but has a storage-full warning
-  that blocks edits, always confirm the account before editing, see the doc's own edit
-  history for the wrong-account traps hit and fixed on 2026-08-29 and 2026-08-31).
+  dated log entries, course-facing. Ask Caleb for the link. It lives in the maintainer's
+  own Google Drive. A second Google account on the maintainer's machine also has read
+  access but has a storage-full warning that blocks edits, so always confirm the account
+  before editing. The doc's own edit history shows the wrong-account traps hit and fixed
+  on 2026-08-29 and 2026-08-31.
   **Standing rule as of 2026-09-04: do not add entries here proactively.** Caleb wants
   this doc kept clean, only updated when he explicitly asks for an entry. Detailed notes
   go in this repo's `research/` docs instead, always.

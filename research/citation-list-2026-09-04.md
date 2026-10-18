@@ -218,8 +218,8 @@ stated open problem, design its eventual human spot-check around confabulation d
 (verify each claim against actual input context) rather than porting SAE-style topical-relevance
 rating, a different failure mode than the one NLA's own authors flag as dominant. Full writeup
 of the NLA-specific connection and a concrete labeler packet proposal:
-`research/nla-bluedot-labeler-cross-pollination-2026-09-04.md` in the private linkedin-os-notepad
-repo (cross-project memo, not duplicated here).
+`research/nla-bluedot-labeler-cross-pollination-2026-09-04.md` in a separate private repo
+(cross-project memo, not duplicated here).
 
 **Added 2026-09-06, from an MLST interview with Tom McGrath (Goodfire's Chief Scientist),
 verified before inclusion — directly relevant to tonight's OLMo-3 SAE decode workstream:**

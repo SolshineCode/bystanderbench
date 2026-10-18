@@ -7,7 +7,7 @@ license: unlicense
 Private provenance archive for a BlueDot Technical AI Safety Project session run on a
 local T7610 (dual Tesla M40 24GB, no cloud compute). Full narrative in
 `bluedot-unit2-impossiblebench-2026-09-01.md` and `bluedot-unit2-incident-eval-gap-analysis-2026-09-01.md`
-(mirrors of the session's entries in the private `linkedin-os-notepad` repo).
+(mirrors of the session's entries in a separate private repo).
 
 ## Bottom line
 

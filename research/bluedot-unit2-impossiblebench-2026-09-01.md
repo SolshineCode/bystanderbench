@@ -201,7 +201,7 @@ probe, not just more behavioral corroboration.
 
 After GPUs resumed, hit a real cwd bug (a `run_eval_gpu.py` launch without the usual `cd` into
 `repo/` wrote its logs relative to whatever directory the shell happened to be in, landing in
-`linkedin-os-notepad/logs/` instead — untracked, never committed, no harm to the notepad repo,
+the `logs/` directory of a separate private repo instead — untracked, never committed, no harm to that repo,
 but confusing until traced). Also corrected an earlier misreport: a "qwen3.6, 0.000 accuracy,
 n=2" reading turned out to be spurious (Fable 5 found both underlying `.eval` samples had zero
 assistant messages and a `CancelledError` from a shutdown mid-run) — that result is void, treated
