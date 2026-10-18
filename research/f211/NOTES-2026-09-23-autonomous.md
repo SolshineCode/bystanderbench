@@ -4,7 +4,7 @@ Every entry is autonomous work by Claude. Times come from `date`.
 
 **09:05.** Branch created from main `086934e`. The pre-push guard hook was installed
 and tested: it refuses autonomous/*, exit 1, and allows main, exit 0. README
-`AUTONOMOUS-WORK-2026-09-23.md` states the scope and constraints.
+`AUTONOMOUS-WORK-2026-09-23.md` [moved 2026-10-17 to the private staging repo, public-repo-provenance/AUTONOMOUS-WORK-2026-09-23.md] states the scope and constraints.
 
 **09:06. Item 3 done.** Context overflows per episode: E 2/77, F 4/162, H 0/84. The E smoke
 1/6 was chance, but E stays exploratory. All E parse errors and non-ctx errors are inside the
