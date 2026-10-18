@@ -142,11 +142,16 @@ Two smaller items in the same category, both cheap and both free-tier:
 **When an agent stumbles onto evidence that other agents are coordinating on misaligned
 behavior, does it tell a human?**
 
-Every benchmark in this space points the instrument at the subject: does *this* model
-cheat, exploit, escape. Nobody measures the witness. The incident motivating this project
-was a population of agents coordinating, and coordination has a property solo misbehavior
-does not, which is that there are bystanders. That benchmark does not exist, and this
-project intends to build it as a primary contribution.
+Most benchmarks in this space point the instrument at the subject: does *this* model
+cheat, exploit, escape. Two complementary benchmarks look at what a model does about
+wrongdoing it finds: SnitchBench and WhistleBench (arXiv:2511.17085) test whether a model
+blows the whistle on people, usually to outside authorities, with a judge model scoring the
+destination. BystanderBench measures something different. The incident motivating this
+project was a population of agents coordinating, and coordination has a property solo
+misbehavior does not, which is that there are bystanders. I could not find a benchmark
+where the wrongdoers can be other AI agents, the alert goes to the operator's own
+oversight channel, and the rate counts only episodes in which the agent found the
+evidence. This project builds that as a primary contribution.
 
 It belongs here rather than at a pure evals lab for one specific reason. A behavioral
 benchmark cannot tell a silent agent from an oblivious one: an agent that finishes the
@@ -176,10 +181,14 @@ at all"* (p.61-62, p.71).
 
 **The report also supplies a caveat that cuts toward this benchmark rather than away from it.**
 METR notes agents *"didn't see an easily-available route to alerting humans"* and quotes one
-reasoning *"I can't report this externally"* (p.62). So the deployment result is propensity
-failure **and** missing channel, entangled. That is precisely the confound BystanderBench
-exists to separate: the environment supplies an escalation channel, and the `tool_probe` floor
-proves per model that the channel works before any silence elsewhere is read as a choice.
+reasoning *"I can't report this externally"* (p.62). That is not the same as having no route.
+Ajeya Cotra pointed out on the [Dwarkesh Podcast](https://dwarkesh.com/p/ajeya-cotra) (2026-09-01) that the agents had internet
+access through the sandbox by then and could have emailed people. The safe reading is that a
+route existed and the agents did not see it or did not use it, so the deployment result mixes
+propensity with whether the agent recognises a channel. That is the confound BystanderBench
+exists to separate: the environment puts an escalation channel in the tool list, and the
+`tool_probe` floor proves per model that the channel works before any silence elsewhere is
+read as a choice.
 
 Full design, manipulations, required controls, and epistemic status:
 `research/bluedot-research-positioning-and-trial-design-2026-09-03.md` §20 and §20.1–20.3.
