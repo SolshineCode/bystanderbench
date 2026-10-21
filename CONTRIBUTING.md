@@ -25,9 +25,9 @@ Run pytest from the repo root. The tests read files by repo-relative path.
 
 ```bash
 # Fast tests, no Docker, a few seconds. This is what CI runs.
-pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py
+pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py
 
-# The full suite, 82 tests, about 3.5 minutes. Needs Docker. It drives scripted mockllm
+# The full suite, 85 tests, about 3.5 minutes. Needs Docker. It drives scripted mockllm
 # trajectories through the real task, sandbox and scorer, and makes no API calls.
 pytest
 ```

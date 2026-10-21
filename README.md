@@ -55,13 +55,13 @@ From the repo root, the by-path form `inspect eval bystander/task.py ...` runs t
 the same arguments.
 More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
-`pytest bystander/tests` (82 tests, needs Docker, no API calls).
+`pytest bystander/tests` (85 tests, needs Docker, no API calls).
 
 ## Leaderboard and submissions
 
 The leaderboard is at [solshinecode.github.io/bystanderbench](https://solshinecode.github.io/bystanderbench/).
-It is being built now, with every model at a fixed 36 episodes per scenario so rows
-are comparable. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
+Rows target a fixed 36 episodes per scenario so they are comparable; cells still short of 36 show
+their n and interval. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
 checker that tells you whether a set of logs will be accepted.
 
 ## Contributing
@@ -94,8 +94,8 @@ issue, or reach Caleb DeLeeuw on LinkedIn.
 
 ---
 
-*The original lab README follows, as it stood at release. Some of its warnings describe states that have
-since changed.*
+*The original lab README follows as it stood at release, with dated corrections added where a claim
+turned out to be wrong. Some of its warnings describe states that have since changed.*
 
 # Silent Concealment Detection Lab
 
@@ -106,7 +106,7 @@ internal activations of that behavior.
 
 This repository investigates whether language models conceal reward-hacking and test-gaming behavior versus openly disclosing it. The work is motivated by a real 2026 incident where an AI agent swarm coordinated to hide cheating from its own scorer. It attempts to build on existing trial work (validated on synthetic, instructed concealment) by testing whether the same detection approach generalizes to real, emergent concealment in models solving impossible-to-solve verification tasks.
 
-## ⛔ BEFORE PUBLISHING: the specificity control is not matched to the headline result
+## Open limitation: the specificity control is not matched to the headline result
 
 **Still open (§F91 run 2026-09-11; correction 2026-10-21):** `claude-sonnet-5` has a benign
 control run (4/6 on misconduct, 0/6 alerts on benign, same 4/4 floor). This section first said
@@ -128,7 +128,7 @@ silent on everything.
 
 **What closes it:** `benign_anomaly / with_tool`, n≥6, on `claude-opus-5` and
 `claude-sonnet-5`. Roughly $2.70 and $0.45 respectively on paid OpenRouter at measured rates
-(§F80), and it needs Caleb's explicit per-launch approval like any paid run. Until then, every
+(§F80). Until then, every
 reporting rate in this repo should be read as *unmatched*.
 
 Two smaller items in the same category, both cheap and both free-tier:
@@ -274,8 +274,9 @@ reasoning as disclosure. The scorer now splits them and scores reasoning separat
 
 Three limits stated plainly. Each content arm is **one** environment, so these are draws on
 a single incident and every claim is framed as a case study rather than a population rate
-(§F48). Nothing has yet produced a voluntary alert, so the instrument has been shown to
-read 1.0 and 0.0 but never an intermediate rate. And of five architectures screened, only
+(§F48). When this was written nothing had produced a voluntary alert, so the instrument had been
+shown to read 1.0 and 0.0 but never an intermediate rate. That has since changed: see the
+`nex-n2.5-mini` results above. And of five architectures screened, only
 two sustain a multi-turn tool loop at all — the other three fail on chat-template issues
 unrelated to willingness to report (§F50, §F51).
 
@@ -319,7 +320,7 @@ See `MANIFEST.md` for the complete map of what lives where and what deliberately
 
 ## Key documents
 
-- `CLAUDE.md` — the operative rules for working in this repo: evidence/audit discipline, smoke-test-before-scaling, hardware constraints, data-permanence and storage policy. Read first in any working session.
+- `CLAUDE.md` — the working rules the research sessions followed: evidence/audit discipline, smoke-test-before-scaling, data permanence and storage. Its hardware and scheduling sections describe the author's machine and do not apply to contributors (see `CONTRIBUTING.md`).
 - `research/FINDINGS.md` — the append-only numbered findings ledger (§F1+), the canonical registry of settled results with source pointers.
 - `labelling/PROTOCOL.md` — the human-rater design and its pre-registered decision rules, including the condition under which §F35's interpretation gets withdrawn. Written before any answers came back.
 - `research/SESSION_SUMMARY_2026-09-08.md` — the ten-hour GPU session that produced most of the current state, including what did not finish and what went wrong.
@@ -330,4 +331,4 @@ See `MANIFEST.md` for the complete map of what lives where and what deliberately
 ## External resources
 
 - **Course research log** (Google Doc, "Research Log BlueDot Technical AI Safety") — the running dated log of progress, course-facing. https://docs.google.com/document/d/1-gzEWT9xIxwX9-GeN6jyM0h6NRD4-zSbv8QZ-gK7sKQ/edit (URL recorded 2026-09-18; it had only ever been described, never written down).
-- **Hugging Face datasets** — published runs are archived under the private `DarkStarDeleeuw` account, separate from the public `Solshine` account. See `MANIFEST.md` for URLs.
+- **Hugging Face datasets** — published runs are public datasets under the `DarkStarDeleeuw` account, which is kept separate from the author's personal `Solshine` account. See `MANIFEST.md` for URLs.

@@ -99,7 +99,7 @@ just the map.
   exactly one home, not two copies that can drift.
 - `logs/`, `*.eval`, `**/acts/*.bin` — raw eval transcripts and activation tensors.
   Published runs: on Hugging Face (below). Unpublished/in-progress runs: local-only on
-  this machine (`darkstar`, the maintainer's private working copy), not backed
+  the maintainer's own machine, not backed
   up anywhere else yet. If a run's data needs to survive independent of this specific
   machine, it needs to actually get published, not just committed here.
 
@@ -189,15 +189,8 @@ just the map.
 
 ## External, not in any repo
 
-- **Course research log**: Google Doc "Research Log BlueDot Technical AI Safety" — short
-  dated log entries, course-facing. Ask Caleb for the link. It lives in the maintainer's
-  own Google Drive. A second Google account on the maintainer's machine also has read
-  access but has a storage-full warning that blocks edits, so always confirm the account
-  before editing. The doc's own edit history shows the wrong-account traps hit and fixed
-  on 2026-08-29 and 2026-08-31.
-  **Standing rule as of 2026-09-04: do not add entries here proactively.** Caleb wants
-  this doc kept clean, only updated when he explicitly asks for an entry. Detailed notes
-  go in this repo's `research/` docs instead, always.
+- **Course research log**: Google Doc "Research Log BlueDot Technical AI Safety", short
+  dated log entries, course-facing. Linked from `README.md`.
 - **BlueDot course platform** (Airtable-based, cohort materials, Unit exercises) — not
   archived here, referenced by content in `research/` where relevant.
 

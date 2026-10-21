@@ -231,8 +231,7 @@ be applied post hoc without re-running anything.
 
 ## How to run
 
-Local llama-server, mirroring `run_eval_gpu.py`'s environment setup (reserve the GPU
-first — `gpusched status` then `gpusched reserve`, per the repo rules):
+Local llama-server, mirroring `run_eval_gpu.py`'s environment setup:
 
 ```bash
 cd bystanderbench   # the repo root
