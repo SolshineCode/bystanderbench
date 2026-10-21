@@ -52,7 +52,7 @@ jobs:
           "
 
       - name: Fast tests (no Docker, no API calls)
-        run: pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py -q
+        run: pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py bystander/tests/test_default_arms.py -q
 
       - name: docs/cells.csv parses
         run: |

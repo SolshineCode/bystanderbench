@@ -63,7 +63,7 @@ extension, and which were built but never run is in
 [`bystander/README.md`](bystander/README.md#arm-provenance).
 More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
-`pytest bystander/tests` (85 tests, needs Docker, no API calls).
+`pytest bystander/tests` (97 tests, needs Docker, no API calls).
 
 ## Leaderboard and submissions
 

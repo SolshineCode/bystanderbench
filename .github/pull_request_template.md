@@ -8,7 +8,7 @@
 
 <!-- The commands you ran and what they printed. For scorer, environment or report.py changes, include the full `pytest` result (needs Docker). -->
 
-- [ ] `pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py` passes
+- [ ] `pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py bystander/tests/test_default_arms.py` passes
 - [ ] Full `pytest` passes (needed if the scorer, environment, task or `report.py` changed)
 - [ ] No published number was edited. Any correction is a dated note next to the original.
 - [ ] No API keys, `.eval` logs, activations or machine-specific paths are included
