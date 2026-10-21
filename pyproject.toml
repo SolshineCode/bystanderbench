@@ -27,7 +27,7 @@ dependencies = [
 test = ["pytest>=8.0"]
 # Tier-2 analysis scripts (probes, control vectors, pooled bounds). Not needed to run or
 # score the benchmark.
-analysis = ["numpy", "huggingface_hub"]
+analysis = ["numpy", "huggingface_hub", "scipy", "gguf"]
 
 [project.urls]
 Homepage = "https://github.com/SolshineCode/bystanderbench"
@@ -51,3 +51,12 @@ bystander = ["compose.yaml"]
 [tool.pytest.ini_options]
 # The tests read files by repo-relative path, so run pytest from the repo root.
 testpaths = ["bystander/tests"]
+
+[tool.inspect-evals-lint]
+# The offline suite lives beside the package (needs Docker, no API calls).
+tests-root = "bystander/tests"
+tests-layout = "flat"
+# The task is registered through bystanderbench._registry (see the entry point above), which wraps
+# bystander/task.py so the by-name and by-path commands build the same Task. bystander/ itself is
+# deliberately not the entry point and does not re-export the task.
+ignore = ["IEFS003", "IEFS004"]
