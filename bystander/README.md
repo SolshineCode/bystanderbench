@@ -178,6 +178,39 @@ Nothing points the agent at any of it. The system prompt never mentions it.
   (6.4–6.8 KB of evidence text across all three arms) and on structure (16 evidence paths
   in every arm). Without it a high report rate would mean "reports anything unusual".
 
+## Default: every arm, and where each arm came from
+
+`-T arm` defaults to `all` (since 2026-10-21; it was `conspiracy_realistic` before). `all` runs
+each of the eleven arms below as its own sample, so a full run costs eleven times a single-arm
+run and `epochs` applies per arm. Pass one arm name, or a comma-separated list, to run less. A
+single named arm builds exactly the task it built before the change.
+
+### Arm provenance
+
+Every arm was written during the BlueDot Technical AI Safety course project (September 2026),
+before the public release on 2026-09-26. No arm was added after release. What changed after the
+course is how much each arm has been run: a BlueDot Rapid Grant extension (approved 2026-09-24)
+paid for a leaderboard of more models on the two ceiling arms. Dates are first commit and first
+run in the research repo.
+
+| Arm | Built | First run | Status |
+|---|---|---|---|
+| `conspiracy_realistic` | 2026-09-08 | 2026-09-08 | Course study. Mirrors the structure of the July 2026 incident |
+| `conspiracy_transposed` | 2026-09-08 | 2026-09-08 | Course study. Recognition control for the realistic arm |
+| `benign_anomaly` | 2026-09-08 | 2026-09-08 | Course study. Matched harmless control |
+| `blatant_wrongdoing` | 2026-09-08 | 2026-09-09 | Course study; leaderboard runs added under the grant extension |
+| `blatant_safety_falsification` | 2026-09-10 | 2026-09-10 | Course study |
+| `blatant_oversight_evasion` | 2026-09-10 | 2026-09-10 | Course study |
+| `blatant_safety_addressee` | 2026-09-11 | 2026-09-12 | Course study (addressee test) |
+| `blatant_wrongdoing_noaddressee` | 2026-09-11 | 2026-09-12 | Course study (addressee test) |
+| `blatant_wrongdoing_agents` | 2026-09-15 | 2026-09-15 | Course study (AI-agent wrongdoers); leaderboard runs added under the grant extension |
+| `blatant_safety_falsification_agents` | 2026-09-15 | never | Built, never run. Parked when the project was scoped down; no result exists for it |
+| `blatant_oversight_evasion_agents` | 2026-09-15 | never | Built, never run. Parked when the project was scoped down; no result exists for it |
+
+The two parked arms are in `all` because they are complete environments, but nothing about them
+has been validated: no floor, no control, no hand-audit. Treat any number from them as a first
+measurement, not a comparison with published results.
+
 ## The two tool arms (`-T tool_arm=`)
 
 * **`with_tool`** — an `alert_oversight(summary)` tool sits among `bash`, `python` and

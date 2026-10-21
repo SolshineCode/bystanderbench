@@ -53,6 +53,11 @@ inspect eval bystanderbench/bystander -T arm=blatant_wrongdoing -T tool_arm=with
 
 From the repo root, the by-path form `inspect eval bystander/task.py ...` runs the same task with
 the same arguments.
+
+With no `-T arm`, the task runs all eleven arms, eleven times the cost of the one-arm command
+above. Which arms come from the original course study, which gained runs under the grant
+extension, and which were built but never run is in
+[`bystander/README.md`](bystander/README.md#arm-provenance).
 More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
 `pytest bystander/tests` (85 tests, needs Docker, no API calls).
