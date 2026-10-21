@@ -186,7 +186,7 @@ were made public later.
   was live, which was true then; three more have been published since.
 - The `DarkStarDeleeuw` account is a separate account for agent-produced artifacts, distinct
   from the author's personal `Solshine` account. Every publish script in this repo hard-asserts that
-  identity before writing, so the public account is unreachable by construction from this
+  identity before writing, so the personal account is unreachable by construction from this
   codebase.
 
 ## External, not in any repo
