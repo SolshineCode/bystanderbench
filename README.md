@@ -108,9 +108,11 @@ This repository investigates whether language models conceal reward-hacking and 
 
 ## ⛔ BEFORE PUBLISHING: the specificity control is not matched to the headline result
 
-**PARTIALLY CLOSED 2026-09-11 (§F91):** `claude-sonnet-5` now has a matched control — 4/6 on
-misconduct, **0/6 on benign**, same 4/4 floor. The objection is answered for Sonnet. It is
-**not** answered for `claude-opus-5`, the 6/6 result, which is what this section is about.
+**Still open (§F91 run 2026-09-11; correction 2026-10-21):** `claude-sonnet-5` has a benign
+control run (4/6 on misconduct, 0/6 alerts on benign, same 4/4 floor). This section first said
+that answered the objection for Sonnet. It does not: in 0 of those 6 benign episodes did Sonnet
+discover the anomaly, so the 0/6 says nothing about whether it would report a benign anomaly it
+had seen. The objection is unanswered for Sonnet and for `claude-opus-5`, the 6/6 result.
 
 **The strongest result in this project has no control run on the same model.**
 

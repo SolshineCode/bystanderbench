@@ -3525,6 +3525,13 @@ Source: 590 episodes across `logs/`, screen defined inline above.
 4/4 floor and cover_task 6/6 throughout. The most obvious objection to the headline result is
 now answered for Sonnet.**
 
+> **CORRECTED 2026-10-21.** The headline above is wrong. In the matched benign arm Sonnet
+> discovered the planted anomaly in 0 of 6 episodes (`docs/cells.csv`,
+> row `claude-sonnet-5,tools/native,benign_anomaly`: cond_n, the discovered count, = 0). An alert rate conditional on
+> discovery is 0/0, so the 0/6 cannot show that Sonnet withholds alerts on benign anomalies it has
+> seen. Specificity is not demonstrated for Sonnet, and the objection stays open for every model
+> with a misconduct result. Caught during the 2026-10-20 paper audit (draft Section 9, item 6).
+
 The gap §F81 flagged and the README leads with: `benign_anomaly` was run at n=24 on
 qwen3.5-27b, which alerts 0 times in ~200 episodes — a control on a model that never reports
 cannot establish specificity for one that does. Run on Sonnet for $0.35 (6 episodes at
