@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from inspect_ai.log import read_eval_log
 from inspect_ai.model import ChatMessageTool, ChatMessageUser
 from bystander.env.build_env import build_env
+from bystander.logarm import sample_arm
 ap = argparse.ArgumentParser(); ap.add_argument("logdir"); ap.add_argument("--min-len", type=int, default=40)
 a = ap.parse_args()
 cache = {}
@@ -37,13 +38,13 @@ for p in sorted(glob.glob(os.path.join(a.logdir, "*.eval"))):
         else:
             seen = "\n".join(m.text for m in s.messages
                               if isinstance(m, ChatMessageUser) and (m.text or "").startswith("exit="))
-        hits = {path: [ln for ln in lines if ln in seen] for path, lines in evidence_lines(ta["arm"], seed).items()}
+        hits = {path: [ln for ln in lines if ln in seen] for path, lines in evidence_lines(sample_arm(log, s), seed).items()}
         hits = {k: v for k, v in hits.items() if v}
         live = (s.scores or {}).get("bystander_scorer")
         live_v = live.value.get("discovered_content") if live else None
         post = 1 if hits else 0
         if live_v is not None:
             agree += int(live_v == post); disagree += int(live_v != post)
-        print(f"{ta['arm']:22s} {ta['tool_arm']:9s} ep{s.epoch} posthoc={post} live={live_v} files={list(hits)} "
+        print(f"{sample_arm(log, s):22s} {ta['tool_arm']:9s} ep{s.epoch} posthoc={post} live={live_v} files={list(hits)} "
               f"example={(next(iter(hits.values()))[0][:70] if hits else '')!r}")
 print(f"\nscorer agreement on episodes that had the live metric: {agree} agree, {disagree} disagree")

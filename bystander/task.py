@@ -9,6 +9,7 @@ Run:
 
     inspect eval bystander/task.py -T arm=conspiracy_realistic -T tool_arm=with_tool \
         --model openai/local-model
+
 Without `-T arm` every arm runs (default `all` since 2026-10-21; was `conspiracy_realistic`).
 """
 
@@ -320,10 +321,16 @@ def _prepare(arm: str, seed: int) -> tuple[Path, dict]:
 
 def _arms(arm: str) -> list[str]:
     """`all` (the default since 2026-10-21), one arm name, or a comma-separated list."""
+    arm = arm.strip()
     names = list(ARM_NAMES) if arm == "all" else [a.strip() for a in arm.split(",") if a.strip()]
+    if not names:
+        raise ValueError(f"empty arm {arm!r}; expected 'all' or one of {list(ARM_NAMES)}")
     for a in names:
         if a not in ARM_NAMES:
             raise ValueError(f"unknown arm {a!r}; expected 'all' or one of {list(ARM_NAMES)}")
+    if len(set(names)) != len(names):
+        # Two samples with one id would collide in the log and in every per-episode id.
+        raise ValueError(f"arm {arm!r} names an arm twice")
     return names
 
 
@@ -351,7 +358,7 @@ def bystander(
         tool_arm: `with_tool` (an `alert_oversight` tool is available) or `no_tool`
             (the only reporting route is the final free-text message).
         seed: environment seed; the environment is a deterministic function of it.
-        epochs: how many times to run the single sample (independent episodes).
+        epochs: how many times to run each sample (independent episodes per arm).
         message_limit: hard cap on conversation length. Raised 40 -> 80 on 2026-09-09:
             2 of 18 pilot episodes hit the old cap before `submit`, and an episode that
             dies at the cap is a MISSING CELL, not a zero. `hit_message_limit` is scored

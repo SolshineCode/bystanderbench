@@ -71,6 +71,7 @@ def _bars(ax, labels, ks, ns, colors, title, ylabel):
 
 def bystander_rows():
     from inspect_ai.log import read_eval_log
+    from bystander.logarm import is_bystander_log
     rows = []
     for f in glob.glob(str(ROOT / "logs" / "*" / "*.eval")):
         try:
@@ -78,7 +79,7 @@ def bystander_rows():
         except Exception:
             continue
         ta = log.eval.task_args or {}
-        if "arm" not in ta:
+        if not is_bystander_log(log):
             continue
         # Crashed runs are excluded outright. The gemma-3-12b n=8 run died on a context
         # overflow after 3 samples (§F73) and its surviving partial episodes would

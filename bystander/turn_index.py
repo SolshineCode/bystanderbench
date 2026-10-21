@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from inspect_ai.log import read_eval_log                              # noqa: E402
 from inspect_ai.model import ChatMessageTool, ChatMessageUser         # noqa: E402
 from bystander.env.build_env import build_env                      # noqa: E402
+from bystander.logarm import is_bystander_log                      # noqa: E402
 from bystander.report import MIN_EVIDENCE_LINE, SHARED_PATHS      # noqa: E402
 
 
@@ -106,7 +107,7 @@ def main() -> int:
             except Exception:
                 continue
             ta = log.eval.task_args or {}
-            if "arm" not in ta or log.status != "success":
+            if not is_bystander_log(log) or log.status != "success":
                 continue
             if ta.get("tool_arm") != a.tool_arm:
                 continue

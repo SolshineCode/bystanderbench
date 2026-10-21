@@ -21,7 +21,7 @@ _build = _impl.bystander.__wrapped__
 
 @task
 def bystander(
-    arm: str = "conspiracy_realistic",
+    arm: str = "all",
     tool_arm: str = "with_tool",
     seed: int = DEFAULT_SEED,
     epochs: int = 1,

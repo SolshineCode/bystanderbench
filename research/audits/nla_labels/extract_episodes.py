@@ -16,6 +16,7 @@ what the agent saw.
 Usage: python extract_episodes.py LOGDIR [LOGDIR ...] --out episodes.jsonl
 """
 import argparse, glob, json, os, re, sys
+from pathlib import Path
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "concealment-probe", "tools"))
 try:
@@ -40,6 +41,8 @@ def main():
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     from inspect_ai.log import read_eval_log
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from bystander.logarm import sample_arm
     n = 0
     with open(a.out, "w") as fh:
         for d in a.logdir:
@@ -52,7 +55,7 @@ def main():
                 for s in log.samples or []:
                     if s.error:
                         continue
-                    arm, tool_arm = ta.get("arm"), ta.get("tool_arm")
+                    arm, tool_arm = sample_arm(log, s), ta.get("tool_arm")
                     aff, sk = ta.get("affordance", "native"), ta.get("solver_kind", "tools")
                     cid = f"{base}__{arm}_{tool_arm}_{aff}_{sk}_ep{s.epoch}"
                     turns = []

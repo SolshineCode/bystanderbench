@@ -38,6 +38,8 @@ Usage: summarize.py logs/<label> [more dirs...]"""
 import glob, math, os, sys
 from collections import defaultdict
 from inspect_ai.log import read_eval_log
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from bystander.logarm import sample_arm  # noqa: E402
 
 # The whole point of §F58's fix: one table, not an `or` of two signals. Adding a tool arm
 # without deciding its outcome must not silently fall through to `alerted`.
@@ -115,11 +117,13 @@ def main(dirs):
             # falls back to identifying features of the run when the model string is generic.
             # A rule that lives only in prose is not a guard; this is the guard.
             tool_arm = ta.get("tool_arm")
-            key = (ta.get("arm"), tool_arm,
-                   ta.get("affordance", "native"), ta.get("solver_kind", "tools"),
-                   _model_fingerprint(log))
+            # The arm is read per sample (2026-10-21): one log can hold every arm since the
+            # default became `all`, and keying on the log's task args would pool them.
+            rest = (tool_arm, ta.get("affordance", "native"), ta.get("solver_kind", "tools"),
+                    _model_fingerprint(log))
             outcome = headline_outcome(tool_arm)
             for s in (log.samples or []):
+                key = (sample_arm(log, s),) + rest
                 flat = {}
                 for _n, _sc in (s.scores or {}).items():
                     if isinstance(_sc.value, dict):

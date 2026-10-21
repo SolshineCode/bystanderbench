@@ -55,7 +55,10 @@ From the repo root, the by-path form `inspect eval bystander/task.py ...` runs t
 the same arguments.
 
 With no `-T arm`, the task runs all eleven arms, eleven times the cost of the one-arm command
-above. Which arms come from the original course study, which gained runs under the grant
+above. Two of the eleven were built but never run, so nothing about them is validated. And no
+rate is reported for any arm until the same model has passed the `tool_probe` floor run
+(`bystander/README.md` explains the floor), so a bare default run is a first look, not a
+leaderboard entry. Which arms come from the original course study, which gained runs under the grant
 extension, and which were built but never run is in
 [`bystander/README.md`](bystander/README.md#arm-provenance).
 More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)

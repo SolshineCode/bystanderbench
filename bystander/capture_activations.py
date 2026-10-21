@@ -126,6 +126,8 @@ def main():
     # (pydantic_core) built for that interpreter, so importing them from the pt113 venv
     # fails with ModuleNotFoundError on _pydantic_core. Do not path-hack across venvs.
     from inspect_ai.log import read_eval_log
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from bystander.logarm import sample_arm
 
     os.makedirs(os.path.join(a.out_dir, "acts"), exist_ok=True)
     man, n_skip = [], 0
@@ -146,7 +148,7 @@ def main():
                 print(f"skip {os.path.basename(p)}: status={log.status}", flush=True)
                 continue
             ta = log.eval.task_args or {}
-            arm, tool_arm = ta.get("arm"), ta.get("tool_arm")
+            tool_arm = ta.get("tool_arm")
             # CID (fixed 2026-09-10). This was `f"{arm}_{tool_arm}_ep{i}"`, with `i`
             # restarting at 1 for every .eval file -- the §F22 design-cell-id bug again,
             # in the one place where a collision silently DESTROYS data rather than only
@@ -162,6 +164,7 @@ def main():
             solver = ta.get("solver_kind", "tools")
             src = os.path.basename(os.path.normpath(d))
             for i, s in enumerate(log.samples or [], 1):
+                arm = sample_arm(log, s)  # per sample: one log can hold every arm (2026-10-21)
                 cid = f"{src}__{arm}_{tool_arm}_{aff}_{solver}_ep{i}"
                 if cid in seen_cids:
                     raise SystemExit(

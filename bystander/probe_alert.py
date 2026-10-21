@@ -66,6 +66,8 @@ def labels_for(logdirs):
     including `enumerate(samples, 1)`, so a mismatch here is a real inconsistency and not a
     naming drift."""
     from inspect_ai.log import read_eval_log
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from bystander.logarm import sample_arm
     out = {}
     for d in logdirs:
         for p in sorted(glob.glob(os.path.join(d, "*.eval"))):
@@ -76,11 +78,12 @@ def labels_for(logdirs):
             ta = log.eval.task_args or {}
             if log.status != "success":
                 continue
-            arm, tool_arm = ta.get("arm"), ta.get("tool_arm")
+            tool_arm = ta.get("tool_arm")
             aff = ta.get("affordance", "native")
             solver = ta.get("solver_kind", "tools")
             src = os.path.basename(os.path.normpath(d))
             for i, s in enumerate(log.samples or [], 1):
+                arm = sample_arm(log, s)  # per sample: one log can hold every arm (2026-10-21)
                 cid = f"{src}__{arm}_{tool_arm}_{aff}_{solver}_ep{i}"
                 if getattr(s, "error", None):
                     continue

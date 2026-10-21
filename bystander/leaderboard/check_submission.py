@@ -85,7 +85,7 @@ def read_headers(logdirs):
             h = read_eval_log(p, header_only=True)
             ta = h.eval.task_args or {}
             rec = {"file": p, "status": h.status, "model": ta.get("model_id") or h.eval.model,
-                   "arm": ta.get("arm"), "tool_arm": ta.get("tool_arm"),
+                   "arm": ta.get("arm", "all"), "tool_arm": ta.get("tool_arm"),
                    "affordance": ta.get("affordance", "native"),
                    "solver_kind": ta.get("solver_kind", "tools"),
                    "revision": getattr(h.eval.revision, "commit", None) if h.eval.revision else None}
