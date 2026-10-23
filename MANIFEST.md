@@ -73,19 +73,22 @@ just the map.
 - `visualizations/` — repeatable chart pipeline over AUDITED results only
   (`build_charts.py` + `out/` PNGs + `verification_table.csv`); registry-driven,
   Wilson CIs + N on every rate bar, pending sources auto-join on re-run. See its
-  README for the audited-only data discipline and the agy review provenance.
-- `research/` — every research doc, moved here 2026-09-03 from the private
-  `linkedin-os-notepad` repo (career-ops workspace, kept separate, see below).
+  README for the audited-only data discipline and the provenance of its independent review
+  (Gemini, run through the Antigravity CLI).
+- `research/` — every research doc, moved here 2026-09-03 from a separate private repo.
 - `messages/` — grant-related communication logs (BlueDot scope-change heads-up, grant
-  update email). Job-application/interview correspondence is NOT here, see below.
-- `stray-eval-logs-2026-09-03/` — a handful of partial `.eval`/`logs.json` files that
-  ended up in the wrong repo (`linkedin-os-notepad`) at some point, likely from a
+  update email).
+- `stray-eval-logs-2026-09-03/` (removed from the public repo on 2026-10-17; byte-identical
+  copies are kept in the maintainer's private provenance archive) — a handful of partial
+  `.eval`/`logs.json` files that ended up in a different, private repo at some point, likely from a
   mis-`cd`'d eval invocation. Kept as-found rather than reconciled against whatever the
   live run's actual current log state is, since the runs that produced them
   (`qwen3.5-27b-run3`, `qwen3.6-concealment`) may still be in progress. Treat as
   possibly-stale partial snapshots, not the authoritative record.
 - `run_*.log`, `llamacpp_logs/` — raw run output kept in git (small, real evidence of
-  what actually happened on each run).
+  what actually happened on each run). On 2026-10-17 the root logs that no document cites
+  were removed from the public repo, with byte-identical copies kept in the maintainer's
+  private provenance archive. The cited ones are still at the root.
 
 ## NOT in this repo, intentionally (see `.gitignore`)
 
@@ -96,11 +99,16 @@ just the map.
   exactly one home, not two copies that can drift.
 - `logs/`, `*.eval`, `**/acts/*.bin` — raw eval transcripts and activation tensors.
   Published runs: on Hugging Face (below). Unpublished/in-progress runs: local-only on
-  this machine (`darkstar`, `/home/darkstar/bluedot-unit2-impossiblebench/`), not backed
+  the maintainer's own machine, not backed
   up anywhere else yet. If a run's data needs to survive independent of this specific
   machine, it needs to actually get published, not just committed here.
 
-## On Hugging Face (`DarkStarDeleeuw` account, private)
+## On Hugging Face (`DarkStarDeleeuw` account)
+
+**Visibility as of 2026-10-21 (HF API check).** 63 `DarkStarDeleeuw/bluedot-unit2-*` datasets
+are public. One, `bluedot-unit2-concealment-probe-2026-09-01`, is not publicly reachable. Entries
+below that call a dataset "private" record its state when the entry was written; the datasets
+were made public later.
 
 - **`DarkStarDeleeuw/bluedot-unit2-concealment-probe-2026-09-01`** — the original
   concealment-probe dataset. **Correction 2026-09-07 (supersedes the 2026-09-05
@@ -173,39 +181,20 @@ just the map.
   `bluedot-unit2-recruiter-pilot-gemma3-12b` (2026-09-05). Contents of each were fetched
   and checked row-by-row, not read from this file's prose: llama3.3-70b and
   recruiter-pilot are clean (no duplicate sids, no false `disclosed`); the other two
-  carry the defects noted on their lines above. Two unrelated prior-project datasets
-  exist on the same account (`nla-research-bulk-provenance`,
-  `sae-rl-homebase-artifacts`) — not part of BlueDot, don't touch them from this repo's
-  scripts.
+  carry the defects noted on their lines above.
   *Superseded — 2026-09-04 check:* said only `bluedot-unit2-concealment-probe-2026-09-01`
   was live, which was true then; three more have been published since.
-- The `DarkStarDeleeuw` account is a private agent-provenance account, distinct from the
-  public-facing `Solshine` account. Every publish script in this repo hard-asserts that
-  identity before writing, so the public account is unreachable by construction from this
+- The `DarkStarDeleeuw` account is a separate account for agent-produced artifacts, distinct
+  from the author's personal `Solshine` account. Every publish script in this repo hard-asserts that
+  identity before writing, so the personal account is unreachable by construction from this
   codebase.
 
 ## External, not in any repo
 
-- **Course research log**: Google Doc "Research Log BlueDot Technical AI Safety" — short
-  dated log entries, course-facing. Ask Caleb for the link, or find it via Google Drive
-  search under the `caleb.deleeuw@gmail.com` account (a second Google account on this
-  machine, a second Google account, also has read access but has a storage-full warning
-  that blocks edits, always confirm the account before editing, see the doc's own edit
-  history for the wrong-account traps hit and fixed on 2026-08-29 and 2026-08-31).
-  **Standing rule as of 2026-09-04: do not add entries here proactively.** Caleb wants
-  this doc kept clean, only updated when he explicitly asks for an entry. Detailed notes
-  go in this repo's `research/` docs instead, always.
+- **Course research log**: Google Doc "Research Log BlueDot Technical AI Safety", short
+  dated log entries, course-facing. Linked from `README.md`.
 - **BlueDot course platform** (Airtable-based, cohort materials, Unit exercises) — not
   archived here, referenced by content in `research/` where relevant.
-
-## What deliberately stays OUT of this repo
-
-- **Job-application and interview-process tracking** (`NOW-job-search.md`,
-  `PENDING-ACTIONS.md`, application-specific research docs) lives in a separate private
-  career-ops workspace, not this repo. That material is about Caleb's broader job search,
-  this repo is scoped to the BlueDot research project specifically. A few pointers in
-  that workspace's `PENDING-ACTIONS.md` reference files that used to live here-adjacent
-  and now live in this repo (updated 2026-09-03 when the move happened).
 
 ### HF correction notes published 2026-09-07
 
@@ -574,7 +563,7 @@ backfill has taken that to **346 across 24 dirs**, all older qwen/nemotron runs.
   `requested_layers.txt` (§F157) rather than assumed. Together with
   `...-lightning-dualtarget-20260913` this is every episode behind lightning's 0/36.
 
-## Pending 2026-09-15: agent-perpetrator arm activation captures, not yet pushed
+## Agent-perpetrator arm activation captures (section opened 2026-09-15; the datasets below it were published 2026-09-15 to 2026-09-21)
 
 A new arm, `blatant_wrongdoing_agents` (§F178/§F179), is a minimal pair with
 `blatant_wrongdoing`: same domain, harm, evidence slots and salience, volume matched to
@@ -599,7 +588,7 @@ Two more launchers run the same arm behaviourally only, with no activation captu
 do not add a new HF dataset by themselves: `bystander/launchers/w13_agentarm_free_sweep.sh`
 (free-tier OpenRouter models matched to their existing human-arm incident-1 cell) and
 `bystander/launchers/w15_agentarm_paid_frontier.sh` (the four paid frontier models, n=6
-each, Caleb's per-launch go-ahead given 2026-09-15 ~11:20 PDT). Their results commit as run
+each). Their results commit as run
 logs in git, per this project's data-permanence rule for small raw logs.
 
 - `bluedot-unit2-bystander-agentarm-overnight-2026-09-19` (48 bins, 201 files, private): two

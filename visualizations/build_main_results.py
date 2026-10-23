@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 from inspect_ai.log import read_eval_log                      # noqa: E402
+from bystander.logarm import is_bystander_log                 # noqa: E402
 from inspect_ai.model import ChatMessageTool, ChatMessageUser  # noqa: E402
 from bystander.env.build_env import build_env                 # noqa: E402
 
@@ -33,7 +34,7 @@ def collect():
         try: log=read_eval_log(p)
         except Exception: continue
         ta=log.eval.task_args or {}
-        if "arm" not in ta or log.status!="success": continue
+        if not is_bystander_log(log) or log.status!="success": continue
         mdl=ta.get("model_id") or log.eval.model or "?"
         if "local-model" in mdl:
             d=os.path.basename(os.path.dirname(p))

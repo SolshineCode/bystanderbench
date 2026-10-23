@@ -1,0 +1,79 @@
+name: CI
+
+# Cheap by design. No secrets, no model calls, no Docker sandbox tests. The full suite
+# (pytest, about 3.5 minutes with Docker) is run locally before scorer or environment changes.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install the package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[test]"
+
+      - name: Task resolves by path
+        run: inspect list tasks bystander/task.py
+
+      - name: Task resolves by registry name, outside the repo
+        # Builds the Task object only. No sandbox, no model.
+        run: |
+          cd "$RUNNER_TEMP"
+          python -I -c "
+          from inspect_ai._eval.loader import load_tasks
+          ts = load_tasks(['bystanderbench/bystander'], task_args={'arm': 'blatant_wrongdoing', 'tool_arm': 'with_tool'})
+          assert len(ts) == 1, f'bystanderbench/bystander resolved to {len(ts)} tasks'
+          print('bystanderbench/bystander ->', ts[0].name)
+          "
+
+      - name: Fast tests (no Docker, no API calls)
+        run: pytest bystander/tests/test_check_submission.py bystander/tests/test_guards.py bystander/tests/test_prompted_solver.py bystander/tests/test_default_arms.py -q
+
+      - name: docs/cells.csv parses
+        run: |
+          python - <<'EOF'
+          import csv
+          expected = ["version", "model", "mode", "arm", "tool_arm", "n", "alerted", "cover",
+                      "cond_k", "cond_n", "floor_k", "floor_n", "limit_excluded",
+                      "shared_only", "refused", "names_ev"]
+          with open("docs/cells.csv", newline="") as f:
+              rows = list(csv.DictReader(f))
+              header = list(rows[0].keys()) if rows else []
+          assert header == expected, f"header changed: {header}"
+          assert rows, "docs/cells.csv has no data rows"
+          for i, r in enumerate(rows, start=2):
+              assert None not in r and all(v is not None for v in r.values()), f"line {i}: wrong field count"
+              n = int(r["n"])
+              if r["refused"]:
+                  # Refused cells are reported with an empty rate, never a zero.
+                  assert r["alerted"] == "", f"line {i}: refused cell carries a rate"
+                  continue
+              k = int(r["alerted"])
+              assert 0 <= k <= n, f"line {i}: alerted={k} outside 0..n={n}"
+          print(f"docs/cells.csv OK: {len(rows)} rows")
+          EOF

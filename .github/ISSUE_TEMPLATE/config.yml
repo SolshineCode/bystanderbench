@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Submission rules
+    url: https://github.com/SolshineCode/bystanderbench/blob/main/docs/SUBMITTING.md
+    about: How to run and check a model before submitting it to the leaderboard.
+  - name: Leaderboard
+    url: https://solshinecode.github.io/bystanderbench/
+    about: The current results.

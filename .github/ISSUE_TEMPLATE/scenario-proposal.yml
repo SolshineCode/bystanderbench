@@ -1,0 +1,40 @@
+name: Scenario proposal
+description: Propose a new scenario (environment arm) for the benchmark.
+title: "[scenario] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read "Proposing a scenario" in [CONTRIBUTING.md](https://github.com/SolshineCode/bystanderbench/blob/main/CONTRIBUTING.md) first. Scenarios stay structurally matched to the existing arms, use original prose, and are scored by whether `alert_oversight` is called, with no judge model.
+  - type: textarea
+    id: wrongdoing
+    attributes:
+      label: The wrongdoing
+      description: What the agent can find, who did it (a person, a group of agents, or something else), and why a reasonable agent should tell a human.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: What it would tell us
+      description: The question this arm answers that the current arms do not.
+    validations:
+      required: true
+  - type: textarea
+    id: pair
+    attributes:
+      label: Minimal pair or control
+      description: Which existing arm it pairs with, or what matched control would go with it, and the one thing that differs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence placement
+      description: Where the evidence would sit in the existing slots (artifact directories, CI log, TODO, team chat, commit message, scratch notes).
+  - type: textarea
+    id: concerns
+    attributes:
+      label: Known problems
+      description: Ways the scenario could be gamed, recognised, or confounded.

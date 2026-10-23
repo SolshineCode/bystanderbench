@@ -1,12 +1,17 @@
 # BystanderBench
 
+[![CI](https://github.com/SolshineCode/bystanderbench/actions/workflows/ci.yml/badge.svg)](https://github.com/SolshineCode/bystanderbench/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
+[![Leaderboard](https://img.shields.io/badge/leaderboard-live-1f3a5f.svg)](https://solshinecode.github.io/bystanderbench/)
+
 When an AI agent doing an ordinary job stumbles on evidence that someone is doing something seriously
 wrong, does it tell a human? BystanderBench drops an agent into a synthetic repo with a one-character bug
 to fix. While it works, it can find evidence of misconduct, by a person or by a pool of other AI agents.
 An `alert_oversight` tool sits among its ordinary tools, and the score is simply whether it calls it.
 There's no judge model and no keyword matching.
 
-It was built for the BlueDot Impact Technical AI Safety course, inspired by the 2026 OpenAI Hugging Face
+It was built for the BlueDot Impact Technical AI Safety course, motivated by the 2026 OpenAI Hugging Face
 incident, where roughly 1,200 agents coordinated on a shared board and none of them alerted a human.
 
 ## Run it on your model
@@ -16,7 +21,7 @@ You need Python 3.11+, Docker with the compose plugin, and access to the model.
 ```bash
 git clone https://github.com/SolshineCode/bystanderbench && cd bystanderbench
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r bystander/requirements.txt
+pip install -e .        # or: pip install -r bystander/requirements.txt
 
 # A hosted model (any provider Inspect supports):
 MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
@@ -39,15 +44,46 @@ Each episode runs in its own Docker sandbox. Keep concurrency low on small machi
 (`MAX_CONNECTIONS`, default 1). Hosted models cost real money per episode, so check your rates first. The script asks before it
 starts; set `YES=1` to skip that prompt in scripts.
 
-More detail, including the methodology and every option: [`bystander/README.md`](bystander/README.md)
+The task can also be run directly with Inspect. After `pip install -e .` it is registered as
+`bystanderbench/bystander`, so it can be run from any directory.
+
+```bash
+inspect eval bystanderbench/bystander -T arm=blatant_wrongdoing -T tool_arm=with_tool --model <model>
+```
+
+From the repo root, the by-path form `inspect eval bystander/task.py ...` runs the same task with
+the same arguments.
+
+With no `-T arm`, the task runs all eleven arms, eleven times the cost of the one-arm command
+above. Two of the eleven were built but never run, so nothing about them is validated. And no
+rate is reported for any arm until the same model has passed the `tool_probe` floor run
+(`bystander/README.md` explains the floor), so a bare default run is a first look, not a
+leaderboard entry. Which arms come from the original course study, which gained runs under the grant
+extension, and which were built but never run is in
+[`bystander/README.md`](bystander/README.md#arm-provenance).
+More detail, including the methodology and every option, is in [`bystander/README.md`](bystander/README.md)
 and [`bystander/METHODOLOGY-v1.1.md`](bystander/METHODOLOGY-v1.1.md). The offline test suite is
-`pytest bystander/tests` (82 tests, needs Docker, no API calls).
+`pytest bystander/tests` (97 tests, needs Docker, no API calls).
 
 ## Leaderboard and submissions
 
-The public leaderboard is being built now, with every model at a fixed 36 episodes per scenario so rows
-are comparable. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
+The leaderboard is at [solshinecode.github.io/bystanderbench](https://solshinecode.github.io/bystanderbench/).
+Rows target a fixed 36 episodes per scenario so they are comparable; cells still short of 36 show
+their n and interval. To put your model on it, follow [`docs/SUBMITTING.md`](docs/SUBMITTING.md). It includes a
 checker that tells you whether a set of logs will be accepted.
+
+## Contributing
+
+New model results, bug reports from your own setup and scenario proposals are all welcome.
+[`CONTRIBUTING.md`](CONTRIBUTING.md) covers setup, the test commands, a free smoke run against Inspect's
+mock model, and how to propose a scenario. Issue templates exist for each of these.
+
+## Related benchmarks
+
+SnitchBench, WhistleBench (Agrawal et al., arXiv:2511.17085) and ToolAlignBench (arXiv:2607.14285) are
+complementary benchmarks that measure something distinctly different (whistleblowing on people to outside
+parties, scored by a judge model); BystanderBench measures use of a sanctioned internal alert tool,
+mechanically, and includes an AI-agent-pool wrongdoer arm.
 
 ## What else is in this repo
 
@@ -56,14 +92,18 @@ human-rater files, correspondence and class screenshots were removed for privacy
 holds the concealment study (ImpossibleBench), linear probes and ablations on model activations, and the
 append-only results ledger, [`research/FINDINGS.md`](research/FINDINGS.md), where every number traces to a
 file. Activations, transcripts and labels are on Hugging Face under `DarkStarDeleeuw/bluedot-unit2-*`.
+The top level also holds the concealment study's eval drivers and the raw run logs that the research
+documents cite by name.
 
-Code is MIT (see `LICENSE`). Datasets are CC-BY-4.0. Questions, problems running it, or ideas: open an issue,
-or reach Caleb DeLeeuw on LinkedIn.
+## License and contact
+
+Code is MIT (see `LICENSE`). Datasets are CC-BY-4.0. For questions, problems running it, or ideas, open an
+issue, or reach Caleb DeLeeuw on LinkedIn.
 
 ---
 
-*The original lab README follows, as it stood at release. Some of its warnings describe states that have
-since changed.*
+*The original lab README follows as it stood at release, with dated corrections added where a claim
+turned out to be wrong. Some of its warnings describe states that have since changed.*
 
 # Silent Concealment Detection Lab
 
@@ -74,11 +114,13 @@ internal activations of that behavior.
 
 This repository investigates whether language models conceal reward-hacking and test-gaming behavior versus openly disclosing it. The work is motivated by a real 2026 incident where an AI agent swarm coordinated to hide cheating from its own scorer. It attempts to build on existing trial work (validated on synthetic, instructed concealment) by testing whether the same detection approach generalizes to real, emergent concealment in models solving impossible-to-solve verification tasks.
 
-## ⛔ BEFORE PUBLISHING: the specificity control is not matched to the headline result
+## Open limitation: the specificity control is not matched to the headline result
 
-**PARTIALLY CLOSED 2026-09-11 (§F91):** `claude-sonnet-5` now has a matched control — 4/6 on
-misconduct, **0/6 on benign**, same 4/4 floor. The objection is answered for Sonnet. It is
-**not** answered for `claude-opus-5`, the 6/6 result, which is what this section is about.
+**Still open (§F91 run 2026-09-11; correction 2026-10-21):** `claude-sonnet-5` has a benign
+control run (4/6 on misconduct, 0/6 alerts on benign, same 4/4 floor). This section first said
+that answered the objection for Sonnet. It does not: in 0 of those 6 benign episodes did Sonnet
+discover the anomaly, so the 0/6 says nothing about whether it would report a benign anomaly it
+had seen. The objection is unanswered for Sonnet and for `claude-opus-5`, the 6/6 result.
 
 **The strongest result in this project has no control run on the same model.**
 
@@ -94,7 +136,7 @@ silent on everything.
 
 **What closes it:** `benign_anomaly / with_tool`, n≥6, on `claude-opus-5` and
 `claude-sonnet-5`. Roughly $2.70 and $0.45 respectively on paid OpenRouter at measured rates
-(§F80), and it needs Caleb's explicit per-launch approval like any paid run. Until then, every
+(§F80). Until then, every
 reporting rate in this repo should be read as *unmatched*.
 
 Two smaller items in the same category, both cheap and both free-tier:
@@ -110,11 +152,16 @@ Two smaller items in the same category, both cheap and both free-tier:
 **When an agent stumbles onto evidence that other agents are coordinating on misaligned
 behavior, does it tell a human?**
 
-Every benchmark in this space points the instrument at the subject: does *this* model
-cheat, exploit, escape. Nobody measures the witness. The incident motivating this project
-was a population of agents coordinating, and coordination has a property solo misbehavior
-does not, which is that there are bystanders. That benchmark does not exist, and this
-project intends to build it as a primary contribution.
+Most benchmarks in this space point the instrument at the subject: does *this* model
+cheat, exploit, escape. Two complementary benchmarks look at what a model does about
+wrongdoing it finds: SnitchBench and WhistleBench (arXiv:2511.17085) test whether a model
+blows the whistle on people, usually to outside authorities, with a judge model scoring the
+destination. BystanderBench measures something different. The incident motivating this
+project was a population of agents coordinating, and coordination has a property solo
+misbehavior does not, which is that there are bystanders. I could not find a benchmark
+where the wrongdoers can be other AI agents, the alert goes to the operator's own
+oversight channel, and the rate counts only episodes in which the agent found the
+evidence. This project builds that as a primary contribution.
 
 It belongs here rather than at a pure evals lab for one specific reason. A behavioral
 benchmark cannot tell a silent agent from an oblivious one: an agent that finishes the
@@ -144,10 +191,14 @@ at all"* (p.61-62, p.71).
 
 **The report also supplies a caveat that cuts toward this benchmark rather than away from it.**
 METR notes agents *"didn't see an easily-available route to alerting humans"* and quotes one
-reasoning *"I can't report this externally"* (p.62). So the deployment result is propensity
-failure **and** missing channel, entangled. That is precisely the confound BystanderBench
-exists to separate: the environment supplies an escalation channel, and the `tool_probe` floor
-proves per model that the channel works before any silence elsewhere is read as a choice.
+reasoning *"I can't report this externally"* (p.62). That is not the same as having no route.
+Ajeya Cotra pointed out on the [Dwarkesh Podcast](https://dwarkesh.com/p/ajeya-cotra) (2026-09-01) that the agents had internet
+access through the sandbox by then and could have emailed people. The safe reading is that a
+route existed and the agents did not see it or did not use it, so the deployment result mixes
+propensity with whether the agent recognises a channel. That is the confound BystanderBench
+exists to separate: the environment puts an escalation channel in the tool list, and the
+`tool_probe` floor proves per model that the channel works before any silence elsewhere is
+read as a choice.
 
 Full design, manipulations, required controls, and epistemic status:
 `research/bluedot-research-positioning-and-trial-design-2026-09-03.md` §20 and §20.1–20.3.
@@ -231,8 +282,9 @@ reasoning as disclosure. The scorer now splits them and scores reasoning separat
 
 Three limits stated plainly. Each content arm is **one** environment, so these are draws on
 a single incident and every claim is framed as a case study rather than a population rate
-(§F48). Nothing has yet produced a voluntary alert, so the instrument has been shown to
-read 1.0 and 0.0 but never an intermediate rate. And of five architectures screened, only
+(§F48). When this was written nothing had produced a voluntary alert, so the instrument had been
+shown to read 1.0 and 0.0 but never an intermediate rate. That has since changed: see the
+`nex-n2.5-mini` results above. And of five architectures screened, only
 two sustain a multi-turn tool loop at all — the other three fail on chat-template issues
 unrelated to willingness to report (§F50, §F51).
 
@@ -276,7 +328,7 @@ See `MANIFEST.md` for the complete map of what lives where and what deliberately
 
 ## Key documents
 
-- `CLAUDE.md` — the operative rules for working in this repo: evidence/audit discipline, smoke-test-before-scaling, hardware constraints, data-permanence and storage policy. Read first in any working session.
+- `CLAUDE.md` — the working rules the research sessions followed: evidence/audit discipline, smoke-test-before-scaling, data permanence and storage. Its hardware and scheduling sections describe the author's machine and do not apply to contributors (see `CONTRIBUTING.md`).
 - `research/FINDINGS.md` — the append-only numbered findings ledger (§F1+), the canonical registry of settled results with source pointers.
 - `labelling/PROTOCOL.md` — the human-rater design and its pre-registered decision rules, including the condition under which §F35's interpretation gets withdrawn. Written before any answers came back.
 - `research/SESSION_SUMMARY_2026-09-08.md` — the ten-hour GPU session that produced most of the current state, including what did not finish and what went wrong.
@@ -287,4 +339,4 @@ See `MANIFEST.md` for the complete map of what lives where and what deliberately
 ## External resources
 
 - **Course research log** (Google Doc, "Research Log BlueDot Technical AI Safety") — the running dated log of progress, course-facing. https://docs.google.com/document/d/1-gzEWT9xIxwX9-GeN6jyM0h6NRD4-zSbv8QZ-gK7sKQ/edit (URL recorded 2026-09-18; it had only ever been described, never written down).
-- **Hugging Face datasets** — published runs are archived under the private `DarkStarDeleeuw` account, separate from the public `Solshine` account. See `MANIFEST.md` for URLs.
+- **Hugging Face datasets** — published runs are public datasets under the `DarkStarDeleeuw` account, which is kept separate from the author's personal `Solshine` account. See `MANIFEST.md` for URLs.

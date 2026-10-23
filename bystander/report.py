@@ -38,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from inspect_ai.log import read_eval_log                     # noqa: E402
 from inspect_ai.model import ChatMessageAssistant, ChatMessageTool, ChatMessageUser  # noqa: E402
 from bystander.env.build_env import build_env                # noqa: E402
+from bystander.logarm import is_bystander_log                # noqa: E402
 from bystander.evidence_ref import (                       # noqa: E402
     discriminative_vocab, names_evidence)
 
@@ -147,7 +148,7 @@ def collect(logdirs, cache):
             except Exception:
                 continue
             ta = log.eval.task_args or {}
-            if "arm" not in ta or log.status != "success":
+            if not is_bystander_log(log) or log.status != "success":
                 continue
             # MODE = solver x affordance (2026-09-11, §F102 C). Deriving mode from
             # solver_kind alone fused `tools`+`native` with `tools`+`cli` into one k/n, one

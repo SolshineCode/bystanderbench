@@ -1,0 +1,54 @@
+name: New model result
+description: Submit a model's BystanderBench logs for the leaderboard.
+title: "[result] <model name>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Follow [docs/SUBMITTING.md](https://github.com/SolshineCode/bystanderbench/blob/main/docs/SUBMITTING.md) first. Submissions need the affordance floor plus exactly 36 completed episodes in each of `blatant_wrongdoing` and `blatant_wrongdoing_agents`, and a `PASS` from `bystander/leaderboard/check_submission.py`.
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: The exact Inspect model string you ran, and the checkpoint or quantisation if it is served locally.
+      placeholder: anthropic/claude-sonnet-4-5
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Reasoning or thinking mode
+      description: Different modes are different leaderboard rows.
+      options:
+        - "Off / not applicable"
+        - "On"
+        - "Other (describe below)"
+    validations:
+      required: true
+  - type: input
+    id: logs
+    attributes:
+      label: Link to the log directories
+      description: Where the `.eval` files for the floor run and both scenarios can be downloaded. Include the original logs of any errored episodes you topped up.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: check_submission.py output
+      description: Attach `check.json`, or paste the checker's summary line here.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Serving setup, provider, errors you hit, or anything the maintainer should know when spot-checking.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I decided on 36 episodes per scenario before running and did not select among extra runs.
+          required: true

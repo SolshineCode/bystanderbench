@@ -239,9 +239,10 @@ figures. Run it directly on a `samples.jsonl` for a one-line summary before quot
   text writes token streams plus an `extract_resid` manifest as it goes (`--tokens-dir` in `sae-causal/run_resample.py`,
   `bystander/capture_activations.py`), so the SAE/NLA/probe arm and any later publication
   can use them without re-running anything.
-- **Code, docs, small results, small raw run logs → git** (root `run_*.log` convention).
+- **Code, docs, small results, small raw run logs → git** (root `run_*.log` convention; root logs are
+  gitignored since 2026-10-17, so add a new one deliberately with `git add -f`).
 - **Datasets (transcripts, tokens, activations, audit sidecars) → Hugging Face** under the
-  private **`DarkStarDeleeuw`** account, never the public `Solshine`; every publish script
+  separate **`DarkStarDeleeuw`** account, never the personal `Solshine`; every publish script
   hard-asserts the identity. URLs in MANIFEST.
 - **Raw eval transcripts, activation `.bin`, HF staging dirs → local-only, gitignored.**
   The staging dirs ARE the published content; one home, not two.

@@ -90,3 +90,26 @@ visualizations/out2/
 sae-causal/tokens/
 sae-causal/tokens_negatives/
 sae-causal/tokens_positives/
+
+# Root clutter guard (2026-10-17). The root used to collect run logs, watcher markers and
+# install/build logs. The root logs a document cites are still tracked; new root-level logs
+# stay local unless someone adds one on purpose with `git add -f`.
+/*.log
+/*.out
+*.seen
+check.json
+
+# Packaging, test and virtualenv scratch.
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.venv*/
+venv/
+.envcache/
+
+# Secrets never belong in a commit. CLAUDE.md promised these patterns; they were missing.
+.env
+*.env
+**/secrets/

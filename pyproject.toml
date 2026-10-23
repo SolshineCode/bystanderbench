@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bystanderbench"
+version = "1.1.0"
+description = "Does an AI agent that finds evidence of serious wrongdoing tell a human? An Inspect AI benchmark scored by a tool call."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Caleb DeLeeuw" }]
+keywords = ["ai-safety", "evals", "inspect-ai", "benchmark", "agents", "oversight"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# Pinned to the exact version every released number was produced with. The 0.3.x API this
+# code uses (read_eval_log, ChatMessageTool, the solver and scorer decorators) is not stable
+# across releases. See bystander/requirements.txt, which carries the same pin.
+dependencies = [
+    "inspect-ai==0.3.261",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+# Tier-2 analysis scripts (probes, control vectors, pooled bounds). Not needed to run or
+# score the benchmark.
+analysis = ["numpy", "huggingface_hub", "scipy", "gguf"]
+
+[project.urls]
+Homepage = "https://github.com/SolshineCode/bystanderbench"
+Leaderboard = "https://solshinecode.github.io/bystanderbench/"
+Issues = "https://github.com/SolshineCode/bystanderbench/issues"
+
+# Lets Inspect find the task by name after install: `inspect eval bystanderbench/bystander`.
+# Inspect loads every module in the `inspect_ai` group and namespaces tasks by the top-level
+# package that defines them, which is why the registry lives in `bystanderbench/`.
+[project.entry-points.inspect_ai]
+bystanderbench = "bystanderbench._registry"
+
+[tool.setuptools]
+# The repo root also holds research directories that are not Python packages, so the
+# package list is explicit rather than auto-discovered.
+packages = ["bystander", "bystander.env", "bystanderbench"]
+
+[tool.setuptools.package-data]
+bystander = ["compose.yaml"]
+
+[tool.pytest.ini_options]
+# The tests read files by repo-relative path, so run pytest from the repo root.
+testpaths = ["bystander/tests"]
+
+[tool.inspect-evals-lint]
+# The offline suite lives beside the package (needs Docker, no API calls).
+tests-root = "bystander/tests"
+tests-layout = "flat"
+# The task is registered through bystanderbench._registry (see the entry point above), which wraps
+# bystander/task.py so the by-name and by-path commands build the same Task. bystander/ itself is
+# deliberately not the entry point and does not re-export the task.
+ignore = ["IEFS003", "IEFS004"]
