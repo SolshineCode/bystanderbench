@@ -21,6 +21,9 @@ classifiers = [
 # across releases. See bystander/requirements.txt, which carries the same pin.
 dependencies = [
     "inspect-ai==0.3.261",
+    # agent-client-protocol 1.0.0 (2026-11-09) removed acp.helpers, which inspect-ai 0.3.261
+    # imports; inspect only asks for >=0.12.0, so pip would pick the broken release.
+    "agent-client-protocol<1.0",
 ]
 
 [project.optional-dependencies]
