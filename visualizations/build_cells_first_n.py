@@ -97,6 +97,10 @@ def main():
                          "any episode")
     ap.add_argument("--order-out", default=None, help="write the per-episode order used to this CSV")
     a = ap.parse_args()
+    # resolve output paths now: the chdir below would otherwise send relative paths into the lab repo
+    for k in ("out", "cache", "meta_out", "order_out"):
+        if getattr(a, k):
+            setattr(a, k, os.path.abspath(getattr(a, k)))
 
     lab = Path(a.lab).resolve()
     sys.path.insert(0, str(lab))
@@ -175,10 +179,12 @@ def main():
 
     rows = list(csv.DictReader(open(tmp_csv)))
     os.remove(tmp_csv)
-    fields = list(rows[0].keys()) + ["first_n"]
-    for r in rows:
-        capped = r["arm"] in MAIN_ARMS and r["tool_arm"] == MAIN_TOOL_ARM
-        r["first_n"] = str(a.n) if (capped and a.n > 0) else ""
+    fields = list(rows[0].keys())
+    if a.n > 0:  # --n 0 writes docs/cells.csv, whose published column set must not change
+        fields.append("first_n")
+        for r in rows:
+            capped = r["arm"] in MAIN_ARMS and r["tool_arm"] == MAIN_TOOL_ARM
+            r["first_n"] = str(a.n) if capped else ""
     with open(a.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
