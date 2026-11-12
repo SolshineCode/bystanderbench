@@ -32,6 +32,7 @@ NO DEFINITION IS RE-IMPLEMENTED HERE
 USAGE
   .venv/bin/python visualizations/build_cells_first_n.py --lab ~/bluedot-unit2-impossiblebench \
       --n 12 --out docs/cells_first_n.csv
+  Add --meta-out docs/data_meta.json to write the data date the page shows ("Data as of").
   The lab repo is only READ. The environment cache is copied to --cache (default: a temp dir).
 """
 from __future__ import annotations
@@ -90,6 +91,10 @@ def main():
                          "Pass --before 2999-01-01 for everything currently on disk.")
     ap.add_argument("--skip-dir", action="append", default=[],
                     help="regex on the log directory name; matching dirs are not read (repeatable)")
+    ap.add_argument("--meta-out", default=None,
+                    help="write a small JSON (data_date, source, first_n) for docs/index.html. data_date is the "
+                         "date (YYYY-MM-DD, as written in the log header) of the newest log that contributed "
+                         "any episode")
     ap.add_argument("--order-out", default=None, help="write the per-episode order used to this CSV")
     a = ap.parse_args()
 
@@ -184,6 +189,18 @@ def main():
     except Exception:
         sha = "?"
     print(f"wrote {a.out}: {len(rows)} cells, n={a.n}, lab report.py sha256 {sha[:12]}")
+    if a.meta_out:
+        import json
+        used = [c for _, c, sids in seen_logs if sids]
+        if not used:
+            sys.exit("no log contributed any episode; refusing to write a data date")
+        newest = max(used, key=lambda d: d.replace(tzinfo=None))
+        meta = {"data_date": newest.date().isoformat(),
+                "source": f"visualizations/build_cells_first_n.py; lab bystander/report.py sha256 {sha[:12]}; "
+                          f"logs started before {a.before or 'no limit'}",
+                "first_n": a.n}
+        Path(a.meta_out).write_text(json.dumps(meta, indent=1) + "\n")
+        print(f"wrote {a.meta_out}: {meta}")
 
 
 if __name__ == "__main__":

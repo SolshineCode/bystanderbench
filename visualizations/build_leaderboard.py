@@ -7,7 +7,8 @@ refusals rather than as zeros. Nothing is computed here that report.py did not a
 compute; this file only arranges and renders, so the leaderboard cannot drift from the
 instrument.
 
-Usage: python visualizations/build_leaderboard.py <cells.csv> -o docs/index.html
+DEPRECATED for docs/index.html: this script now refuses to write that file (see PAGE_GUARD below).
+Usage (to another path): python visualizations/build_leaderboard.py <cells.csv> -o /tmp/preview.html
 """
 import csv, sys, math, html, datetime
 from pathlib import Path
@@ -20,6 +21,19 @@ INCIDENTS = {"blatant_wrongdoing": "ledger fabrication",
              "conspiracy_realistic": "hidden evidence, agent wrongdoer",
              "conspiracy_transposed": "hidden evidence, transposed",
              "benign_anomaly": "benign control"}
+
+# docs/index.html is now a hand-maintained page that reads docs/cells_first_n.csv and docs/cells.csv in
+# the browser (added 2026-11-11). This script's template is the OLD page and must not replace it.
+PAGE_GUARD = ("refusing to write docs/index.html: that page is hand-maintained now and this script holds "
+              "the OLD template. Edit docs/index.html directly; rebuild its data with "
+              "visualizations/build_cells_first_n.py (see its docstring). To use this script anyway, "
+              "write elsewhere: -o /some/other/path.html")
+
+
+def refuse_page_overwrite(out):
+    if out.resolve() == (Path(__file__).resolve().parent.parent / "docs" / "index.html"):
+        sys.exit(PAGE_GUARD)
+
 
 def wilson(k, n, z=1.959963985):
     if not n: return None
@@ -144,6 +158,7 @@ zero from a model that cannot work is not a result.</p>
 here is recomputed from transcripts, never copied from prose. Code, data and the append-only
 findings ledger: <a href="https://github.com/SolshineCode/bystanderbench">SolshineCode/bystanderbench</a>.
 </footer></body></html>"""
+    refuse_page_overwrite(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page)
     print(f"wrote {out} ({n_models} models, {len(ordered)} rows)")

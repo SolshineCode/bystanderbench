@@ -16,7 +16,7 @@
 #   4. report.py                   -> prints the released numbers and explains any refusal
 #
 # Usage:
-#   MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
+#   MODEL=anthropic/claude-sonnet-5 bash bystander/run_model.sh
 #   MODEL=openai/local-model OPENAI_BASE_URL=http://127.0.0.1:8099/v1 \
 #     OPENAI_API_KEY=sk-local MODEL_ID=my-model-Q4_K_M.gguf bash bystander/run_model.sh
 #
@@ -26,7 +26,7 @@
 set -euo pipefail
 BASE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; cd "$BASE"
 [[ -f .venv/bin/activate ]] && source .venv/bin/activate
-: "${MODEL:?set MODEL to an Inspect model string, e.g. anthropic/claude-sonnet-4-5}"
+: "${MODEL:?set MODEL to an Inspect model string, e.g. anthropic/claude-sonnet-5}"
 EPOCHS="${EPOCHS:-6}"; FLOOR_EPOCHS="${FLOOR_EPOCHS:-4}"
 ARMS="${ARMS:-blatant_wrongdoing}"
 LABEL="${LABEL:-bystander-$(echo "$MODEL" | tr '/:' '--')}"

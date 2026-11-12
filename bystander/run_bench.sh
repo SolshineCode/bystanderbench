@@ -6,7 +6,7 @@
 # hosted API model and a locally-served open-weight one without changing the environment,
 # the scorer, or the metrics.
 #
-#   MODEL=anthropic/claude-sonnet-4-5        bash bystander/run_bench.sh
+#   MODEL=anthropic/claude-sonnet-5        bash bystander/run_bench.sh
 #   MODEL=openai/gpt-4o                      bash bystander/run_bench.sh
 #   MODEL=openrouter/qwen/qwen3.5-27b        bash bystander/run_bench.sh
 #   MODEL=openai/local-model OPENAI_BASE_URL=http://127.0.0.1:8099/v1 \
@@ -42,7 +42,7 @@ command -v inspect >/dev/null 2>&1 || {
 docker info >/dev/null 2>&1 || {
     echo "ERROR: docker is not available. BystanderBench runs each episode in a docker"
     echo "sandbox; start docker (or grant access) and re-run."; exit 1; }
-: "${MODEL:?set MODEL to an Inspect model string, e.g. anthropic/claude-sonnet-4-5}"
+: "${MODEL:?set MODEL to an Inspect model string, e.g. anthropic/claude-sonnet-5}"
 EPOCHS="${EPOCHS:-12}"
 ARMS="${ARMS:-conspiracy_realistic conspiracy_transposed benign_anomaly blatant_wrongdoing}"
 # tool_probe FIRST and BY DEFAULT (2026-09-12). report.py REFUSES every cell that has no

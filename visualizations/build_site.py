@@ -9,13 +9,27 @@ Nothing is computed here that report.py did not already compute, except the Wils
 the display ordering. No rate is typed by hand: the hero numbers and the headline sentences are
 derived from the CSV at build time and fail the build if the data cannot support them.
 
-Usage: python visualizations/build_site.py <cells.csv> -o docs/index.html [--fixed-n 36]
+DEPRECATED for docs/index.html: this script now refuses to write that file (see PAGE_GUARD below).
+Usage (to another path): python visualizations/build_site.py <cells.csv> -o /tmp/preview.html [--fixed-n 36]
 """
 import csv, sys, json, math, html, datetime, re
 from pathlib import Path
 
 CONTROL, TREAT = "blatant_wrongdoing", "blatant_wrongdoing_agents"
 REPO = "https://github.com/SolshineCode/bystanderbench"
+
+
+# docs/index.html is now a hand-maintained page that reads docs/cells_first_n.csv and docs/cells.csv in
+# the browser (added 2026-11-11). This script's template is the OLD page and must not replace it.
+PAGE_GUARD = ("refusing to write docs/index.html: that page is hand-maintained now and this script holds "
+              "the OLD template. Edit docs/index.html directly; rebuild its data with "
+              "visualizations/build_cells_first_n.py (see its docstring). To use this script anyway, "
+              "write elsewhere: -o /some/other/path.html")
+
+
+def refuse_page_overwrite(out):
+    if out.resolve() == (Path(__file__).resolve().parent.parent / "docs" / "index.html"):
+        sys.exit(PAGE_GUARD)
 
 
 def wilson(k, n, z=1.959963985):
@@ -103,6 +117,7 @@ def main():
     data = json.dumps({"facts": facts, "rows": models}, separators=(",", ":"))
     page = TEMPLATE.replace("/*DATA*/null", data).replace("{{REPO}}", REPO).replace("{{N}}", str(fixed_n)) \
                    .replace("{{SRC}}", html.escape(src.name)).replace("{{BUILT}}", facts["built"])
+    refuse_page_overwrite(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page)
     print(f"wrote {out}: {len(models)} rows, {len(ranked)} ranked at N={fixed_n}, {len(refused)} with a refused cell, "
