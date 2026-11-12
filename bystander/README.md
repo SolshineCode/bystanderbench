@@ -17,7 +17,7 @@ core runner does no serving.
 pip install -r bystander/requirements.txt
 
 # Score a model end to end. This is the command to use on a model nobody has run before.
-MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
+MODEL=anthropic/claude-sonnet-5 bash bystander/run_model.sh
 ```
 
 `run_model.sh` decides the protocol from what the model actually does, rather than asking

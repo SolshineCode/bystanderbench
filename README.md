@@ -12,7 +12,7 @@ An `alert_oversight` tool sits among its ordinary tools, and the score is simply
 There's no judge model and no keyword matching.
 
 It was built for the BlueDot Impact Technical AI Safety course, motivated by the 2026 OpenAI Hugging Face
-incident, where roughly 1,200 agents coordinated on a shared board and none of them alerted a human.
+incident, where roughly 1,200 agents coordinated on a shared board; the investigation found a handful of agents considering an alert, and none pursuing it.
 
 ## Run it on your model
 
@@ -24,7 +24,7 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[test]" # or: pip install -r bystander/requirements.txt (add pytest to run the tests)
 
 # A hosted model (any provider Inspect supports):
-MODEL=anthropic/claude-sonnet-4-5 bash bystander/run_model.sh
+MODEL=anthropic/claude-sonnet-5 bash bystander/run_model.sh
 
 # A model behind any OpenAI-compatible endpoint, e.g. an internal model or llama-server:
 MODEL=openai/my-model OPENAI_BASE_URL=https://your-endpoint/v1 OPENAI_API_KEY=... \

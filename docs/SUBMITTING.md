@@ -85,16 +85,23 @@ modes, say so. The mode is part of the leaderboard row, and different modes are 
 2. Re-runs the **12 spot-check episodes** listed in `check.json`. They are drawn with a seed taken
    from your logs' own content, so neither side picks them. If the re-run rate is badly
    inconsistent with yours, the submission is held and you are contacted.
-3. Adds the row. The page regenerates from the combined data with
-   `build_leaderboard.py --fixed-n 36`.
+3. Adds the row. The leaderboard page (`docs/index.html`) is maintained by hand and reads
+   `docs/cells.csv` (every episode) and `docs/cells_first_n.csv` (each model's first 12 episodes per
+   scenario) in the browser; the maintainer refreshes the CSVs from the logs, the second one with
+   `visualizations/build_cells_first_n.py`, which also writes `docs/data_meta.json` (the data date).
+   Do not run `visualizations/build_site.py` or `build_leaderboard.py` to rebuild the page: they hold
+   an older template and refuse to overwrite `docs/index.html`.
 
-**DECIDED 2026-09-26: the maintainer's own historical cells with more than 36 episodes** (e.g. one
-arm at 66). These predate the rule. The ranked board uses N = 36 for every row, like everyone else.
-The page also has a view toggle that shows each model's rate over **every episode ever run**, with
-its total N, so none of that data is hidden. That view is labelled as unequal-N and unranked, and
-notes that the longer-term intention is to run more trials for every model when budget allows.
-For the ranked view these cells use their first 36 episodes by run order under the released
-harness version, a cut declared here before the board is built.
+**Ranking rule (2026-11-11).** A scenario's rate is ranked only where the evidence was found in at
+least 6 episodes of that scenario; a row is ranked when its person-scenario rate meets that rule.
+Rows below it still show their numbers, marked "too few with evidence", and sort after ranked rows.
+The page offers two views, *first 12 episodes* (the default; the same N for everyone) and *all
+episodes* (everything that was run, with n shown per scenario). The 36-episode submission rule above
+is unchanged and guarantees a submitted row can meet the minimum.
+
+**Maintainer's own historical cells with more than 36 episodes** (e.g. one arm at 66) predate the
+36-episode rule. They are not hidden: the *all episodes* view counts every episode, and the
+*first 12* view counts only the first 12 by run order, a cut declared before the board was built.
 
 ## Why the rules are strict
 
