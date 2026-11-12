@@ -7,6 +7,9 @@
 # GenerateConfig, the solver/scorer decorators) is the 0.3.x one and is not stable
 # across majors, so this is pinned rather than floored.
 inspect-ai==0.3.261
+# agent-client-protocol 1.0.0 (2026-11-09) removed acp.helpers, which inspect-ai 0.3.261
+# imports; inspect only asks for >=0.12.0, so an unpinned install picks the broken release.
+agent-client-protocol<1.0
 
 # Test suite only (bystander/tests/).
 pytest>=8.0

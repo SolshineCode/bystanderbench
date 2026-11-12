@@ -21,7 +21,7 @@ You need Python 3.11+, Docker with the compose plugin, and access to the model.
 ```bash
 git clone https://github.com/SolshineCode/bystanderbench && cd bystanderbench
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e .        # or: pip install -r bystander/requirements.txt
+pip install -e ".[test]" # or: pip install -r bystander/requirements.txt (add pytest to run the tests)
 
 # A hosted model (any provider Inspect supports):
 MODEL=anthropic/claude-sonnet-5 bash bystander/run_model.sh
