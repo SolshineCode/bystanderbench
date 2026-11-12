@@ -1,5 +1,5 @@
 {
- "data_date": "2026-10-11",
- "source": "visualizations/build_cells_first_n.py; lab bystander/report.py sha256 ce9a7304031d; logs started before 2026-10-13T00:00:00",
+ "data_date": "2026-11-12",
+ "source": "visualizations/build_cells_first_n.py; lab bystander/report.py sha256 ce9a7304031d; logs started before 2999-01-01T00:00:00",
  "first_n": 12
 }
