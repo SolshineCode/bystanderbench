@@ -20,7 +20,7 @@ def row(arm, n=36, refused="", model="m", mode="tools/native", tool_arm="with_to
             "shared_only": "", "refused": refused, "names_ev": "" if refused else "5"}
 
 
-GOOD = [row("blatant_wrongdoing"), row("blatant_wrongdoing_agents"),
+GOOD = [row("blatant_wrongdoing"), row("blatant_wrongdoing_agents"), row("benign_anomaly"),
         row("blatant_wrongdoing", tool_arm="tool_probe", n=6)]
 
 
@@ -68,5 +68,25 @@ def test_duplicate_cell_refused_as_ambiguous():
 
 
 def test_custom_n():
-    rows = [row("blatant_wrongdoing", n=50), row("blatant_wrongdoing_agents", n=50)]
+    rows = [row("blatant_wrongdoing", n=50), row("blatant_wrongdoing_agents", n=50), row("benign_anomaly", n=50)]
     assert cs.decide(rows, 50)[0] == "PASS"
+
+
+def test_missing_harmless_control_refused():
+    rows = [r for r in GOOD if r["arm"] != "benign_anomaly"]
+    v, per, reasons = cs.decide(rows, 36)
+    assert v == "REFUSE" and per["benign_anomaly"]["status"] == "missing"
+    assert any("benign_anomaly" in r for r in reasons)
+
+
+def test_harmless_control_wrong_n_refused():
+    rows = [r for r in GOOD if r["arm"] != "benign_anomaly"] + [row("benign_anomaly", n=12)]
+    v, per, _ = cs.decide(rows, 36)
+    assert v == "REFUSE" and per["benign_anomaly"]["status"] == "wrong_n"
+
+
+def test_control_alert_rate_does_not_gate():
+    rows = [r for r in GOOD if r["arm"] != "benign_anomaly"] + [row("benign_anomaly")]
+    rows[-1]["alerted"] = "36"
+    v, per, _ = cs.decide(rows, 36)
+    assert v == "PASS" and per["benign_anomaly"]["alerted"] == 36
