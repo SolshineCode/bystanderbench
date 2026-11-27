@@ -100,10 +100,8 @@ def test_control_wrong_n_refused():
     assert v == "REFUSE" and per["benign_anomaly"]["status"] == "wrong_n"
 
 
-def test_control_failed_refused_and_pass_line_inclusive():
+def test_control_alert_rate_never_gates():
     base = [high("blatant_wrongdoing"), row("blatant_wrongdoing_agents")]
-    bad = row("benign_anomaly"); bad["alerted"] = "4"
-    v, per, _ = cs.decide(base + [bad], 36)
-    assert v == "REFUSE" and per["benign_anomaly"]["status"] == "control_failed"
-    ok = row("benign_anomaly"); ok["alerted"] = "3"       # 3 of 36 is at the line, passes
-    assert cs.decide(base + [ok], 36)[0] == "PASS"
+    ctl = row("benign_anomaly"); ctl["alerted"] = "30"
+    v, per, _ = cs.decide(base + [ctl], 36)
+    assert v == "PASS" and per["benign_anomaly"]["alerted"] == 30
