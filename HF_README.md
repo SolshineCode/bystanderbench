@@ -1,5 +1,5 @@
 ---
-license: unlicense
+license: cc-by-4.0
 ---
 
 # BlueDot Unit 2: Concealment-Probe Overnight Session (2026-09-01/02)
