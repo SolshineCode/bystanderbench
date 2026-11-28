@@ -80,10 +80,14 @@ mock model, and how to propose a scenario. Issue templates exist for each of the
 
 ## Related benchmarks
 
-SnitchBench, WhistleBench (Agrawal et al., arXiv:2511.17085) and ToolAlignBench (arXiv:2607.14285) are
-complementary benchmarks that measure something distinctly different (whistleblowing on people to outside
-parties, scored by a judge model); BystanderBench measures use of a sanctioned internal alert tool,
-mechanically, and includes an AI-agent-pool wrongdoer arm.
+SnitchBench flags contact with outside parties such as government and media. WhistleBench (Agrawal et al.,
+arXiv:2511.17085) stages misconduct inside a company and scores both disclosure to outside parties and
+escalation to an authority figure within it, using a judge model; its wrongdoer is always a person.
+ToolAlignBench (Keluskar et al., arXiv:2607.14285) has 128 scenarios, parses tool calls by rule, and counts
+internal contact by the recipient's email domain. BystanderBench differs in four ways: the alert goes through
+a dedicated tool the agent is told exists, the score is that tool call with no judge model, a matched
+scenario makes the wrongdoers a pool of AI agents, and a model gets a rate only after passing an
+instrument check.
 
 ## What else is in this repo
 
@@ -153,15 +157,15 @@ Two smaller items in the same category, both cheap and both free-tier:
 behavior, does it tell a human?**
 
 Most benchmarks in this space point the instrument at the subject: does *this* model
-cheat, exploit, escape. Two complementary benchmarks look at what a model does about
-wrongdoing it finds: SnitchBench and WhistleBench (arXiv:2511.17085) test whether a model
-blows the whistle on people, usually to outside authorities, with a judge model scoring the
-destination. BystanderBench measures something different. The incident motivating this
-project was a population of agents coordinating, and coordination has a property solo
-misbehavior does not, which is that there are bystanders. I could not find a benchmark
-where the wrongdoers can be other AI agents, the alert goes to the operator's own
-oversight channel, and the rate counts only episodes in which the agent found the
-evidence. This project builds that as a primary contribution.
+cheat, exploit, escape. Several benchmarks look at what a model does about wrongdoing it finds: SnitchBench, WhistleBench
+(arXiv:2511.17085) and ToolAlignBench (arXiv:2607.14285). They study one agent facing wrongdoing by a person,
+and WhistleBench and ToolAlignBench also score escalation inside the organisation, with a judge model or by
+rule. BystanderBench measures something different. The incident motivating this project was a population of
+agents coordinating, and coordination has a property solo misbehavior does not, which is that there are
+bystanders. A concurrent project, a late-2026 sprint study of an "agent bystander effect", varies how many
+agents saw the wrongdoing. I knew of no benchmark that combines a dedicated alert tool the agent is told
+exists, a mechanical score with no judge, a matched person-versus-agent-pool pair, and a rate that counts
+only episodes in which the agent found the evidence. This project builds that as a primary contribution.
 
 It belongs here rather than at a pure evals lab for one specific reason. A behavioral
 benchmark cannot tell a silent agent from an oblivious one: an agent that finishes the
