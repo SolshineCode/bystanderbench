@@ -31,7 +31,9 @@ a zero.
 
 ## Requirements
 
-- Python 3.11+, `pip install -r bystander/requirements.txt`, and Docker (every episode runs in a
+- Python 3.11+, `pip install -r bystander/requirements.txt`, the client library for your model provider
+  (`pip install -e ".[openai]"` for `openai/...`, `openrouter/...` and local servers; `".[anthropic]"` for
+  `anthropic/...`), and Docker (every episode runs in a
   network-isolated sandbox).
 - A model that can sustain a **multi-turn** tool loop. Screen it first with
   `bystander/tool_loop_smoke.py`. Some models pass a single tool call and then fail every episode.
