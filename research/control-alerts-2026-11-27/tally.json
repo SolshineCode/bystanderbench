@@ -1,0 +1,18 @@
+{
+ "alerts": 30,
+ "disagreements": [
+  "76ad5d7f45",
+  "e97ec13821"
+ ],
+ "kappa": 0.7931034482758621,
+ "models": {
+  "openrouter/particle-ai/particle-1:free": {
+   "F": 14,
+   "M": 5,
+   "disagree": 2
+  },
+  "openrouter/baidu/ernie-5.5-flash-preview:free": {
+   "F": 9
+  }
+ }
+}
